@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gossip Harbor Complete Guide - Merge Chains, Generators, Energy, Events & Strategies</title>
+    <meta name="description" content="The ultimate comprehensive guide for Gossip Harbor: Merge & Story. 25+ merge chains, generator optimization, energy management, event strategies, complete story walkthrough, and advanced gameplay techniques.">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2485720330662082"
+     crossorigin="anonymous"></script>
+    <!-- Adsterra -->
+    <script src="https://pl29460731.effectivecpmnetwork.com/9c/dd/e4/9cdde4973a3de11f32d31c5e3d7ac0e7.js"></script>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #1a6b8a;
+            --primary-dark: #0f4a60;
+            --primary-light: #e8f4f8;
+            --accent: #e8734a;
+            --accent-light: #fff0eb;
+            --gold: #d4a843;
+            --gold-light: #fdf6e3;
+            --bg: #fafbfc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
+            --shadow-hover: 0 6px 24px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --success: #2d8a56;
+            --warning: #d97706;
+            --danger: #dc2626;
+            --purple: #7c3aed;
+            --purple-light: #f0e6ff;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent); }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+        }
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .game-logo {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, #0ea5e9, var(--primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 2px 8px rgba(26,107,138,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .game-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(255,255,255,0.4) 4px, rgba(255,255,255,0.4) 6px);
+        }
+        .nav-links { display: flex; gap: 16px; list-style: none; flex-wrap: wrap; }
+        .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-light);
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+        
+        /* Dropdown Menu */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > a { cursor: pointer; }
+        .nav-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            min-width: 180px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-hover);
+            z-index: 200;
+            padding: 8px 0;
+        }
+        .nav-dropdown:hover .nav-dropdown-content { display: block; }
+        .nav-dropdown-content a {
+            display: block;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            border-bottom: none;
+        }
+        .nav-dropdown-content a:hover {
+            background: var(--primary-light);
+            border-bottom: none;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 40%, #2d9bb5 70%, #0ea5e9 100%);
+            color: #fff;
+            padding: 60px 24px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(232,115,74,0.12) 0%, transparent 40%);
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(20px, -20px) rotate(1deg); }
+            66% { transform: translate(-10px, 10px) rotate(-1deg); }
+        }
+
+        .floating-items {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .float-item {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: floatUp var(--dur, 18s) var(--delay, 0s) infinite ease-in-out;
+        }
+        .float-item:nth-child(1)  { left: 5%;  top: 15%; --dur: 22s; --delay: 0s;   font-size: 2.5rem; }
+        .float-item:nth-child(2)  { left: 15%; top: 60%; --dur: 18s; --delay: -3s;  font-size: 1.8rem; }
+        .float-item:nth-child(3)  { left: 80%; top: 10%; --dur: 25s; --delay: -5s;  font-size: 2.2rem; }
+        .float-item:nth-child(4)  { left: 70%; top: 55%; --dur: 20s; --delay: -8s;  font-size: 1.6rem; }
+        .float-item:nth-child(5)  { left: 90%; top: 30%; --dur: 16s; --delay: -2s;  font-size: 2rem; }
+        .float-item:nth-child(6)  { left: 30%; top: 75%; --dur: 24s; --delay: -10s; font-size: 1.5rem; }
+        .float-item:nth-child(7)  { left: 50%; top: 8%;  --dur: 19s; --delay: -6s;  font-size: 2.8rem; }
+        .float-item:nth-child(8)  { left: 40%; top: 45%; --dur: 21s; --delay: -4s;  font-size: 1.4rem; }
+        @keyframes floatUp {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(8deg); }
+            50% { transform: translateY(-8px) rotate(-5deg); }
+            75% { transform: translateY(-25px) rotate(3deg); }
+        }
+
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(4px);
+        }
+        .hero-badge .pulse-dot {
+            width: 8px; height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.4); }
+        }
+
+        .game-title-logo {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .game-title-logo .icon-row {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        .game-title-logo .icon-row span {
+            width: 36px; height: 36px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: iconBob 3s ease-in-out infinite;
+        }
+        .game-title-logo .icon-row span:nth-child(2) { animation-delay: -0.3s; }
+        .game-title-logo .icon-row span:nth-child(3) { animation-delay: -0.6s; }
+        .game-title-logo .icon-row span:nth-child(4) { animation-delay: -0.9s; }
+        .game-title-logo .icon-row span:nth-child(5) { animation-delay: -1.2s; }
+        @keyframes iconBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+        .hero h1 .highlight { color: var(--gold); }
+        .hero h1 .sub-title {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.7;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 6px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 24px;
+            line-height: 1.8;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat .num { font-size: 1.6rem; font-weight: 800; display: block; }
+        .hero-stat .label { font-size: 0.75rem; opacity: 0.75; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        .merge-demo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 24px auto 0;
+            padding: 14px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            max-width: 480px;
+        }
+        .merge-demo .demo-item {
+            width: 48px; height: 48px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .merge-demo .demo-plus { font-size: 1.1rem; font-weight: 800; opacity: 0.6; }
+        .merge-demo .demo-arrow {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--gold);
+            animation: arrowPulse 1.5s infinite;
+        }
+        @keyframes arrowPulse {
+            0%, 100% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(4px); opacity: 0.6; }
+        }
+        .merge-demo .demo-result {
+            width: 52px; height: 52px;
+            background: linear-gradient(135deg, rgba(212,168,67,0.3), rgba(232,115,74,0.3));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            border: 2px solid rgba(212,168,67,0.5);
+            animation: resultGlow 2s infinite;
+        }
+        @keyframes resultGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(212,168,67,0); }
+            50% { box-shadow: 0 0 20px 4px rgba(212,168,67,0.3); }
+        }
+        .merge-demo .demo-label { font-size: 0.7rem; opacity: 0.7; text-align: center; margin-top: 4px; }
+
+        /* ===== WAVE DIVIDER ===== */
+        .wave-divider {
+            position: relative;
+            margin-top: -2px;
+            line-height: 0;
+        }
+        .wave-divider svg { display: block; width: 100%; height: 50px; }
+
+        /* ===== CONTAINER ===== */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 50px 0; }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+        }
+
+        /* ===== NAV CARDS ===== */
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .nav-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+            display: block;
+        }
+        .nav-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+        .nav-card .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .nav-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+        .nav-card p { font-size: 0.85rem; color: var(--text-light); }
+
+        /* ===== FEATURED SECTION ===== */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .featured-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        .featured-card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+        .featured-card .featured-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .featured-card .featured-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-light), #d1ecf1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .featured-card h3 { font-size: 1.2rem; font-weight: 700; }
+        .featured-card p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 16px; }
+        .featured-card .featured-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .featured-card .featured-links a {
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            background: var(--primary-light);
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .featured-card .featured-links a:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 50px 40px;
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '⚓ 🦞 🍔 🧁 🍹 🦐 🥪 🍰';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            letter-spacing: 15px;
+            opacity: 0.06;
+            white-space: nowrap;
+        }
+        .cta-section h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; position: relative; }
+        .cta-section p { opacity: 0.9; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
+        .cta-form {
+            display: flex;
+            gap: 10px;
+            max-width: 440px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .cta-form input {
+            flex: 1;
+            padding: 12px 18px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .cta-form input::placeholder { color: rgba(255,255,255,0.6); }
+        .cta-form button {
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: none;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .cta-form button:hover { background: #d4612e; transform: scale(1.05); }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--text);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 24px 24px;
+            margin-top: 50px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 32px;
+        }
+        .footer-brand h3 { color: #fff; font-size: 1rem; margin-bottom: 6px; }
+        .footer-brand p { font-size: 0.8rem; line-height: 1.6; }
+        .footer h4 { color: #fff; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 6px; }
+        .footer ul a { color: rgba(255,255,255,0.6); font-size: 0.8rem; transition: color 0.2s; }
+        .footer ul a:hover { color: #fff; }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 24px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero-stats { gap: 20px; }
+            .hero-stat .num { font-size: 1.3rem; }
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 14px 20px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow);
+                gap: 10px;
+            }
+            .cta-section { padding: 32px 20px; }
+            .cta-form { flex-direction: column; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .featured-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .footer-inner { grid-template-columns: 1fr; }
+            .hero { padding: 50px 16px 80px; }
+            .hero h1 { font-size: 1.6rem; }
+            .float-item { font-size: 1.2rem !important; }
+            .section-header h2 { font-size: 1.5rem; }
+        }
+
+        /* ===== ADS ===== */
+        /* AdSense Top Banner */
+        .ad-adsense-top {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin: 24px auto;
+            text-align: center;
+            max-width: 1200px;
+        }
+
+        /* Adsterra Sidebar */
+        .ad-adsterra-sidebar {
+            position: fixed;
+            right: 20px;
+            top: 100px;
+            width: 300px;
+            z-index: 50;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+        }
+        @media (max-width: 1400px) {
+            .ad-adsterra-sidebar { display: none; }
+        }
+
+        /* Ad Label */
+        .ad-label {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-brand">
+                <div class="game-logo">⚓</div>
+                Gossip Harbor Guide
+            </a>
+            <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="beginner.html">Beginner</a></li>
+                <li class="nav-dropdown">
+                    <a href="merge-chains.html">Merge Chains ▾</a>
+                    <div class="nav-dropdown-content">
+                        <a href="merge-chains.html">Overview</a>
+                        <a href="merge-chains-bread.html">Bread Chain</a>
+                        <a href="merge-chains-coffee.html">Coffee & Tea</a>
+                        <a href="merge-chains-seafood.html">Seafood</a>
+                        <a href="merge-chains-other.html">Other Chains</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="generators.html">Generators ▾</a>
+                    <div class="nav-dropdown-content">
+                        <a href="generators.html">Overview</a>
+                        <a href="generator-booster.html">Generator Booster</a>
+                    </div>
+                </li>
+                <li><a href="customer-orders.html">Orders</a></li>
+                <li><a href="energy.html">Energy</a></li>
+                <li class="nav-dropdown">
+                    <a href="events.html">Events ▾</a>
+                    <div class="nav-dropdown-content">
+                        <a href="events.html">Overview</a>
+                        <a href="events-types.html">Event Types</a>
+                    </div>
+                </li>
+                <li><a href="diamonds.html">Diamonds</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="characters.html">Characters</a></li>
+                <li><a href="decoration.html">Decoration</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="advanced.html">Advanced</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- AdSense Top Banner -->
+    <div class="ad-adsense-top">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2485720330662082"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Adsterra Sidebar -->
+    <div class="ad-adsterra-sidebar">
+        <div class="ad-label">Advertisement</div>
+        <div id="adsterra-sidebar-ad"></div>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="floating-items">
+            <span class="float-item">☕</span>
+            <span class="float-item">🥪</span>
+            <span class="float-item">🦐</span>
+            <span class="float-item">🍰</span>
+            <span class="float-item">🍹</span>
+            <span class="float-item">🧁</span>
+            <span class="float-item">🍔</span>
+            <span class="float-item">🦞</span>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                #1 Merge Game Guide — Updated Weekly
+            </div>
+            <div class="game-title-logo">
+                <div class="icon-row">
+                    <span>🥪</span><span>☕</span><span>🦐</span><span>🍰</span><span>🍹</span>
+                </div>
+            </div>
+            <h1>
+                <span class="highlight">Gossip Harbor</span>
+                <span class="sub-title">Complete Strategy Guide</span>
+            </h1>
+            <p>The most comprehensive resource for Gossip Harbor: Merge & Story. Master merge chains, optimize generators, manage energy, complete events, and uncover every story secret.</p>
+            <div class="merge-demo">
+                <div style="text-align:center">
+                    <div class="demo-item">🍞</div>
+                    <div class="demo-label">Bread</div>
+                </div>
+                <span class="demo-plus">+</span>
+                <div style="text-align:center">
+                    <div class="demo-item">🧀</div>
+                    <div class="demo-label">Cheese</div>
+                </div>
+                <span class="demo-arrow">→</span>
+                <div style="text-align:center">
+                    <div class="demo-result">🥪</div>
+                    <div class="demo-label">Sandwich!</div>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><span class="num">25+</span><span class="label">Merge Chains</span></div>
+                <div class="hero-stat"><span class="num">15+</span><span class="label">Generators</span></div>
+                <div class="hero-stat"><span class="num">50+</span><span class="label">Event Guides</span></div>
+                <div class="hero-stat"><span class="num">150+</span><span class="label">Story Chapters</span></div>
+                <div class="hero-stat"><span class="num">30+</span><span class="label">Characters</span></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 50" preserveAspectRatio="none"><path d="M0,25 C240,50 480,0 720,25 C960,50 1200,0 1440,25 L1440,50 L0,50 Z" fill="#fafbfc"/></svg>
+    </div>
+
+    <div class="container">
+        <!-- Quick Navigation -->
+        <section>
+            <div class="section-header">
+                <div class="tag">🗺️ Quick Navigation</div>
+                <h2>Explore the Guide</h2>
+                <p>Navigate to any section of our comprehensive Gossip Harbor guide. Click a card to dive deeper into each topic.</p>
+            </div>
+            <div class="nav-cards">
+                <a href="beginner.html" class="nav-card">
+                    <div class="icon">🚀</div>
+                    <h3>Beginner Guide</h3>
+                    <p>Start your journey with essential tips and fundamentals for new players.</p>
+                </a>
+                <a href="merge-chains.html" class="nav-card">
+                    <div class="icon">🔗</div>
+                    <h3>Merge Chains</h3>
+                    <p>Complete reference for all 25+ merge chains with detailed tables.</p>
+                </a>
+                <a href="generators.html" class="nav-card">
+                    <div class="icon">⚙️</div>
+                    <h3>Generators</h3>
+                    <p>Master every generator, optimize output, and learn upgrade strategies.</p>
+                </a>
+                <a href="customer-orders.html" class="nav-card">
+                    <div class="icon">🍽️</div>
+                    <h3>Customer Orders</h3>
+                    <p>Maximize coins and XP with smart order prioritization strategies.</p>
+                </a>
+                <a href="energy.html" class="nav-card">
+                    <div class="icon">⚡</div>
+                    <h3>Energy Guide</h3>
+                    <p>Manage your most precious resource with proven energy strategies.</p>
+                </a>
+                <a href="events.html" class="nav-card">
+                    <div class="icon">📅</div>
+                    <h3>Events</h3>
+                    <p>Complete event calendar and strategies for all event types.</p>
+                </a>
+                <a href="diamonds.html" class="nav-card">
+                    <div class="icon">💎</div>
+                    <h3>Diamond Guide</h3>
+                    <p>Best diamond spending priorities and F2P earning strategies.</p>
+                </a>
+                <a href="story.html" class="nav-card">
+                    <div class="icon">📖</div>
+                    <h3>Story Guide</h3>
+                    <p>Follow Quinn's journey and uncover all the secrets of Brimwave Island.</p>
+                </a>
+                <a href="characters.html" class="nav-card">
+                    <div class="icon">👥</div>
+                    <h3>Characters</h3>
+                    <p>Meet all residents of Brimwave Island and their roles in the story.</p>
+                </a>
+                <a href="decoration.html" class="nav-card">
+                    <div class="icon">🏠</div>
+                    <h3>Decoration</h3>
+                    <p>Customize your restaurant with our complete decoration catalog.</p>
+                </a>
+                <a href="achievements.html" class="nav-card">
+                    <div class="icon">🏆</div>
+                    <h3>Achievements</h3>
+                    <p>Track your progress and unlock all achievement rewards.</p>
+                </a>
+                <a href="advanced.html" class="nav-card">
+                    <div class="icon">🎯</div>
+                    <h3>Advanced Strategies</h3>
+                    <p>Expert techniques for experienced players to optimize gameplay.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Content -->
+        <section>
+            <div class="section-header">
+                <div class="tag">⭐ Featured Content</div>
+                <h2>Popular Guides</h2>
+                <p>Our most visited and helpful guides chosen by the community.</p>
+            </div>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="featured-header">
+                        <div class="featured-icon">🔗</div>
+                        <h3>Merge Chain Mastery</h3>
+                    </div>
+                    <p>Learn the complete merge chain system including the 15-level Bread chain, Coffee optimization, and energy-efficient merging strategies.</p>
+                    <div class="featured-links">
+                        <a href="merge-chains-bread.html">Bread Chain</a>
+                        <a href="merge-chains-coffee.html">Coffee & Tea</a>
+                        <a href="merge-chains-seafood.html">Seafood</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-header">
+                        <div class="featured-icon">⚡</div>
+                        <h3>Energy Optimization</h3>
+                    </div>
+                    <p>Master energy management with our daily routine guide, F2P energy budget, and the critical energy bottle merging strategy.</p>
+                    <div class="featured-links">
+                        <a href="energy.html#daily-routine">Daily Routine</a>
+                        <a href="energy.html#energy-bottle">Energy Bottles</a>
+                        <a href="energy.html#f2p-budget">F2P Budget</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-header">
+                        <div class="featured-icon">📅</div>
+                        <h3>Event Strategies</h3>
+                    </div>
+                    <p>Dominate every event type from Card Collection to Flaming Frenzy with our detailed strategies and reward optimization tips.</p>
+                    <div class="featured-links">
+                        <a href="events-types.html">Event Types</a>
+                        <a href="events.html#flaming-frenzy">Flaming Frenzy</a>
+                        <a href="events.html#card-collection">Card Collection</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-header">
+                        <div class="featured-icon">🎯</div>
+                        <h3>Pro Tips</h3>
+                    </div>
+                    <p>Advanced techniques including the 5-merge rule, generator boost optimization, and late-game energy strategies.</p>
+                    <div class="featured-links">
+                        <a href="advanced.html#5-merge">5-Merge Rule</a>
+                        <a href="generator-booster.html">Generator Booster</a>
+                        <a href="advanced.html">All Strategies</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Stay Updated 🌊</h2>
+            <p>Get weekly guides, event alerts, merge tips, and exclusive strategies delivered to your inbox. Join 10,000+ Gossip Harbor players!</p>
+            <div class="cta-form">
+                <input type="email" placeholder="Enter your email..." aria-label="Email address">
+                <button type="button">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>⚓ Gossip Harbor Guide</h3>
+                <p>The ultimate fan-made resource for Gossip Harbor: Merge & Story. Not affiliated with Microfun — just passionate players helping players.</p>
+            </div>
+            <div>
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="beginner.html">Beginner Guide</a></li>
+                    <li><a href="merge-chains.html">Merge Chains</a></li>
+                    <li><a href="generators.html">Generators</a></li>
+                    <li><a href="energy.html">Energy Tips</a></li>
+                    <li><a href="diamonds.html">Diamond Strategy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Content</h4>
+                <ul>
+                    <li><a href="events.html">Event Calendar</a></li>
+                    <li><a href="story.html">Story Walkthrough</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="https://www.reddit.com/r/GossipHarbor/" target="_blank">Reddit Community</a></li>
+                    <li><a href="https://www.facebook.com/GossipHarbor" target="_blank">Facebook Page</a></li>
+                    <li><a href="https://gossip-harbor.fandom.com/wiki/Gossip_Harbor_Wiki" target="_blank">Fandom Wiki</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy" onclick="document.getElementById('privacy-modal').style.display='block'">Privacy Policy</a></li>
+                    <li><a href="#terms" onclick="document.getElementById('terms-modal').style.display='block'">Terms of Service</a></li>
+                    <li><a href="#contact" onclick="document.getElementById('contact-modal').style.display='block'">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Gossip Harbor Guide. Fan-made site. Gossip Harbor is a trademark of Microfun. All game assets belong to their respective owners.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">This website uses Google AdSense to serve ads. <a href="#privacy" onclick="document.getElementById('privacy-modal').style.display='block'" style="color: var(--gold);">Learn more</a></p>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; overflow-y:auto;">
+        <div style="max-width:800px; margin:50px auto; background:var(--card-bg); padding:40px; border-radius:var(--radius); position:relative;">
+            <button onclick="document.getElementById('privacy-modal').style.display='none'" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--text);">×</button>
+            <h2>Privacy Policy</h2>
+            <p><strong>Last Updated:</strong> January 2026</p>
+            <h3>1. Information We Collect</h3>
+            <p>This website uses Google AdSense, which may collect certain information about your visit, including:</p>
+            <ul>
+                <li>IP address</li>
+                <li>Browser type and version</li>
+                <li>Pages you visit on this site</li>
+                <li>Time spent on pages</li>
+                <li>Referring website</li>
+            </ul>
+            <h3>2. Google AdSense</h3>
+            <p>We use Google AdSense to display advertisements. Google uses cookies to serve ads based on your prior visits to this and other websites. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--primary);">Google Ads Settings</a>.</p>
+            <h3>3. Cookies</h3>
+            <p>This website uses cookies to enhance user experience and serve personalized ads. By using this site, you consent to the use of cookies.</p>
+            <h3>4. Third-Party Links</h3>
+            <p>This website contains links to third-party sites (e.g., Reddit, Facebook, Fandom). We are not responsible for the privacy practices of these sites.</p>
+            <h3>5. Contact</h3>
+            <p>If you have questions about this privacy policy, please contact us through the Contact Us page.</p>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="terms-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; overflow-y:auto;">
+        <div style="max-width:800px; margin:50px auto; background:var(--card-bg); padding:40px; border-radius:var(--radius); position:relative;">
+            <button onclick="document.getElementById('terms-modal').style.display='none'" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--text);">×</button>
+            <h2>Terms of Service</h2>
+            <p><strong>Last Updated:</strong> January 2026</p>
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing and using this website, you accept and agree to be bound by these Terms of Service.</p>
+            <h3>2. Content</h3>
+            <p>This is a fan-made guide for Gossip Harbor: Merge & Story. All game content, including images, characters, and story elements, are the property of Microfun. This site is not affiliated with or endorsed by Microfun.</p>
+            <h3>3. Use of Information</h3>
+            <p>The information provided on this website is for educational and entertainment purposes only. While we strive for accuracy, we make no guarantees about the completeness or reliability of the information.</p>
+            <h3>4. Advertisements</h3>
+            <p>This website displays advertisements through Google AdSense. We are not responsible for the content of these advertisements.</p>
+            <h3>5. Limitation of Liability</h3>
+            <p>We shall not be liable for any damages arising from the use of this website or the information contained herein.</p>
+            <h3>6. Changes to Terms</h3>
+            <p>We reserve the right to modify these terms at any time. Continued use of the site constitutes acceptance of the updated terms.</p>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; overflow-y:auto;">
+        <div style="max-width:600px; margin:50px auto; background:var(--card-bg); padding:40px; border-radius:var(--radius); position:relative;">
+            <button onclick="document.getElementById('contact-modal').style.display='none'" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--text);">×</button>
+            <h2>Contact Us</h2>
+            <p>Have questions, suggestions, or corrections for the guide? We'd love to hear from you!</p>
+            <div style="margin-top:24px;">
+                <h3>Community Channels</h3>
+                <ul style="margin:16px 0; padding-left:24px;">
+                    <li>Join the discussion on <a href="https://www.reddit.com/r/GossipHarbor/" target="_blank" style="color:var(--primary);">Reddit</a></li>
+                    <li>Follow updates on <a href="https://www.facebook.com/GossipHarbor" target="_blank" style="color:var(--primary);">Facebook</a></li>
+                    <li>Visit the <a href="https://gossip-harbor.fandom.com/wiki/Gossip_Harbor_Wiki" target="_blank" style="color:var(--primary);">Fandom Wiki</a> for more info</li>
+                </ul>
+            </div>
+            <div style="margin-top:24px; padding:16px; background:var(--bg-light); border-radius:var(--radius);">
+                <p style="font-size:0.9rem; color:var(--text-light);"><strong>Note:</strong> This is a fan-made guide site. For official game support, please contact Microfun through the game's settings menu.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Merge demo cycling
+        const mergeDemos = [
+            { a: '🍞', aLabel: 'Bread', b: '🧀', bLabel: 'Cheese', result: '🥪', rLabel: 'Sandwich!' },
+            { a: '🌱', aLabel: 'Bean', b: '🌱', bLabel: 'Bean', result: '☕', rLabel: 'Coffee!' },
+            { a: '🪱', aLabel: 'Bait', b: '🪱', bLabel: 'Bait', result: '🦐', rLabel: 'Shrimp!' },
+            { a: '🥛', aLabel: 'Milk', b: '🧈', bLabel: 'Butter', result: '🧁', rLabel: 'Cupcake!' },
+            { a: '🧊', aLabel: 'Ice', b: '🍋', bLabel: 'Lemon', result: '🍹', rLabel: 'Cocktail!' },
+        ];
+        let demoIndex = 0;
+        const demo = document.querySelector('.merge-demo');
+        if (demo) {
+            setInterval(() => {
+                demoIndex = (demoIndex + 1) % mergeDemos.length;
+                const d = mergeDemos[demoIndex];
+                const items = demo.querySelectorAll('.demo-item');
+                const result = demo.querySelector('.demo-result');
+                const labels = demo.querySelectorAll('.demo-label');
+                items[0].textContent = d.a; items[1].textContent = d.b; result.textContent = d.result;
+                labels[0].textContent = d.aLabel; labels[1].textContent = d.bLabel; labels[2].textContent = d.rLabel;
+                result.style.transform = 'scale(1.2)';
+                setTimeout(() => result.style.transform = 'scale(1)', 300);
+            }, 3000);
+        }
+    </script>
+
+    <!-- Adsterra Popunder -->
+    <script>
+        // Popunder loads via the script in head
+        // This is a click-triggered popunder, not forced
+    </script>
+</body>
+</html>

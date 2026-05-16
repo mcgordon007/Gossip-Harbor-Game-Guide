@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Guide - Gossip Harbor Complete Guide</title>
+    <meta name="description" content="Complete beginner's guide for Gossip Harbor: Merge & Story. Essential tips, fundamentals, and strategies for new players starting their journey on Brimwave Island.">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2485720330662082"
+     crossorigin="anonymous"></script>
+    <!-- Adsterra -->
+    <script src="https://pl29460731.effectivecpmnetwork.com/9c/dd/e4/9cdde4973a3de11f32d31c5e3d7ac0e7.js"></script>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #1a6b8a;
+            --primary-dark: #0f4a60;
+            --primary-light: #e8f4f8;
+            --accent: #e8734a;
+            --accent-light: #fff0eb;
+            --gold: #d4a843;
+            --gold-light: #fdf6e3;
+            --bg: #fafbfc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
+            --shadow-hover: 0 6px 24px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --success: #2d8a56;
+            --warning: #d97706;
+            --danger: #dc2626;
+            --purple: #7c3aed;
+            --purple-light: #f0e6ff;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent); }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+        }
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .game-logo {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, #0ea5e9, var(--primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 2px 8px rgba(26,107,138,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .game-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(255,255,255,0.4) 4px, rgba(255,255,255,0.4) 6px);
+        }
+        .nav-links { display: flex; gap: 16px; list-style: none; flex-wrap: wrap; }
+        .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-light);
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+        
+        /* Dropdown Menu */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > a { cursor: pointer; }
+        .nav-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            min-width: 180px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-hover);
+            z-index: 200;
+            padding: 8px 0;
+        }
+        .nav-dropdown:hover .nav-dropdown-content { display: block; }
+        .nav-dropdown-content a {
+            display: block;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            border-bottom: none;
+        }
+        .nav-dropdown-content a:hover {
+            background: var(--primary-light);
+            border-bottom: none;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 50px 0; }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            font-size: 0.85rem;
+        }
+        .breadcrumb-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .breadcrumb a { color: var(--text-light); }
+        .breadcrumb a:hover { color: var(--primary); }
+        .breadcrumb span { color: var(--text); font-weight: 600; }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+        }
+
+        /* ===== BEGINNER SECTION ===== */
+        .beginner-section {
+            background: linear-gradient(135deg, var(--primary-light), #f0f8ff);
+            border-radius: var(--radius);
+            padding: 40px;
+            border: 1px solid #d1ecf1;
+        }
+        .tips-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .tip-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: rgba(255,255,255,0.8);
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.9);
+            transition: all 0.3s;
+        }
+        .tip-item:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+        .tip-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+        .tip-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 3px; }
+        .tip-item p { font-size: 0.8rem; color: var(--text-light); }
+
+        /* ===== PRO TIP BOX ===== */
+        .pro-tip {
+            margin-top: 24px;
+            padding: 20px;
+            background: var(--accent-light);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+        .pro-tip-title {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .pro-tip p { font-size: 0.85rem; color: var(--text); }
+
+        /* ===== INFO BOX ===== */
+        .info-box {
+            background: var(--primary-light);
+            border: 1px solid #d1ecf1;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        .info-box h4 { font-size: 0.9rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .info-box p { font-size: 0.85rem; color: var(--text); }
+
+        /* ===== PAGE NAVIGATION ===== */
+        .page-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+        .page-nav a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--primary-light);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .page-nav a:hover { background: var(--primary); color: #fff; }
+        .page-nav .back-home {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+        .page-nav .back-home:hover { background: var(--accent); color: #fff; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--text);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 24px 24px;
+            margin-top: 50px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 32px;
+        }
+        .footer-brand h3 { color: #fff; font-size: 1rem; margin-bottom: 6px; }
+        .footer-brand p { font-size: 0.8rem; line-height: 1.6; }
+        .footer h4 { color: #fff; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 6px; }
+        .footer ul a { color: rgba(255,255,255,0.6); font-size: 0.8rem; transition: color 0.2s; }
+        .footer ul a:hover { color: #fff; }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 24px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 14px 20px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow);
+                gap: 10px;
+            }
+            .beginner-section { padding: 24px 16px; }
+            .tips-list { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .page-nav { flex-direction: column; gap: 12px; }
+        }
+        @media (max-width: 480px) {
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+
+        /* ===== ADS ===== */
+        /* AdSense Top Banner */
+        .ad-adsense-top {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin: 24px auto;
+            text-align: center;
+            max-width: 1200px;
+        }
+
+        /* Adsterra Sidebar */
+        .ad-adsterra-sidebar {
+            position: fixed;
+            right: 20px;
+            top: 100px;
+            width: 300px;
+            z-index: 50;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+        }
+        @media (max-width: 1400px) {
+            .ad-adsterra-sidebar { display: none; }
+        }
+
+        /* Ad Label */
+        .ad-label {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-brand">
+                <div class="game-logo">⚓</div>
+                Gossip Harbor Guide
+            </a>
+            <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="beginner.html" class="active">Beginner</a></li>
+                <li class="nav-dropdown">
+                    <a href="merge-chains.html">Merge Chains ▾</a>
+                    <div class="nav-dropdown-content">
+                        <a href="merge-chains.html">Overview</a>
+                        <a href="merge-chains-bread.html">Bread Chain</a>
+                        <a href="merge-chains-coffee.html">Coffee & Tea</a>
+                        <a href="merge-chains-seafood.html">Seafood</a>
+                        <a href="merge-chains-other.html">Other Chains</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="generators.html">Generators ▾</a>
+                    <div class="nav-dropdown-content">
+                        <a href="generators.html">Overview</a>
+                        <a href="generator-booster.html">Generator Booster</a>
+                    </div>
+                </li>
+                <li><a href="customer-orders.html">Orders</a></li>
+                <li><a href="energy.html">Energy</a></li>
+                <li class="nav-dropdown">
+                    <a href="events.html">Events ▾</a>
+                    <div class="nav-dropdown-content">
+                        <a href="events.html">Overview</a>
+                        <a href="events-types.html">Event Types</a>
+                    </div>
+                </li>
+                <li><a href="diamonds.html">Diamonds</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="characters.html">Characters</a></li>
+                <li><a href="decoration.html">Decoration</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="advanced.html">Advanced</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- AdSense Top Banner -->
+    <div class="ad-adsense-top">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2485720330662082"
+             data-ad-slot="1234567891"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Adsterra Sidebar -->
+    <div class="ad-adsterra-sidebar">
+        <div class="ad-label">Advertisement</div>
+        <div id="adsterra-sidebar-ad"></div>
+    </div>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-inner">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <span>Beginner Guide</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="beginner">
+            <div class="section-header">
+                <div class="tag">🚀 Getting Started</div>
+                <h2>Complete Beginner's Guide</h2>
+                <p>Everything you need to know to start your journey in Brimwave Island. Master these fundamentals and you'll progress faster than 90% of new players.</p>
+            </div>
+            <div class="beginner-section">
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <div class="tip-num">1</div>
+                        <div>
+                            <h4>🔗 Always Keep Merging</h4>
+                            <p>Never let your merge board get cluttered. A full board means wasted energy drops. Merge items whenever possible to free up space.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">2</div>
+                        <div>
+                            <h4>📖 Focus on Story Tasks First</h4>
+                            <p>Story tasks give the best rewards and unlock new areas. Prioritize merging items needed for active story goals before random merges.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">3</div>
+                        <div>
+                            <h4>⚡ Save Your Energy</h4>
+                            <p>Don't waste energy on random merges. Plan ahead — check what items you need for current tasks and only merge those chains.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">4</div>
+                        <div>
+                            <h4>⏱️ Collect Energy Timers</h4>
+                            <p>Energy recharges over time (+1 every 2 minutes). Log in regularly to collect free energy before it caps out. Set reminders!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">5</div>
+                        <div>
+                            <h4>🏆 Join Events Early</h4>
+                            <p>Events offer exclusive rewards. Start them as soon as they appear so you have maximum time to complete all milestones.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">6</div>
+                        <div>
+                            <h4>🏠 Don't Rush Decorations</h4>
+                            <p>Decoration choices are reversible — you can change them anytime. Focus on story progress first, decorate later.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">7</div>
+                        <div>
+                            <h4>📺 Watch All Ads</h4>
+                            <p>Watch every available reward ad for bonus energy. Even though Gossip Harbor gives less than other games, every bit counts!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">8</div>
+                        <div>
+                            <h4>🎁 Claim Daily Rewards</h4>
+                            <p>Log in every day to claim your daily rewards. The streak bonus increases over time, so don't break your streak!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">9</div>
+                        <div>
+                            <h4>🧹 Clean the Board Before Logging Off</h4>
+                            <p>Before closing the game, merge everything possible. This ensures you start fresh next time with maximum board space.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">10</div>
+                        <div>
+                            <h4>💎 Save Diamonds for Board Expansion</h4>
+                            <p>Board expansions are the best diamond investment. More space = more efficient merging = less wasted energy.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">11</div>
+                        <div>
+                            <h4>⚙️ Upgrade Generators Strategically</h4>
+                            <p>Focus upgrades on generators that produce items for your current story tasks. Don't spread upgrades evenly across all generators.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">12</div>
+                        <div>
+                            <h4>🍽️ Complete High-Value Orders First</h4>
+                            <p>Customer orders have different coin/XP rewards. Prioritize orders with better rewards and skip low-value ones when busy.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">13</div>
+                        <div>
+                            <h4>👥 Add Friends for Daily Gifts</h4>
+                            <p>Connect with friends to send and receive energy gifts. Up to 20 gifts per day = 100-200 free energy!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">14</div>
+                        <div>
+                            <h4>📅 Check Event Calendar</h4>
+                            <p>Plan your play sessions around events. Coin Rush weekends are perfect for earning decoration money!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">15</div>
+                        <div>
+                            <h4>📖 Read All Dialogue</h4>
+                            <p>Story dialogue contains hints about upcoming tasks and hidden secrets. Don't skip through — you might miss important clues!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>🎯 Quick Start Checklist</h4>
+                <p><strong>Day 1:</strong> Complete tutorial, claim daily rewards, add friends.<br>
+                <strong>Day 2-7:</strong> Focus on story tasks, upgrade Basket and Coffee Pot generators.<br>
+                <strong>Week 2:</strong> Start participating in events, save diamonds for board expansion.<br>
+                <strong>Week 3+:</strong> Optimize energy usage, complete achievements, progress through story chapters.</p>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Golden Rule for New Players</div>
+                <p>The most important habit to develop early: <strong>Always merge 5 items instead of 3 when possible.</strong> Merging 5 gives you 2 items instead of 1 — that's a 100% bonus! This single habit can increase your efficiency by 25-40% over time. Plan your board to enable 5-merges whenever possible.</p>
+            </div>
+        </section>
+
+        <!-- Page Navigation -->
+        <div class="page-nav">
+            <a href="index.html" class="back-home">← Back to Home</a>
+            <a href="merge-chains.html">Next: Merge Chains →</a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>⚓ Gossip Harbor Guide</h3>
+                <p>The ultimate fan-made resource for Gossip Harbor: Merge & Story. Not affiliated with Microfun — just passionate players helping players.</p>
+            </div>
+            <div>
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="beginner.html">Beginner Guide</a></li>
+                    <li><a href="merge-chains.html">Merge Chains</a></li>
+                    <li><a href="generators.html">Generators</a></li>
+                    <li><a href="energy.html">Energy Tips</a></li>
+                    <li><a href="diamonds.html">Diamond Strategy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Content</h4>
+                <ul>
+                    <li><a href="events.html">Event Calendar</a></li>
+                    <li><a href="story.html">Story Walkthrough</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="https://www.reddit.com/r/GossipHarbor/" target="_blank">Reddit Community</a></li>
+                    <li><a href="https://www.facebook.com/GossipHarbor" target="_blank">Facebook Page</a></li>
+                    <li><a href="https://gossip-harbor.fandom.com/wiki/Gossip_Harbor_Wiki" target="_blank">Fandom Wiki</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Gossip Harbor Guide. Fan-made site. Gossip Harbor is a trademark of Microfun. All game assets belong to their respective owners.</p>
+        </div>
+    </footer>
+
+    <!-- Adsterra Popunder -->
+    <script>
+        // Popunder loads via the script in head
+        // This is a click-triggered popunder, not forced
+    </script>
+</body>
+</html>
