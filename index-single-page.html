@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gossip Harbor Complete Guide - Merge Chains, Generators, Energy, Events, Story & Advanced Strategies</title>
+    <meta name="description" content="The ultimate comprehensive guide for Gossip Harbor: Merge & Story. 25+ merge chains, generator optimization, energy management, event strategies, complete story walkthrough, character relationships, and advanced gameplay techniques.">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2485720330662082"
+     crossorigin="anonymous"></script>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #1a6b8a;
+            --primary-dark: #0f4a60;
+            --primary-light: #e8f4f8;
+            --accent: #e8734a;
+            --accent-light: #fff0eb;
+            --gold: #d4a843;
+            --gold-light: #fdf6e3;
+            --bg: #fafbfc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
+            --shadow-hover: 0 6px 24px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --success: #2d8a56;
+            --warning: #d97706;
+            --danger: #dc2626;
+            --purple: #7c3aed;
+            --purple-light: #f0e6ff;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent); }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+        }
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .game-logo {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, #0ea5e9, var(--primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 2px 8px rgba(26,107,138,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .game-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(255,255,255,0.4) 4px, rgba(255,255,255,0.4) 6px);
+        }
+        .nav-links { display: flex; gap: 16px; list-style: none; flex-wrap: wrap; }
+        .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-light);
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 40%, #2d9bb5 70%, #0ea5e9 100%);
+            color: #fff;
+            padding: 60px 24px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(232,115,74,0.12) 0%, transparent 40%);
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(20px, -20px) rotate(1deg); }
+            66% { transform: translate(-10px, 10px) rotate(-1deg); }
+        }
+
+        .floating-items {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .float-item {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: floatUp var(--dur, 18s) var(--delay, 0s) infinite ease-in-out;
+        }
+        .float-item:nth-child(1)  { left: 5%;  top: 15%; --dur: 22s; --delay: 0s;   font-size: 2.5rem; }
+        .float-item:nth-child(2)  { left: 15%; top: 60%; --dur: 18s; --delay: -3s;  font-size: 1.8rem; }
+        .float-item:nth-child(3)  { left: 80%; top: 10%; --dur: 25s; --delay: -5s;  font-size: 2.2rem; }
+        .float-item:nth-child(4)  { left: 70%; top: 55%; --dur: 20s; --delay: -8s;  font-size: 1.6rem; }
+        .float-item:nth-child(5)  { left: 90%; top: 30%; --dur: 16s; --delay: -2s;  font-size: 2rem; }
+        .float-item:nth-child(6)  { left: 30%; top: 75%; --dur: 24s; --delay: -10s; font-size: 1.5rem; }
+        .float-item:nth-child(7)  { left: 50%; top: 8%;  --dur: 19s; --delay: -6s;  font-size: 2.8rem; }
+        .float-item:nth-child(8)  { left: 40%; top: 45%; --dur: 21s; --delay: -4s;  font-size: 1.4rem; }
+        @keyframes floatUp {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(8deg); }
+            50% { transform: translateY(-8px) rotate(-5deg); }
+            75% { transform: translateY(-25px) rotate(3deg); }
+        }
+
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(4px);
+        }
+        .hero-badge .pulse-dot {
+            width: 8px; height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.4); }
+        }
+
+        .game-title-logo {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .game-title-logo .icon-row {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        .game-title-logo .icon-row span {
+            width: 36px; height: 36px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: iconBob 3s ease-in-out infinite;
+        }
+        .game-title-logo .icon-row span:nth-child(2) { animation-delay: -0.3s; }
+        .game-title-logo .icon-row span:nth-child(3) { animation-delay: -0.6s; }
+        .game-title-logo .icon-row span:nth-child(4) { animation-delay: -0.9s; }
+        .game-title-logo .icon-row span:nth-child(5) { animation-delay: -1.2s; }
+        @keyframes iconBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+        .hero h1 .highlight { color: var(--gold); }
+        .hero h1 .sub-title {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.7;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 6px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 24px;
+            line-height: 1.8;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat .num { font-size: 1.6rem; font-weight: 800; display: block; }
+        .hero-stat .label { font-size: 0.75rem; opacity: 0.75; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        .merge-demo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 24px auto 0;
+            padding: 14px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            max-width: 480px;
+        }
+        .merge-demo .demo-item {
+            width: 48px; height: 48px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .merge-demo .demo-plus { font-size: 1.1rem; font-weight: 800; opacity: 0.6; }
+        .merge-demo .demo-arrow {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--gold);
+            animation: arrowPulse 1.5s infinite;
+        }
+        @keyframes arrowPulse {
+            0%, 100% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(4px); opacity: 0.6; }
+        }
+        .merge-demo .demo-result {
+            width: 52px; height: 52px;
+            background: linear-gradient(135deg, rgba(212,168,67,0.3), rgba(232,115,74,0.3));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            border: 2px solid rgba(212,168,67,0.5);
+            animation: resultGlow 2s infinite;
+        }
+        @keyframes resultGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(212,168,67,0); }
+            50% { box-shadow: 0 0 20px 4px rgba(212,168,67,0.3); }
+        }
+        .merge-demo .demo-label { font-size: 0.7rem; opacity: 0.7; text-align: center; margin-top: 4px; }
+
+        /* ===== WAVE DIVIDER ===== */
+        .wave-divider {
+            position: relative;
+            margin-top: -2px;
+            line-height: 0;
+        }
+        .wave-divider svg { display: block; width: 100%; height: 50px; }
+
+        /* ===== GAME RESOURCE BAR ===== */
+        .game-resource-bar {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 24px;
+        }
+        .resource-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .resource-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg);
+            padding: 6px 14px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .resource-item .res-icon {
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        .res-energy .res-icon { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+        .res-coin .res-icon { background: linear-gradient(135deg, #fef3c7, #fbbf24); }
+        .res-diamond .res-icon { background: linear-gradient(135deg, #ede9fe, #c4b5fd); }
+        .res-xp .res-icon { background: linear-gradient(135deg, #d1fae5, #6ee7b7); }
+
+        /* ===== QUICK NAV ===== */
+        .quick-nav {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            position: sticky;
+            top: 64px;
+            z-index: 90;
+        }
+        .quick-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .quick-nav-inner::-webkit-scrollbar { display: none; }
+        .quick-nav a {
+            flex-shrink: 0;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .quick-nav a:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 50px 0; }
+
+        /* ===== SECTION DIVIDER ===== */
+        .section-divider {
+            text-align: center;
+            padding: 6px 0;
+            color: var(--border);
+            font-size: 1rem;
+            letter-spacing: 10px;
+            user-select: none;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+        }
+
+        /* ===== SUBSECTION TITLE ===== */
+        .subsection-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 32px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .subsection-title .icon { font-size: 1.3rem; }
+
+        /* ===== BEGINNER SECTION ===== */
+        .beginner-section {
+            background: linear-gradient(135deg, var(--primary-light), #f0f8ff);
+            border-radius: var(--radius);
+            padding: 40px;
+            border: 1px solid #d1ecf1;
+        }
+        .tips-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .tip-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: rgba(255,255,255,0.8);
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.9);
+            transition: all 0.3s;
+        }
+        .tip-item:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+        .tip-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+        .tip-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 3px; }
+        .tip-item p { font-size: 0.8rem; color: var(--text-light); }
+
+        /* ===== MERGE CHAIN TABLE ===== */
+        .merge-table-wrapper {
+            overflow-x: auto;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+        .merge-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .merge-table thead { background: var(--primary); color: #fff; }
+        .merge-table th {
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .merge-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+        .merge-table tbody tr:hover { background: var(--primary-light); }
+        .merge-table .chain-arrow { color: var(--accent); font-weight: 700; }
+        .merge-table .item-emoji { font-size: 1.1rem; margin-right: 4px; }
+        .merge-table .level-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .merge-table .drop-source { font-size: 0.75rem; color: var(--text-light); }
+        .merge-table .energy-cost { font-size: 0.75rem; color: var(--warning); font-weight: 600; }
+
+        /* ===== GENERATOR CARDS ===== */
+        .generator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .generator-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        .generator-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+        .generator-card .gen-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .generator-card .gen-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold-light), #f9edcc);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .generator-card h4 { font-size: 1rem; font-weight: 700; }
+        .generator-card .gen-unlock { font-size: 0.7rem; color: var(--text-light); }
+        .generator-card .gen-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .generator-card .stat {
+            background: var(--bg);
+            padding: 8px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .generator-card .stat-label { font-size: 0.65rem; color: var(--text-light); display: block; }
+        .generator-card .stat-value { font-size: 0.85rem; font-weight: 700; color: var(--primary); }
+        .generator-card .gen-produces {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+        .generator-card .gen-produces-label { font-size: 0.7rem; color: var(--text-light); margin-bottom: 6px; }
+        .generator-card .gen-produces-items { display: flex; gap: 4px; flex-wrap: wrap; }
+        .generator-card .gen-produces-items span {
+            font-size: 1.2rem;
+            background: var(--bg);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        /* ===== ENERGY GUIDE ===== */
+        .energy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 14px;
+        }
+        .energy-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .energy-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+        .energy-card .icon { font-size: 1.8rem; margin-bottom: 10px; }
+        .energy-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+        .energy-card .value { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-bottom: 3px; }
+        .energy-card p { font-size: 0.75rem; color: var(--text-light); }
+
+        /* ===== ENERGY CALCULATOR ===== */
+        .energy-calc {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+        .energy-calc h4 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; color: var(--primary); }
+        .calc-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .calc-row label { font-size: 0.85rem; font-weight: 600; min-width: 140px; }
+        .calc-row input {
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            width: 100px;
+        }
+        .calc-row .result {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* ===== EVENT CALENDAR ===== */
+        .event-list { display: flex; flex-direction: column; gap: 12px; }
+        .event-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px 20px;
+            transition: all 0.3s;
+        }
+        .event-item:hover { box-shadow: var(--shadow); border-color: var(--gold); }
+        .event-date {
+            flex-shrink: 0;
+            text-align: center;
+            background: var(--gold-light);
+            border-radius: 8px;
+            padding: 10px 14px;
+            min-width: 60px;
+        }
+        .event-date .month { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: var(--gold); }
+        .event-date .day { font-size: 1.3rem; font-weight: 800; color: var(--text); }
+        .event-info { flex: 1; }
+        .event-info h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 3px; }
+        .event-info p { font-size: 0.8rem; color: var(--text-light); }
+        .event-rewards {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .event-rewards span {
+            background: var(--bg);
+            padding: 2px 8px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+        .event-type {
+            flex-shrink: 0;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 5px 10px;
+            border-radius: 50px;
+        }
+        .type-seasonal { background: #e6fff0; color: var(--success); }
+        .type-limited { background: #fff0eb; color: var(--accent); }
+        .type-weekly { background: #e8f0ff; color: var(--primary); }
+        .type-special { background: var(--gold-light); color: #b8860b; }
+        .type-pvp { background: #f0e6ff; color: #7c3aed; }
+
+        /* ===== DIAMOND GUIDE ===== */
+        .diamond-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .diamond-tip {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .diamond-tip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+        }
+        .diamond-tip.do::before { background: var(--success); }
+        .diamond-tip.dont::before { background: var(--danger); }
+        .diamond-tip .priority {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 8px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        .priority-do { background: #e6fff0; color: var(--success); }
+        .priority-dont { background: #ffeaea; color: var(--danger); }
+        .diamond-tip h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+        .diamond-tip p { font-size: 0.8rem; color: var(--text-light); }
+        .diamond-tip .cost {
+            font-size: 0.75rem;
+            color: var(--text);
+            font-weight: 600;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ===== DIAMOND VALUE TABLE ===== */
+        .value-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+        .value-table th, .value-table td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .value-table th {
+            background: var(--primary-light);
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .value-table .value-high { color: var(--success); font-weight: 700; }
+        .value-table .value-medium { color: var(--warning); font-weight: 700; }
+        .value-table .value-low { color: var(--danger); font-weight: 700; }
+
+        /* ===== STORY SECTION ===== */
+        .story-chapters {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 14px;
+        }
+        .chapter-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .chapter-card:hover { box-shadow: var(--shadow); border-color: var(--primary); }
+        .chapter-num {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary), #2d9bb5);
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+        .chapter-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
+        .chapter-card p { font-size: 0.75rem; color: var(--text-light); }
+        .chapter-tasks {
+            font-size: 0.7rem;
+            color: var(--primary);
+            margin-top: 4px;
+        }
+
+        /* ===== CHARACTER GRID ===== */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .character-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            transition: all 0.3s;
+        }
+        .character-card:hover { box-shadow: var(--shadow); border-color: var(--primary); }
+        .character-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-light), #d1ecf1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+        .character-info h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+        .character-info .role { font-size: 0.7rem; color: var(--accent); font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
+        .character-info p { font-size: 0.8rem; color: var(--text-light); }
+        .character-traits {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .character-traits span {
+            background: var(--bg);
+            padding: 2px 8px;
+            border-radius: 50px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        /* ===== DECORATION GRID ===== */
+        .decoration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 14px;
+        }
+        .deco-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .deco-item:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+        .deco-item .deco-icon { font-size: 2rem; margin-bottom: 8px; }
+        .deco-item h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; }
+        .deco-item .deco-cost {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .deco-item .deco-unlock {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== DAILY TASKS ===== */
+        .daily-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 14px;
+        }
+        .daily-task {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .daily-task .task-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .daily-task h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 2px; }
+        .daily-task p { font-size: 0.75rem; color: var(--text-light); }
+        .daily-task .reward {
+            font-size: 0.7rem;
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* ===== ACHIEVEMENT GRID ===== */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 14px;
+        }
+        .achievement-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .achievement-card .achv-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--gold-light), #f9edcc);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .achievement-card h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 2px; }
+        .achievement-card p { font-size: 0.75rem; color: var(--text-light); }
+        .achievement-card .achv-reward {
+            font-size: 0.7rem;
+            color: var(--purple);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* ===== ADVANCED STRATEGIES ===== */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        .strategy-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .strategy-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .strategy-card p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px; }
+        .strategy-card .strategy-steps { list-style: none; }
+        .strategy-card .strategy-steps li {
+            font-size: 0.8rem;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .strategy-card .strategy-steps li:last-child { border-bottom: none; }
+        .strategy-card .strategy-steps .step-num {
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list { display: flex; flex-direction: column; gap: 12px; }
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 16px 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .faq-question:hover { background: var(--bg); }
+        .faq-question .toggle { font-size: 1.2rem; color: var(--primary); }
+        .faq-answer {
+            padding: 0 20px 16px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ===== PRO TIP BOX ===== */
+        .pro-tip {
+            margin-top: 24px;
+            padding: 20px;
+            background: var(--accent-light);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+        .pro-tip-title {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .pro-tip p { font-size: 0.85rem; color: var(--text); }
+
+        /* ===== INFO BOX ===== */
+        .info-box {
+            background: var(--primary-light);
+            border: 1px solid #d1ecf1;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        .info-box h4 { font-size: 0.9rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .info-box p { font-size: 0.85rem; color: var(--text); }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 50px 40px;
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '⚓ 🦞 🍔 🧁 🍹 🦐 🥪 🍰';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            letter-spacing: 15px;
+            opacity: 0.06;
+            white-space: nowrap;
+        }
+        .cta-section h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; position: relative; }
+        .cta-section p { opacity: 0.9; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
+        .cta-form {
+            display: flex;
+            gap: 10px;
+            max-width: 440px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .cta-form input {
+            flex: 1;
+            padding: 12px 18px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .cta-form input::placeholder { color: rgba(255,255,255,0.6); }
+        .cta-form button {
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: none;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .cta-form button:hover { background: #d4612e; transform: scale(1.05); }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--text);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 24px 24px;
+            margin-top: 50px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 32px;
+        }
+        .footer-brand h3 { color: #fff; font-size: 1rem; margin-bottom: 6px; }
+        .footer-brand p { font-size: 0.8rem; line-height: 1.6; }
+        .footer h4 { color: #fff; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 6px; }
+        .footer ul a { color: rgba(255,255,255,0.6); font-size: 0.8rem; transition: color 0.2s; }
+        .footer ul a:hover { color: #fff; }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 24px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .hero-stats { gap: 20px; }
+            .hero-stat .num { font-size: 1.3rem; }
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 14px 20px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow);
+                gap: 10px;
+            }
+            .beginner-section { padding: 24px 16px; }
+            .tips-list { grid-template-columns: 1fr; }
+            .cta-section { padding: 32px 20px; }
+            .cta-form { flex-direction: column; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .diamond-tips { grid-template-columns: 1fr; }
+            .story-chapters { grid-template-columns: 1fr; }
+            .character-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .footer-inner { grid-template-columns: 1fr; }
+            .hero { padding: 50px 16px 80px; }
+            .hero h1 { font-size: 1.6rem; }
+            .float-item { font-size: 1.2rem !important; }
+            .section-header h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="navbar-brand">
+                <div class="game-logo">⚓</div>
+                Gossip Harbor Guide
+            </a>
+            <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="#beginner" class="active">Beginner</a></li>
+                <li><a href="#merge-chains">Merge</a></li>
+                <li><a href="#generators">Generators</a></li>
+                <li><a href="#customer-orders">Orders</a></li>
+                <li><a href="#energy">Energy</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#diamonds">Diamonds</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#advanced">Advanced</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="floating-items">
+            <span class="float-item">☕</span>
+            <span class="float-item">🥪</span>
+            <span class="float-item">🦐</span>
+            <span class="float-item">🍰</span>
+            <span class="float-item">🍹</span>
+            <span class="float-item">🧁</span>
+            <span class="float-item">🍔</span>
+            <span class="float-item">🦞</span>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                #1 Merge Game Guide — Updated Weekly
+            </div>
+            <div class="game-title-logo">
+                <div class="icon-row">
+                    <span>🥪</span><span>☕</span><span>🦐</span><span>🍰</span><span>🍹</span>
+                </div>
+            </div>
+            <h1>
+                <span class="highlight">Gossip Harbor</span>
+                <span class="sub-title">Complete Strategy Guide</span>
+            </h1>
+            <p>The most comprehensive resource for Gossip Harbor: Merge & Story. Master merge chains, optimize generators, manage energy, complete events, and uncover every story secret.</p>
+            <div class="merge-demo">
+                <div style="text-align:center">
+                    <div class="demo-item">🍞</div>
+                    <div class="demo-label">Bread</div>
+                </div>
+                <span class="demo-plus">+</span>
+                <div style="text-align:center">
+                    <div class="demo-item">🧀</div>
+                    <div class="demo-label">Cheese</div>
+                </div>
+                <span class="demo-arrow">→</span>
+                <div style="text-align:center">
+                    <div class="demo-result">🥪</div>
+                    <div class="demo-label">Sandwich!</div>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><span class="num">25+</span><span class="label">Merge Chains</span></div>
+                <div class="hero-stat"><span class="num">15+</span><span class="label">Generators</span></div>
+                <div class="hero-stat"><span class="num">50+</span><span class="label">Event Guides</span></div>
+                <div class="hero-stat"><span class="num">150+</span><span class="label">Story Chapters</span></div>
+                <div class="hero-stat"><span class="num">30+</span><span class="label">Characters</span></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 50" preserveAspectRatio="none"><path d="M0,25 C240,50 480,0 720,25 C960,50 1200,0 1440,25 L1440,50 L0,50 Z" fill="#fafbfc"/></svg>
+    </div>
+
+    <div class="game-resource-bar">
+        <div class="resource-bar-inner">
+            <div class="resource-item res-energy"><div class="res-icon">⚡</div><span>Energy</span></div>
+            <div class="resource-item res-coin"><div class="res-icon">🪙</div><span>Coins</span></div>
+            <div class="resource-item res-diamond"><div class="res-icon">💎</div><span>Diamonds</span></div>
+            <div class="resource-item res-xp"><div class="res-icon">⭐</div><span>XP</span></div>
+        </div>
+    </div>
+
+    <div class="quick-nav">
+        <div class="quick-nav-inner">
+            <a href="#beginner">🚀 Beginner</a>
+            <a href="#merge-chains">🔗 Merge Chains</a>
+            <a href="#generators">⚙️ Generators</a>
+            <a href="#customer-orders">🍽️ Orders</a>
+            <a href="#energy">⚡ Energy</a>
+            <a href="#events">📅 Events</a>
+            <a href="#diamonds">💎 Diamonds</a>
+            <a href="#story">📖 Story</a>
+            <a href="#characters">👥 Characters</a>
+            <a href="#decoration">🏠 Decoration</a>
+            <a href="#achievements">🏆 Achievements</a>
+            <a href="#advanced">🎯 Advanced</a>
+            <a href="#daily">📋 Daily</a>
+            <a href="#faq">❓ FAQ</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ===== BEGINNER GUIDE ===== -->
+        <section id="beginner">
+            <div class="section-header">
+                <div class="tag">🚀 Getting Started</div>
+                <h2>Complete Beginner's Guide</h2>
+                <p>Everything you need to know to start your journey in Brimwave Island. Master these fundamentals and you'll progress faster than 90% of new players.</p>
+            </div>
+            <div class="beginner-section">
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <div class="tip-num">1</div>
+                        <div>
+                            <h4>🔗 Always Keep Merging</h4>
+                            <p>Never let your merge board get cluttered. A full board means wasted energy drops. Merge items whenever possible to free up space.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">2</div>
+                        <div>
+                            <h4>📖 Focus on Story Tasks First</h4>
+                            <p>Story tasks give the best rewards and unlock new areas. Prioritize merging items needed for active story goals before random merges.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">3</div>
+                        <div>
+                            <h4>⚡ Save Your Energy</h4>
+                            <p>Don't waste energy on random merges. Plan ahead — check what items you need for current tasks and only merge those chains.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">4</div>
+                        <div>
+                            <h4>⏱️ Collect Energy Timers</h4>
+                            <p>Energy recharges over time (+1 every 2 minutes). Log in regularly to collect free energy before it caps out. Set reminders!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">5</div>
+                        <div>
+                            <h4>🏆 Join Events Early</h4>
+                            <p>Events offer exclusive rewards. Start them as soon as they appear so you have maximum time to complete all milestones.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">6</div>
+                        <div>
+                            <h4>🏠 Don't Rush Decorations</h4>
+                            <p>Decoration choices are reversible — you can change them anytime. Focus on story progress first, decorate later.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">7</div>
+                        <div>
+                            <h4>📺 Watch All Ads</h4>
+                            <p>Watch every available reward ad for bonus energy. Even though Gossip Harbor gives less than other games, every bit counts!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">8</div>
+                        <div>
+                            <h4>🎁 Claim Daily Rewards</h4>
+                            <p>Log in every day to claim your daily rewards. The streak bonus increases over time, so don't break your streak!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">9</div>
+                        <div>
+                            <h4>🧹 Clean the Board Before Logging Off</h4>
+                            <p>Before closing the game, merge everything possible. This ensures you start fresh next time with maximum board space.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">10</div>
+                        <div>
+                            <h4>💎 Save Diamonds for Board Expansion</h4>
+                            <p>Board expansions are the best diamond investment. More space = more efficient merging = less wasted energy.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">11</div>
+                        <div>
+                            <h4>⚙️ Upgrade Generators Strategically</h4>
+                            <p>Focus upgrades on generators that produce items for your current story tasks. Don't spread upgrades evenly across all generators.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">12</div>
+                        <div>
+                            <h4>🍽️ Complete High-Value Orders First</h4>
+                            <p>Customer orders have different coin/XP rewards. Prioritize orders with better rewards and skip low-value ones when busy.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">13</div>
+                        <div>
+                            <h4>👥 Add Friends for Daily Gifts</h4>
+                            <p>Connect with friends to send and receive energy gifts. Up to 20 gifts per day = 100-200 free energy!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">14</div>
+                        <div>
+                            <h4>📅 Check Event Calendar</h4>
+                            <p>Plan your play sessions around events. Coin Rush weekends are perfect for earning decoration money!</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">15</div>
+                        <div>
+                            <h4>📖 Read All Dialogue</h4>
+                            <p>Story dialogue contains hints about upcoming tasks and hidden secrets. Don't skip through — you might miss important clues!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider">⚓ ☕ 🥪 🦐 🍰</div>
+
+        <!-- ===== MERGE CHAINS ===== -->
+        <section id="merge-chains">
+            <div class="section-header">
+                <div class="tag">🔗 Core Mechanic</div>
+                <h2>Complete Merge Chain Reference</h2>
+                <p>Every merge chain in the game organized by category. Know exactly what to merge, what drops it, and what it's used for.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">☕</span> Food & Beverage Chains</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead>
+                        <tr><th>Chain</th><th>Merge Path</th><th>Lv</th><th>Energy</th><th>Generator</th><th>Used For</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>🍞 Bread Chain</strong></td><td><span class="item-emoji">🌾</span>Flour → <span class="item-emoji">🫓</span>Dough → <span class="item-emoji">🍞</span>Beginner Bread → <span class="item-emoji">🥖</span>Sourdough Loaf → <span class="item-emoji">🍞</span>Sliced Loaf → <span class="item-emoji">🧈</span>Toast with Butter and Jam → <span class="item-emoji">🥪</span>Jelly Sandwich → <span class="item-emoji">🥪</span>Half a Ham Sandwich → <span class="item-emoji">🥪</span>Ham n' Cheese Sammy → <span class="item-emoji">🥖</span>Sub With the Fixins' → <span class="item-emoji">🥯</span>Bagel Sandwich → <span class="item-emoji">🥐</span>Ham and Cheese Croissant → <span class="item-emoji">🍔</span>Gooey Cheeseburger → <span class="item-emoji">🍔</span>Cheeseburger and Fries → <span class="item-emoji">🍱</span>Luxe Cheeseburger Meal</td><td><span class="level-badge">15</span></td><td class="energy-cost">1-16,384</td><td class="drop-source">Basket</td><td>Most common orders, Sandwich ingredient. Total energy to Lv15: 16,000+!</td></tr>
+                        <tr><td><strong>☕ Coffee Chain</strong></td><td><span class="item-emoji">🥤</span>Empty Coffee Cup → <span class="item-emoji">☕</span>Coffee → <span class="item-emoji">🎨</span>Latte Art Coffee</td><td><span class="level-badge">~10</span></td><td class="energy-cost">1-2</td><td class="drop-source">Coffee Pot</td><td>Highest priority orders, shares gen with Tea</td></tr>
+                        <tr><td><strong>🍵 Tea Chain</strong></td><td><span class="item-emoji">🫖</span>Tea Bag → <span class="item-emoji">🧊</span>Iced Tea / <span class="item-emoji">🍵</span>Black Tea</td><td><span class="level-badge">~8</span></td><td class="energy-cost">1-2</td><td class="drop-source">Coffee Pot</td><td>Tea orders, lower drop rate than Coffee</td></tr>
+                        <tr><td><strong>🍟 Fries Chain</strong></td><td><span class="item-emoji">🥔</span>Potato → <span class="item-emoji">🍟</span>Fries → <span class="item-emoji">🍟</span>Higher-level Fries</td><td><span class="level-badge">7</span></td><td class="energy-cost">1-2</td><td class="drop-source">Basket (~10% rate)</td><td>Fries orders, good value</td></tr>
+                        <tr><td><strong>🦐 Seafood Chain</strong></td><td><span class="item-emoji">🦐</span>Raw Shrimp → <span class="item-emoji">🐟</span>Fresh Fish → <span class="item-emoji">🍣</span>Grilled Fish</td><td><span class="level-badge">~8</span></td><td class="energy-cost">2-4</td><td class="drop-source">Fishing Net</td><td>High-value orders, upgrade net for fish mother piece</td></tr>
+                        <tr><td><strong>🍊 Orange Chain</strong></td><td><span class="item-emoji">🍊</span>Orange → <span class="item-emoji">🍰</span>Orange Cake / <span class="item-emoji">🍪</span>Orange Cookie</td><td><span class="level-badge">~6</span></td><td class="energy-cost">0</td><td class="drop-source">Orange Tree</td><td>Cake orders, auto gen, no energy cost, long cooldown</td></tr>
+                        <tr><td><strong>🥪 Sandwich Chain</strong></td><td><span class="item-emoji">🍞</span>Bread + <span class="item-emoji">🥬</span>ingredients → <span class="item-emoji">🥪</span>Sandwich</td><td><span class="level-badge">~8</span></td><td class="energy-cost">2-3</td><td class="drop-source">Combine from Bread + other chains</td><td>Mid-level orders, uses Bread chain output</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🍞</span> Bread Chain Detailed (15 Levels)</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Level</th><th>Item Name</th><th>Energy Needed</th><th>Hot Sale Price</th><th>Sell Price</th><th>Notes</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="level-badge">1</span></td><td><strong>Sack of Flour</strong></td><td class="energy-cost">1</td><td>N/A</td><td>N/A</td><td>Can't be sold, only merged</td></tr>
+                        <tr><td><span class="level-badge">2</span></td><td><strong>Proofed Dough</strong></td><td class="energy-cost">2</td><td>N/A</td><td>N/A</td><td>Can't be sold</td></tr>
+                        <tr><td><span class="level-badge">3</span></td><td><strong>Beginner's Bread</strong></td><td class="energy-cost">4</td><td>1 gem</td><td>N/A</td><td>Spawns bubbles</td></tr>
+                        <tr><td><span class="level-badge">4</span></td><td><strong>Sourdough Loaf</strong></td><td class="energy-cost">8</td><td>2 gems</td><td>N/A</td><td>Spawns bubbles</td></tr>
+                        <tr><td><span class="level-badge">5</span></td><td><strong>Sliced Loaf</strong></td><td class="energy-cost">16</td><td>4 gems</td><td>+1 coin</td><td>Eligible for 2min ice cubes</td></tr>
+                        <tr><td><span class="level-badge">6</span></td><td><strong>Toast with Butter and Jam</strong></td><td class="energy-cost">32</td><td>7 gems</td><td>+2 coins</td><td>-</td></tr>
+                        <tr><td><span class="level-badge">7</span></td><td><strong>Jelly Sandwich</strong></td><td class="energy-cost">64</td><td>13 gems</td><td>+3 coins</td><td>Eligible for 6min ice cubes</td></tr>
+                        <tr><td><span class="level-badge">8</span></td><td><strong>Half a Ham Sandwich</strong></td><td class="energy-cost">128</td><td>25 gems</td><td>+4 coins</td><td>Spawns A Coin and bubbles</td></tr>
+                        <tr><td><span class="level-badge">9</span></td><td><strong>Ham n' Cheese Sammy</strong></td><td class="energy-cost">256</td><td>47 gems</td><td>+5 coins</td><td>Spawns A Coin and bubbles</td></tr>
+                        <tr><td><span class="level-badge">10</span></td><td><strong>Sub With the Fixins'</strong></td><td class="energy-cost">512</td><td>89 gems</td><td>+6 coins</td><td>Customers sometimes order</td></tr>
+                        <tr><td><span class="level-badge">11</span></td><td><strong>Bagel Sandwich</strong></td><td class="energy-cost">1024</td><td>170 gems</td><td>+7 coins</td><td>Customers rarely order</td></tr>
+                        <tr><td><span class="level-badge">12</span></td><td><strong>Ham and Cheese Croissant</strong></td><td class="energy-cost">2048</td><td>320 gems</td><td>+8 coins</td><td>Auto-generates order</td></tr>
+                        <tr><td><span class="level-badge">13</span></td><td><strong>Gooey Cheeseburger</strong></td><td class="energy-cost">4096</td><td>610 gems</td><td>+9 coins</td><td>Auto-generates order</td></tr>
+                        <tr><td><span class="level-badge">14</span></td><td><strong>Cheeseburger and Fries</strong></td><td class="energy-cost">8192</td><td>? gems</td><td>+10 coins</td><td>Auto-generates order</td></tr>
+                        <tr><td><span class="level-badge">15</span></td><td><strong>Luxe Cheeseburger Meal</strong></td><td class="energy-cost">16384</td><td>? gems</td><td>+11 coins</td><td>Customers rarely/never order</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="background: var(--gold-light); font-weight: 700;">
+                            <td colspan="6"><strong>⚠️ Important:</strong> Total energy to reach Level 15: over 16,000 energy!</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🧰</span> Tool & Utility Chains</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Chain</th><th>Merge Path</th><th>Lv</th><th>Energy</th><th>Generator</th><th>Used For</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>⚡ Energy Bottle Chain</strong></td><td><span class="item-emoji">⚡</span>Small Energy Bottle (Lv4=40⚡) → <span class="item-emoji">🔋</span>Medium → <span class="item-emoji">🔋</span>Large → <span class="item-emoji">🔋</span>Max Level (100⚡)</td><td><span class="level-badge">~8</span></td><td class="energy-cost">0 (merge only)</td><td class="drop-source">Various drops / events</td><td>Energy recovery — TIP: merge to max before opening!</td></tr>
+                        <tr><td><strong>✂️ Scissors Chain</strong></td><td><span class="item-emoji">✂️</span>Scissors (Lv1) → <span class="item-emoji">✂️</span>Higher-level Scissors</td><td><span class="level-badge">~5</span></td><td class="energy-cost">1</td><td class="drop-source">Various drops</td><td>Cuts high-level items down one level, essential for Orange Tree</td></tr>
+                        <tr><td><strong>⏳ Hourglass Chain</strong></td><td><span class="item-emoji">⏳</span>Hourglass (Lv1) → <span class="item-emoji">⏳</span>Higher-level Hourglass</td><td><span class="level-badge">~5</span></td><td class="energy-cost">1</td><td class="drop-source">Various drops / events</td><td>Reduces generator cooldown times</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🌸</span> Decoration & Special Chains</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Chain</th><th>Merge Path</th><th>Lv</th><th>Energy</th><th>Generator</th><th>Used For</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>🐚 Shell Chain</strong></td><td><span class="item-emoji">🐚</span>Shell (Lv1) → <span class="item-emoji">🐚</span>Higher-level Shells</td><td><span class="level-badge">~10</span></td><td class="energy-cost">1-2</td><td class="drop-source">Shell Machine</td><td>Decoration, collection rewards</td></tr>
+                        <tr><td><strong>🌊 Ocean Chain</strong></td><td><span class="item-emoji">🌊</span>Ocean item (Lv1) → <span class="item-emoji">🐠</span>Higher-level Ocean items</td><td><span class="level-badge">~10</span></td><td class="energy-cost">2-3</td><td class="drop-source">Ocean Machine</td><td>Decoration, hard to upgrade</td></tr>
+                        <tr><td><strong>🐕 Dog House Chain</strong></td><td><span class="item-emoji">🐕</span>Small Chihuahua (Lv1) → <span class="item-emoji">🐕</span>Higher-level Dogs</td><td><span class="level-badge">~6</span></td><td class="energy-cost">1-2</td><td class="drop-source">Dog House</td><td>Pet companion, Lv4 produces 6 puppies</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🎉</span> Event-Exclusive Chains</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Chain</th><th>Merge Path</th><th>Lv</th><th>Event</th><th>Availability</th><th>Rewards</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>🎉 Pinata Party</strong></td><td><span class="item-emoji">📦</span>Complete orders → <span class="item-emoji">🪄</span>Stick items → <span class="item-emoji">🪄</span>Merge sticks → <span class="item-emoji">🎯</span>Attack pinata → <span class="item-emoji">🎁</span>Rewards</td><td><span class="level-badge">~5</span></td><td class="drop-source">Pinata Party Event</td><td>Limited-time event</td><td>Energy, coins, decor</td></tr>
+                        <tr><td><strong>🃏 Card Collection</strong></td><td><span class="item-emoji">📦</span>Complete orders → <span class="item-emoji">🃏</span>1-5 Star Card Packs → <span class="item-emoji">🃏</span>Collect 9 different cards</td><td><span class="level-badge">5 stars</span></td><td class="drop-source">Card Collection Event</td><td>Limited-time event</td><td>Exclusive rewards for full set</td></tr>
+                        <tr><td><strong>🍭 Ollie's Lollipop</strong></td><td><span class="item-emoji">📦</span>Complete orders → <span class="item-emoji">🍭</span>Lollipop pieces → <span class="item-emoji">🍭</span>Merge to max level</td><td><span class="level-badge">~8</span></td><td class="drop-source">Ollie's Lollipop Event</td><td>Limited-time event</td><td>Energy, special items</td></tr>
+                        <tr><td><strong>🚗 Sam's Road Trip</strong></td><td><span class="item-emoji">📦</span>Complete orders → <span class="item-emoji">📍</span>Accumulate points → <span class="item-emoji">🚗</span>Move vehicle → <span class="item-emoji">🎁</span>Rewards</td><td><span class="level-badge">Milestones</span></td><td class="drop-source">Sam's Road Trip Event</td><td>Limited-time event</td><td>Coins, energy, decor</td></tr>
+                        <tr><td><strong>🍳 Jiwa's Restaurant Competition</strong></td><td><span class="item-emoji">📦</span>Complete orders → <span class="item-emoji">🪙</span>Earn target coins → <span class="item-emoji">🏆</span>5-player race</td><td><span class="level-badge">Race</span></td><td class="drop-source">Jiwa's Competition Event</td><td>Limited-time event</td><td>Exclusive decor, coins</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">📊</span> Merge Chain Efficiency Analysis</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Chain Category</th><th>Avg Energy/Merge</th><th>Order Frequency</th><th>Efficiency Rating</th><th>Best For</th><th>Priority</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>☕ Coffee Chain</strong></td><td class="energy-cost">1-2</td><td>Very High</td><td class="value-high">⭐⭐⭐⭐⭐</td><td>Most common orders, best value per energy</td><td class="value-high">TOP Priority</td></tr>
+                        <tr><td><strong>🍞 Bread Chain</strong></td><td class="energy-cost">1-2</td><td>Very High</td><td class="value-high">⭐⭐⭐⭐⭐</td><td>Core ingredient for sandwiches, constant demand</td><td class="value-high">TOP Priority</td></tr>
+                        <tr><td><strong>🍟 Fries Chain</strong></td><td class="energy-cost">1-2</td><td>High</td><td class="value-high">⭐⭐⭐⭐</td><td>Good value orders, ~10% drop from Basket</td><td class="value-high">High</td></tr>
+                        <tr><td><strong>🦐 Seafood Chain</strong></td><td class="energy-cost">2-4</td><td>Medium</td><td class="value-medium">⭐⭐⭐</td><td>High coin rewards, needs net upgrades</td><td class="value-medium">Medium</td></tr>
+                        <tr><td><strong>🍵 Tea Chain</strong></td><td class="energy-cost">1-2</td><td>Medium</td><td class="value-medium">⭐⭐⭐</td><td>Shares Coffee Pot, lower drop rate</td><td class="value-medium">Medium</td></tr>
+                        <tr><td><strong>🥪 Sandwich Chain</strong></td><td class="energy-cost">2-3</td><td>Medium</td><td class="value-medium">⭐⭐⭐</td><td>Uses Bread output, mid-level orders</td><td class="value-medium">Medium</td></tr>
+                        <tr><td><strong>🍊 Orange Chain</strong></td><td class="energy-cost">0</td><td>Low</td><td class="value-medium">⭐⭐⭐</td><td>Free energy, long cooldown, use Scissors to cut</td><td class="value-medium">Low-Medium</td></tr>
+                        <tr><td><strong>🍰 High-level Cake/Latte</strong></td><td class="energy-cost">5-10+</td><td>Low</td><td class="value-low">⭐⭐</td><td>F2P players should SKIP — too energy-intensive</td><td class="value-low">SKIP (F2P)</td></tr>
+                        <tr><td><strong>🐕 Pet Orders</strong></td><td class="energy-cost">5-15+</td><td>Low</td><td class="value-low">⭐</td><td>NOT recommended during events — high energy, long waits</td><td class="value-low">SKIP (Events)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h4>🎯 Chain Selection Strategy (Real Game Data)</h4>
+                <p><strong>Priority Order: Coffee > Bread > Fries</strong> — these are the most common orders with the best energy-to-reward ratio.<br>
+                <strong>Low-level Coffee Orders:</strong> Complete ~5 orders below level 7, then switch to Shrimp orders for better returns.<br>
+                <strong>Cake / High-level Latte:</strong> F2P players should SKIP these — they are extremely energy-intensive with poor ROI.<br>
+                <strong>Pet Orders:</strong> NOT recommended during events — they consume too much energy and have long wait times.<br>
+                <strong>Energy Bottles:</strong> Always merge to MAX level before opening! A max-level bottle gives 100 energy vs 40 at Lv4.<br>
+                <strong>Orange Tree:</strong> Free energy source (no energy cost, auto-generates). Use Scissors to cut down high-level oranges for merging.</p>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Pro Tip: Real Game Merge Chain Strategy</div>
+                <p><strong>1. Coffee Pot is King:</strong> The Coffee Pot produces both Coffee and Tea. Coffee has a higher drop rate — focus on Coffee orders first. <strong>2. Basket Drop Rates:</strong> The Basket primarily drops Bread materials. Fries (Potato) drop at ~10% rate — don't waste energy farming them specifically. <strong>3. Fishing Net Upgrade:</strong> Upgrade the Fishing Net to unlock the fish mother piece — this is essential for the Seafood chain. <strong>4. Energy Bottle Rule:</strong> NEVER open low-level Energy Bottles! Always merge them to max first. Lv4 = 40 energy, Max = 100 energy. <strong>5. Scissors + Orange Tree:</strong> Use Scissors to cut high-level Orange Tree items down one level for easier merging. <strong>6. Event Strategy:</strong> During events, focus ONLY on event orders. Skip pet orders and high-level cake/latte orders to conserve energy.</p>
+            </div>
+        </section>
+
+        <div class="section-divider">⚙️ 🔧 🏗️ 🛠️ 📦</div>
+
+        <!-- ===== GENERATORS ===== -->
+        <section id="generators">
+            <div class="section-header">
+                <div class="tag">⚙️ Production</div>
+                <h2>Generator Guide</h2>
+                <p>Generators are the core of your merge board. Each "mother piece" produces items until it enters cooldown. Here is the real data for every generator in Gossip Harbor.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🧺</span> All Generators</h3>
+            <div class="generator-grid">
+                <div class="generator-card"><div class="gen-header"><div class="gen-icon">🧺</div><div><h4>Basket</h4><div class="gen-unlock">Min Lv 4</div></div></div><div class="gen-stats"><div class="stat"><span class="stat-label">Energy Cost</span><span class="stat-value">Yes</span></div><div class="stat"><span class="stat-label">Type</span><span class="stat-value">Manual</span></div></div><div class="gen-produces"><div class="gen-produces-label">Produces:</div><div class="gen-produces-items"><span>Flour (90%)</span><span>Potato (10%)</span></div></div><div class="gen-produces"><div class="gen-produces-label">Upgraded:</div><div class="gen-produces-items"><span>Dough</span><span>Higher-level items</span></div></div></div>
+                <div class="generator-card"><div class="gen-header"><div class="gen-icon">☕</div><div><h4>Coffee Pot</h4><div class="gen-unlock">Min Lv 4</div></div></div><div class="gen-stats"><div class="stat"><span class="stat-label">Energy Cost</span><span class="stat-value">Yes</span></div><div class="stat"><span class="stat-label">Type</span><span class="stat-value">Manual</span></div></div><div class="gen-produces"><div class="gen-produces-label">Produces:</div><div class="gen-produces-items"><span>Empty Coffee Cup</span><span>Tea Bag (lower rate)</span></div></div></div>
+                <div class="generator-card"><div class="gen-header"><div class="gen-icon">🎣</div><div><h4>Fishing Net</h4><div class="gen-unlock">Min Lv 5</div></div></div><div class="gen-stats"><div class="stat"><span class="stat-label">Energy Cost</span><span class="stat-value">Yes</span></div><div class="stat"><span class="stat-label">Type</span><span class="stat-value">Manual</span></div></div><div class="gen-produces"><div class="gen-produces-label">Produces:</div><div class="gen-produces-items"><span>Raw Shrimp</span><span>Fresh Fish (after upgrade)</span></div></div></div>
+                <div class="generator-card"><div class="gen-header"><div class="gen-icon">🍊</div><div><h4>Orange Tree</h4><div class="gen-unlock">Min Lv 6</div></div></div><div class="gen-stats"><div class="stat"><span class="stat-label">Energy Cost</span><span class="stat-value">FREE (Auto)</span></div><div class="stat"><span class="stat-label">Type</span><span class="stat-value">AUTO Generator</span></div></div><div class="gen-produces"><div class="gen-produces-label">Produces:</div><div class="gen-produces-items"><span>Oranges (random)</span></div></div><div class="gen-produces"><div class="gen-produces-label">Cooldown:</div><div class="gen-produces-items"><span>Low Lv: &lt;1hr</span><span>Lv9 Max: ≥2hr</span></div></div></div>
+                <div class="generator-card"><div class="gen-header"><div class="gen-icon">🐕</div><div><h4>Dog House</h4><div class="gen-unlock">Min Lv 4</div></div></div><div class="gen-stats"><div class="stat"><span class="stat-label">Energy Cost</span><span class="stat-value">Yes</span></div><div class="stat"><span class="stat-label">Type</span><span class="stat-value">Manual (Very Long CD)</span></div></div><div class="gen-produces"><div class="gen-produces-label">Produces:</div><div class="gen-produces-items"><span>Small Chihuahua</span></div></div><div class="gen-produces"><div class="gen-produces-label">Note:</div><div class="gen-produces-items"><span>Lv4 produces 6 puppies total</span><span>Very long cooldown</span></div></div></div>
+                <div class="generator-card"><div class="gen-header"><div class="gen-icon">🐚</div><div><h4>Shell Machine</h4><div class="gen-unlock">Min Lv 5</div></div></div><div class="gen-stats"><div class="stat"><span class="stat-label">Energy Cost</span><span class="stat-value">Yes</span></div><div class="stat"><span class="stat-label">Type</span><span class="stat-value">Manual</span></div></div><div class="gen-produces"><div class="gen-produces-label">Produces:</div><div class="gen-produces-items"><span>Shells only</span></div></div></div>
+                <div class="generator-card"><div class="gen-header"><div class="gen-icon">🌊</div><div><h4>Ocean Machine</h4><div class="gen-unlock">Min Lv 5</div></div></div><div class="gen-stats"><div class="stat"><span class="stat-label">Energy Cost</span><span class="stat-value">Yes</span></div><div class="stat"><span class="stat-label">Type</span><span class="stat-value">Manual</span></div></div><div class="gen-produces"><div class="gen-produces-label">Produces:</div><div class="gen-produces-items"><span>Ocean items</span></div></div><div class="gen-produces"><div class="gen-produces-label">Note:</div><div class="gen-produces-items"><span>Upgrade materials are hard to get</span></div></div></div>
+            </div>
+
+            <div class="info-box">
+                <h4>🔧 Key Generator Mechanics</h4>
+                <p><strong>Mother Piece Cooldown:</strong> Each generator's "mother piece" produces a set number of items before entering cooldown. You must wait for cooldown to end before it can produce again.<br>
+                <strong>Scissors Tool:</strong> Can cut high-level items down by one level. Useful when you need lower-level items for merges or tasks.<br>
+                <strong>Hourglass Tool:</strong> Reduces mother piece cooldown time. Use on your most important generators when you're in a hurry.<br>
+                <strong>Energy Boost (Lv26+):</strong> Unlocks at Lv26. Each generator tap gives +2 energy, but the output item level is +1 higher. Despite the higher level output, this actually saves energy overall!</p>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Generator Optimization Strategy</div>
+                <p><strong>1. Orange Tree is your best friend:</strong> It's the ONLY auto generator (no energy cost!). Always keep it running. <strong>2. Prioritize by task needs:</strong> Only invest energy in generators that produce items for your current story tasks. <strong>3. Use Scissors wisely:</strong> If you have high-level items you can't merge, use Scissors to downgrade them instead of wasting energy producing low-level items. <strong>4. Hourglass timing:</strong> Save Hourglass tools for Ocean Machine and Fishing Net cooldowns — their upgrade materials are the hardest to obtain. <strong>5. Energy Boost math:</strong> At Lv26+, the +2 energy per tap more than compensates for getting +1 level items, since higher-level items merge into what you need faster.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">📊</span> Generator Comparison Table</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Generator</th><th>Min Lv</th><th>Energy Cost</th><th>Primary Output</th><th>Secondary Output</th><th>Special</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>🧺 Basket</strong></td><td>Lv 4</td><td class="energy-cost">Yes</td><td>Flour (90%)</td><td>Potato (10%)</td><td>Upgrades produce Dough</td></tr>
+                        <tr><td><strong>☕ Coffee Pot</strong></td><td>Lv 4</td><td class="energy-cost">Yes</td><td>Empty Coffee Cup</td><td>Tea Bag (low rate)</td><td>—</td></tr>
+                        <tr><td><strong>🎣 Fishing Net</strong></td><td>Lv 5</td><td class="energy-cost">Yes</td><td>Raw Shrimp</td><td>Fresh Fish (upgrade)</td><td>—</td></tr>
+                        <tr><td><strong>🍊 Orange Tree</strong></td><td>Lv 6</td><td class="value-high">FREE</td><td>Oranges</td><td>Random output</td><td class="value-high">AUTO, no energy!</td></tr>
+                        <tr><td><strong>🐕 Dog House</strong></td><td>Lv 4</td><td class="energy-cost">Yes</td><td>Small Chihuahua</td><td>—</td><td>Very long CD, 6 total</td></tr>
+                        <tr><td><strong>🐚 Shell Machine</strong></td><td>Lv 5</td><td class="energy-cost">Yes</td><td>Shells</td><td>—</td><td>—</td></tr>
+                        <tr><td><strong>🌊 Ocean Machine</strong></td><td>Lv 5</td><td class="energy-cost">Yes</td><td>Ocean items</td><td>—</td><td>Upgrade mats hard to get</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🎯</span> Generator Priority Ranking</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Priority</th><th>Generator</th><th>Why</th><th>Key Tip</th></tr></thead>
+                    <tbody>
+                        <tr><td class="value-high">⭐⭐⭐⭐⭐</td><td><strong>🍊 Orange Tree</strong></td><td>ONLY free auto generator. No energy cost ever!</td><td>Always keep running, upgrade CD reduction first</td></tr>
+                        <tr><td class="value-high">⭐⭐⭐⭐</td><td><strong>🧺 Basket</strong></td><td>Flour is needed for many food chains</td><td>90% Flour rate is very reliable</td></tr>
+                        <tr><td class="value-high">⭐⭐⭐⭐</td><td><strong>☕ Coffee Pot</strong></td><td>Coffee items needed for many tasks</td><td>Tea Bag is a bonus side product</td></tr>
+                        <tr><td class="value-medium">⭐⭐⭐</td><td><strong>🎣 Fishing Net</strong></td><td>Seafood items for specific tasks</td><td>Upgrade to unlock Fresh Fish</td></tr>
+                        <tr><td class="value-medium">⭐⭐⭐</td><td><strong>🌊 Ocean Machine</strong></td><td>Ocean items for story progression</td><td>Save upgrade materials when you see them!</td></tr>
+                        <tr><td class="value-medium">⭐⭐</td><td><strong>🐚 Shell Machine</strong></td><td>Shells for decoration tasks</td><td>Only when shell tasks are active</td></tr>
+                        <tr><td class="value-low">⭐</td><td><strong>🐕 Dog House</strong></td><td>Very limited use, long cooldown</td><td>Only 6 puppies at Lv4, not worth prioritizing</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Generator Strategy by Game Stage</h4>
+                <p><strong>Early Game (Lv4-10):</strong> Focus on Basket and Coffee Pot — these produce items needed for most early story tasks. Dog House is available but low priority.<br>
+                <strong>Mid Game (Lv10-25):</strong> Add Fishing Net and Shell Machine. Save Hourglass tools for Ocean Machine cooldowns.<br>
+                <strong>Late Game (Lv26+):</strong> Energy Boost is unlocked! The +2 energy per tap makes generator tapping much more efficient. Ocean Machine upgrades become critical.<br>
+                <strong>Golden Rule:</strong> Orange Tree is always #1 priority — it's the only generator that costs zero energy!</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">⚡</span> Generator Booster</h3>
+            <div class="energy-grid">
+                <div class="energy-card"><div class="icon">1️⃣</div><h4>Default Boost</h4><div class="value">1x (1 energy)</div><p>Normal tapping with no boost. Produces standard level items.</p></div>
+                <div class="energy-card"><div class="icon">2️⃣</div><h4>2x Boost</h4><div class="value">2x (2 energy)</div><p>Uses 2 energy per tap. Skips intermediate item levels to reach higher items faster.</p></div>
+                <div class="energy-card"><div class="icon">4️⃣</div><h4>4x Boost</h4><div class="value">4x (4 energy)</div><p>Uses 4 energy per tap. Maximum boost for fastest progression to high-level items.</p></div>
+                <div class="energy-card"><div class="icon">⚡</div><h4>Visual Indicators</h4><div class="value">Thunderbolt Colors</div><p>Yellow thunderbolt = 1 energy, Purple = 2 energy, Pink = 4 energy</p></div>
+            </div>
+
+            <div class="info-box">
+                <h4>🔧 Generator Booster Mechanics</h4>
+                <p><strong>Effect:</strong> Skips item levels to reach higher items faster. Example: Skip Hot Tea and Tea Bag levels to reach Elegant Teapot directly.<br>
+                <strong>Pros:</strong> Less clutter on board, faster to target item, fewer merges needed.<br>
+                <strong>Cons:</strong> Uses more energy per tap, slows Season progress (fewer merges = less season XP).<br>
+                <strong>Best Use:</strong> When you need specific high-level items quickly and don't care about season progress.</p>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Generator Booster Strategy</div>
+                <p><strong>When to use 1x:</strong> During Season events when you want maximum merge count for season progress. <strong>When to use 2x:</strong> Balanced approach — moderate energy use with faster item progression. <strong>When to use 4x:</strong> When you need a specific high-level item urgently and have energy to spare. <strong>Trade-off Warning:</strong> Higher boosts mean fewer total items produced, which means fewer merges and slower Season progress. Choose wisely based on your current priorities!</p>
+            </div>
+        </section>
+
+        <div class="section-divider">⚡ 🔋 🪙 💎 ⭐</div>
+
+        <!-- ===== CUSTOMER ORDERS ===== -->
+        <section id="customer-orders">
+            <div class="section-header">
+                <div class="tag">🍽️ Orders</div>
+                <h2>Customer Order System</h2>
+                <p>Master the order system to maximize coins, XP, and story progression. Learn which orders to prioritize and which to skip.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">👥</span> Customer Types</h3>
+            <div class="character-grid">
+                <div class="character-card"><div class="character-avatar">🧑</div><div class="character-info"><h4>Regular Customers</h4><div class="role">Standard Orders</div><p>Basic orders with moderate rewards. Quick to complete, good for steady income.</p><div class="character-traits"><span>🪙 30-80</span><span>⭐ 10-25 XP</span><span>⏱️ 2-5 min</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨‍💼</div><div class="character-info"><h4>VIP Customers</h4><div class="role">Premium Orders</div><p>High-value orders requiring premium items. Best coin-per-energy ratio in the game.</p><div class="character-traits"><span>🪙 150-400</span><span>⭐ 50-100 XP</span><span>⏱️ 10-20 min</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">🎉</div><div class="character-info"><h4>Party Groups</h4><div class="role">Bulk Orders</div><p>Large orders for multiple items. Great for clearing board space and earning bulk rewards.</p><div class="character-traits"><span>🪙 200-500</span><span>⭐ 75-150 XP</span><span>⏱️ 15-30 min</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">⭐</div><div class="character-info"><h4>Story Characters</h4><div class="role">Plot Orders</div><p>Orders from main characters that advance the story. Always prioritize these!</p><div class="character-traits"><span>📖 Story Progress</span><span>🎁 Special Rewards</span><span>⏱️ Varies</span></div></div></div>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">📊</span> Order Value Analysis</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Order Type</th><th>Items Needed</th><th>Coin Reward</th><th>XP Reward</th><th>Energy Cost</th><th>ROI</th><th>Priority</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>☕ Coffee Order</strong></td><td>☕ Coffee x2</td><td>🪙 40-60</td><td>⭐ 15</td><td class="energy-cost">4-6</td><td class="value-high">High</td><td>✅ Accept</td></tr>
+                        <tr><td><strong>🥪 Lunch Combo</strong></td><td>🥪 Sandwich + 🥤 Drink</td><td>🪙 80-120</td><td>⭐ 30</td><td class="energy-cost">6-10</td><td class="value-high">High</td><td>✅ Accept</td></tr>
+                        <tr><td><strong>🥗 Salad Bowl</strong></td><td>🥗 Salad x1</td><td>🪙 50-80</td><td>⭐ 20</td><td class="energy-cost">3-5</td><td class="value-high">High</td><td>✅ Accept</td></tr>
+                        <tr><td><strong>🍳 Breakfast Plate</strong></td><td>🍳 Eggs + 🥞 Pancakes</td><td>🪙 70-100</td><td>⭐ 25</td><td class="energy-cost">5-8</td><td class="value-high">High</td><td>✅ Accept</td></tr>
+                        <tr><td><strong>🦐 Seafood Platter</strong></td><td>🦞 Lobster + 🦀 Crab</td><td>🪙 200-350</td><td>⭐ 80</td><td class="energy-cost">15-25</td><td class="value-medium">Medium</td><td>⚠️ If VIP</td></tr>
+                        <tr><td><strong>🍣 Sushi Set</strong></td><td>🍣 Sushi x3</td><td>🪙 150-250</td><td>⭐ 60</td><td class="energy-cost">12-20</td><td class="value-medium">Medium</td><td>⚠️ If VIP</td></tr>
+                        <tr><td><strong>🍰 Dessert Tray</strong></td><td>🍰 Cake + 🧁 Cupcake x2</td><td>🪙 100-150</td><td>⭐ 40</td><td class="energy-cost">8-12</td><td class="value-medium">Medium</td><td>⚠️ Check stock</td></tr>
+                        <tr><td><strong>🎉 Party Order</strong></td><td>Various x5-10</td><td>🪙 300-600</td><td>⭐ 100-200</td><td class="energy-cost">25-50</td><td class="value-low">Low</td><td>❌ Skip if busy</td></tr>
+                        <tr><td><strong>🍕 Pizza Night</strong></td><td>🍕 Pizza x3</td><td>🪙 120-180</td><td>⭐ 45</td><td class="energy-cost">10-15</td><td class="value-medium">Medium</td><td>⚠️ Check stock</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🎯</span> Order Strategy Guide</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card"><h4>✅ Always Accept</h4><p>Orders that give the best value for your energy:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Story character orders — advance plot</li><li><span class="step-num">2</span>Coffee orders — quick, good ROI</li><li><span class="step-num">3</span>Salad orders — low energy cost</li><li><span class="step-num">4</span>VIP seafood orders — premium rewards</li><li><span class="step-num">5</span>Orders matching your current chain stock</li></ul></div>
+                <div class="strategy-card"><h4>⚠️ Conditional Accept</h4><p>Accept only if you have the items ready:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Party orders — only if board is full</li><li><span class="step-num">2</span>Seafood platters — only for VIPs</li><li><span class="step-num">3</span>Dessert trays — check if items ready</li><li><span class="step-num">4</span>Multi-item orders — calculate energy first</li></ul></div>
+                <div class="strategy-card"><h4>❌ Skip These</h4><p>Orders that waste energy — let them expire:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Low-value orders during events</li><li><span class="step-num">2</span>Orders requiring chains you don't use</li><li><span class="step-num">3</span>Party orders when energy is low</li><li><span class="step-num">4</span>Orders with terrible coin/energy ratio</li></ul></div>
+                <div class="strategy-card"><h4>💰 Coin Rush Strategy</h4><p>Maximize double-coin weekends:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Save VIP orders for Coin Rush</li><li><span class="step-num">2</span>Prep high-value items beforehand</li><li><span class="step-num">3</span>Accept ALL orders during event</li><li><span class="step-num">4</span>Stock up on premium chain items</li></ul></div>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Order Queue Management</div>
+                <p><strong>Order Slots:</strong> You have 3-4 order slots. Keep 1 slot open for story orders. <strong>Refresh Timer:</strong> Orders refresh every 30 minutes. Skip bad orders to get new ones faster. <strong>Tip Calculation:</strong> Fast completion gives bonus coins. Complete orders within 2 minutes for +10-20% tip bonus!</p>
+            </div>
+        </section>
+
+        <div class="section-divider">⚡ 🔋 🪙 💎 ⭐</div>
+
+        <!-- ===== ENERGY GUIDE ===== -->
+        <section id="energy">
+            <div class="section-header">
+                <div class="tag">⚡ Resource Management</div>
+                <h2>Complete Energy Guide</h2>
+                <p>Energy is your most precious resource in Gossip Harbor. Here is the REAL energy system data — no fluff, just facts.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">📊</span> Energy Basics</h3>
+            <div class="energy-grid">
+                <div class="energy-card"><div class="icon">🔋</div><h4>Max Energy</h4><div class="value">100</div><p>Maximum energy capacity is 100. This is your energy cap at any given time.</p></div>
+                <div class="energy-card"><div class="icon">⏱️</div><h4>Regeneration</h4><div class="value">+1 per 2 min</div><p>Energy regenerates at +1 energy every 2 minutes until reaching the cap of 100.</p></div>
+                <div class="energy-card"><div class="icon">🎁</div><h4>Daily System Gift</h4><div class="value">100 energy/day</div><p>ONLY given if you used ALL your energy the previous day! This is the biggest F2P source — make sure to empty your energy bar daily.</p></div>
+                <div class="energy-card"><div class="icon">📅</div><h4>Daily Check-in</h4><div class="value">20 energy/day</div><p>Daily check-in reward gives 20 energy. Don't forget to claim it every day!</p></div>
+                <div class="energy-card"><div class="icon">📺</div><h4>Watch Ads</h4><div class="value">15 energy/day</div><p>Watch reward ads for 15 energy. Only for F2P players who never bought anything!</p></div>
+                <div class="energy-card"><div class="icon">🎒</div><h4>Energy Chest</h4><div class="value">10 gems / Free</div><p>Available in item store for 10 gems or free with ad watch.</p></div>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">⚠️ Critical: Gossip Harbor Ad Energy is LOW</div>
+                <p>Gossip Harbor gives approximately <strong>40% less energy from ads</strong> compared to similar merge games like Travel Town, Merge Mansion, etc. This is by design to encourage diamond purchases. Your strategy must adapt: <strong>focus on daily system gift (100) + check-in (20) + ads (15) = ~135 energy/day for F2P</strong>. The daily system gift is conditional — you MUST use all energy the previous day to qualify!</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">💎</span> Diamond Energy Purchase</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Purchase #</th><th>Diamond Cost</th><th>Notes</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>1st</strong></td><td>💎 FREE</td><td class="value-high">First purchase is FREE — always claim this!</td></tr>
+                        <tr><td><strong>2nd</strong></td><td>💎 10</td><td>Price doubles each time</td></tr>
+                        <tr><td><strong>3rd</strong></td><td>💎 20</td><td>Price doubles each time</td></tr>
+                        <tr><td><strong>4th</strong></td><td>💎 40</td><td>Price doubles each time</td></tr>
+                        <tr><td><strong>5th</strong></td><td>💎 80</td><td>Price doubles each time</td></tr>
+                        <tr><td><strong>6th+</strong></td><td>💎 160+</td><td>Continues doubling — gets very expensive fast!</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="background: var(--gold-light); font-weight: 700;">
+                            <td colspan="3"><strong>⏰ Reset Time:</strong> All purchase prices reset daily at 12am GMT</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Diamond Energy Strategy</h4>
+                <p><strong>Rule #1:</strong> Always claim the 1st purchase (FREE!). <strong>Rule #2:</strong> The 2nd purchase (10 diamonds) is usually worth it if you're stuck on a story task. <strong>Rule #3:</strong> 3rd purchase (20 diamonds) and beyond — only if absolutely necessary. The cost doubles each time: 10 → 20 → 40 → 80 → 160+, so it escalates VERY quickly. <strong>Rule #4:</strong> Prices reset daily at 12am GMT.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🧴</span> Energy Bottle</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Bottle Level</th><th>Energy Given</th><th>Recommendation</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Lv4 Bottle</strong></td><td>⚡ 40 energy</td><td class="value-low">DON'T open low-level bottles! Save them to merge into higher-level bottles first.</td></tr>
+                        <tr><td><strong>Max Level Bottle</strong></td><td>⚡ 100 energy</td><td class="value-high">ALWAYS merge bottles to max level before opening. 100 energy vs 40 = 2.5x more value!</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Energy Bottle Golden Rule</div>
+                <p><strong>NEVER open a low-level energy bottle!</strong> Always merge energy bottles to max level before opening them. A Lv4 bottle gives 40 energy, but a max-level bottle gives 100 energy. That's 2.5x more value for the same board space. Merge first, open later!</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">📊</span> Daily F2P Energy Budget</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Source</th><th>Energy</th><th>Condition</th><th>Notes</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>🎁 Daily System Gift</strong></td><td>⚡ 100</td><td>Must use ALL energy previous day</td><td class="value-high">Biggest F2P source! Always empty your bar.</td></tr>
+                        <tr><td><strong>📅 Daily Check-in</strong></td><td>⚡ 20</td><td>Log in daily</td><td>Easy free energy, don't forget</td></tr>
+                        <tr><td><strong>📺 Watch Ads</strong></td><td>⚡ ~15</td><td>Watch reward ads</td><td class="value-low">~40% less than competing games</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="background: var(--gold-light); font-weight: 700;">
+                            <td><strong>📊 TOTAL DAILY F2P</strong></td>
+                            <td><strong>⚡ ~135/day</strong></td>
+                            <td>System gift conditional</td>
+                            <td>Without system gift: ~35/day</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">⚡</span> Energy Boost (Lv26+)</h3>
+            <div class="info-box">
+                <h4>⚡ Energy Boost Details</h4>
+                <p><strong>Unlock:</strong> Level 26+<br>
+                <strong>Effect:</strong> Each generator tap gives <strong>+2 energy</strong> per tap<br>
+                <strong>Trade-off:</strong> Output item level is <strong>+1 higher</strong> than normal<br>
+                <strong>Verdict:</strong> Despite producing higher-level items, this actually <strong>saves energy overall</strong>. The +2 energy per tap adds up significantly over a play session, and higher-level items mean fewer merges needed to reach your target item.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🎮</span> Late Game Energy Reality</h3>
+            <div class="info-box">
+                <h4>⚠️ Late Game (Lv40+) Warning</h4>
+                <p>At level 40+, high-level items may require <strong>3000+ energy</strong> to produce from scratch. With only ~135 energy/day from F2P sources, that means <strong>22+ days</strong> of saving for a single high-level item chain. This is by design — the game wants you to spend diamonds. Plan your energy spending very carefully in late game.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🎯</span> Advanced Energy Strategies</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card"><h4>🌅 Daily Routine</h4><p>Optimize your daily energy collection:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Use ALL remaining energy before sleeping (critical for system gift!)</li><li><span class="step-num">2</span>Claim daily system gift (100 energy) — only if you emptied bar yesterday</li><li><span class="step-num">3</span>Daily check-in (20 energy)</li><li><span class="step-num">4</span>Watch ads (~15 energy)</li><li><span class="step-num">5</span>Claim free 1st diamond energy purchase (free!)</li><li><span class="step-num">6</span>Tap all generators, especially Orange Tree (free!)</li></ul></div>
+                <div class="strategy-card"><h4>💡 Energy Saving Tips</h4><p>Make every energy point count:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Always merge energy bottles to MAX before opening</li><li><span class="step-num">2</span>Use Scissors to downgrade items instead of spending energy on low-level production</li><li><span class="step-num">3</span>Focus energy on story-critical item chains only</li><li><span class="step-num">4</span>Use Orange Tree (free auto generator) as much as possible</li></ul></div>
+                <div class="strategy-card"><h4>🚫 Energy Wastes to Avoid</h4><p>Common mistakes that waste energy:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Opening low-level energy bottles (40 vs 100 at max)</li><li><span class="step-num">2</span>Forgetting to empty energy bar before sleep (lose 100 system gift!)</li><li><span class="step-num">3</span>Spending energy on non-story items</li><li><span class="step-num">4</span>Buying 3rd+ diamond energy (40+ diamonds, escalates fast)</li></ul></div>
+                <div class="strategy-card"><h4>💎 When to Buy Diamond Energy</h4><p>Diamond energy purchase guide:</p><ul class="strategy-steps"><li><span class="step-num">1</span>1st purchase: ALWAYS (it's free!)</li><li><span class="step-num">2</span>2nd purchase (20 diamonds): Yes, if stuck on story</li><li><span class="step-num">3</span>3rd purchase (40 diamonds): Only for critical story tasks</li><li><span class="step-num">4</span>4th+ purchase (80+ diamonds): Almost never worth it</li></ul></div>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">💡</span> Energy-Saving Techniques</h3>
+            <div class="diamond-tips">
+                <div class="diamond-tip do"><span class="priority priority-do">✅ DO</span><h4>Empty Energy Bar Before Sleep</h4><p>Always use all your energy before going to sleep. This ensures you qualify for the 100 energy daily system gift the next day. Missing this = losing your biggest F2P energy source!</p><div class="cost">Saves: 100 energy/day</div></div>
+                <div class="diamond-tip do"><span class="priority priority-do">✅ DO</span><h4>Merge Bottles to Max Level</h4><p>Never open a Lv4 energy bottle (40 energy). Always merge to max level first (100 energy). That's 2.5x more value!</p><div class="cost">Saves: 60 energy per bottle</div></div>
+                <div class="diamond-tip do"><span class="priority priority-do">✅ DO</span><h4>Use Orange Tree Constantly</h4><p>The Orange Tree is the ONLY auto generator — it costs zero energy. Keep it running at all times for free items.</p><div class="cost">Saves: Unlimited free items</div></div>
+                <div class="diamond-tip do"><span class="priority priority-do">✅ DO</span><h4>Claim Free 1st Diamond Purchase</h4><p>The first diamond energy purchase is FREE every day. Always claim it, even if you don't need energy right now.</p><div class="cost">Saves: Free energy daily</div></div>
+                <div class="diamond-tip dont"><span class="priority priority-dont">❌ DON'T</span><h4>Open Low-Level Energy Bottles</h4><p>A Lv4 bottle gives only 40 energy. A max-level bottle gives 100. Opening early wastes 60 potential energy per bottle.</p><div class="cost">Wastes: 60 energy per bottle</div></div>
+                <div class="diamond-tip dont"><span class="priority priority-dont">❌ DON'T</span><h4>Buy 3rd+ Diamond Energy Lightly</h4><p>Cost doubles each time: 40, 80, 160... diamonds are precious. Save them for board expansions or critical story tasks.</p><div class="cost">Wastes: 40-160+ diamonds</div></div>
+                <div class="diamond-tip dont"><span class="priority priority-dont">❌ DON'T</span><h4>Forget Daily Check-in</h4><p>20 free energy per day just for logging in. Missing days = missing free energy. Set a daily reminder!</p><div class="cost">Wastes: 20 energy/day</div></div>
+                <div class="diamond-tip dont"><span class="priority priority-dont">❌ DON'T</span><h4>Compare to Other Merge Games</h4><p>Gossip Harbor gives ~40% LESS ad energy than Travel Town etc. Don't expect the same energy income — plan accordingly.</p><div class="cost">Misconception: Expecting more ad energy</div></div>
+            </div>
+        </section>
+
+        <div class="section-divider">🎉 🏆 📅 🎰 📦</div>
+
+        <!-- ===== EVENTS ===== -->
+        <section id="events">
+            <div class="section-header">
+                <div class="tag">📅 Live Ops</div>
+                <h2>Event Guide</h2>
+                <p>Gossip Harbor runs 4-10 events simultaneously, sometimes up to 8-10 at once. Events start from early game, not just mid/late game. Here's the complete guide to verified event types.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🎯</span> Verified Event Types</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Event</th><th>How It Works</th><th>Rewards</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Pinata Party</strong></td><td>Complete orders to get stick items, merge sticks, attack the pinata, break it open for rewards</td><td>Energy, items, coins</td></tr>
+                        <tr><td><strong>Card Collection</strong></td><td>Complete orders to earn 1-5 star card packs. Collect 9 different cards per set for energy/item rewards. Duplicate cards accumulate by star level to exchange for new packs</td><td>Energy, items, new card packs</td></tr>
+                        <tr><td><strong>1v1 Tournament</strong></td><td>Two players race to complete specific item orders. First to finish gets better rewards. Added April 2024</td><td>Competitive rewards, leaderboard</td></tr>
+                        <tr><td><strong>Fishing Minigame</strong></td><td>Merge on a separate board for rewards. Has run 3+ times in 2024</td><td>Special items, energy</td></tr>
+                        <tr><td><strong>Clay Coloring</strong></td><td>Combine and color clay pieces in a minigame format</td><td>Decorations, items</td></tr>
+                        <tr><td><strong>Monopoly-style</strong></td><td>Monopoly GO! style gameplay with board movement and rewards</td><td>Coins, energy, items</td></tr>
+                        <tr><td><strong>Multiplayer Competition</strong></td><td>Complete tasks within a time limit, ranked by speed</td><td>Ranked rewards, leaderboard</td></tr>
+                        <tr><td><strong>Season/Battle Pass</strong></td><td>Clear tiers for predictable, consistent progression and rewards</td><td>Tier-based rewards</td></tr>
+                        <tr><td><strong>Wheel/Spinner</strong></td><td>Lucky wheel spinning for random prizes</td><td>Random energy, coins, items</td></tr>
+                        <tr><td><strong>Bingo Tasks</strong></td><td>Bingo-style task completion system</td><td>Task completion rewards</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🎉</span> Seasonal & Themed Events</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Event</th><th>Theme</th><th>Timing</th><th>Notes</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>The Big Game</strong></td><td>Super Bowl</td><td>February 2026</td><td>Super Bowl themed limited-time event</td></tr>
+                        <tr><td><strong>Spring Festival</strong></td><td>Chinese New Year</td><td>Jan/Feb (varies)</td><td>Chinese New Year themed events with special decorations and items</td></tr>
+                        <tr><td><strong>Silvertails Cowboy Celebration</strong></td><td>Western</td><td>May 2026</td><td>Features NPCs: Colton, Olivia, Lori</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🔥</span> Flaming Frenzy Event</h3>
+            <div class="info-box">
+                <h4>🔥 What is Flaming Frenzy?</h4>
+                <p><strong>Trigger:</strong> Activated after earning enough coins<br>
+                <strong>Minimum Points:</strong> 700 points needed for Silver Dish Rewards<br>
+                <strong>Type:</strong> Timer-based event<br>
+                <strong>Frequency:</strong> Triggers automatically based on coin earnings</p>
+            </div>
+
+            <div class="strategy-grid">
+                <div class="strategy-card"><h4>⏱️ Delay Tactics</h4><p>Ways to delay the next Flaming Frenzy:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Stay in kitchen board long after timer ends</li><li><span class="step-num">2</span>Hoard coins and orders before FF starts</li><li><span class="step-num">3</span>Some screens don't force FF to start (merging events, certain stores)</li><li><span class="step-num">4</span>Check event start times to plan around FF</li></ul></div>
+                <div class="strategy-card"><h4>⚠️ Crash Warning</h4><p>If app crashes after FF ends:</p><ul class="strategy-steps"><li><span class="step-num">1</span>FF will restart when reentering kitchen</li><li><span class="step-num">2</span>Make sure to finish FF before closing app</li><li><span class="step-num">3</span>Save progress frequently during FF</li></ul></div>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Flaming Frenzy Strategy</div>
+                <p><strong>Preparation:</strong> Hoard coins and completed orders before FF triggers — you'll need them for the event! <strong>Timing:</strong> Check event calendars to plan around FF — you don't want it triggering during other important events. <strong>Delay Strategy:</strong> Stay on the kitchen board as long as possible after the timer ends to delay the next FF activation. <strong>Screen Exploit:</strong> Merging events and certain store screens don't force FF to start — use these to your advantage!</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">📋</span> Event Strategy Guide</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card"><h4>🎯 Prioritize Wisely</h4><p>With 4-10 events running simultaneously, you can't do everything:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Focus on events with the best energy-to-reward ratio</li><li><span class="step-num">2</span>Don't spread yourself too thin across all events</li><li><span class="step-num">3</span>Seasonal events may not return - prioritize these</li><li><span class="step-num">4</span>Battle Pass is most predictable - steady progress</li></ul></div>
+                <div class="strategy-card"><h4>⚡ Energy Management</h4><p>Events compete for your energy:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Plan which events get energy priority each session</li><li><span class="step-num">2</span>Save energy for events with time-limited milestones</li><li><span class="step-num">3</span>1v1 Tournament needs focused energy bursts</li><li><span class="step-num">4</span>Card Collection benefits from consistent daily play</li></ul></div>
+                <div class="strategy-card"><h4>🏆 Competitive Events</h4><p>For 1v1 and Multiplayer Competition:</p><ul class="strategy-steps"><li><span class="step-num">1</span>1v1: Speed is everything - know your merge chains</li><li><span class="step-num">2</span>Multiplayer: Consistency matters more than bursts</li><li><span class="step-num">3</span>Don't waste diamonds competing unless rewards justify it</li><li><span class="step-num">4</span>Focus on milestone rewards if you can't win</li></ul></div>
+                <div class="strategy-card"><h4>📦 Collection Events</h4><p>For Card Collection and Bingo:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Card Collection: Duplicate cards have value - exchange them</li><li><span class="step-num">2</span>Collect all 9 cards per set for the best rewards</li><li><span class="step-num">3</span>Bingo: Plan which tasks to complete for bingo lines</li><li><span class="step-num">4</span>These reward consistent daily play</li></ul></div>
+            </div>
+
+            <div class="info-box">
+                <h4>📅 Key Event Facts</h4>
+                <p><strong>Event Overload:</strong> Players typically face 4-5 parallel events, sometimes up to 8-10 simultaneously. This is by design - you're not meant to complete all of them.<br>
+                <strong>Early Game Events:</strong> Events start appearing from the beginning of the game, not just mid/late game. New players should learn event mechanics early.<br>
+                <strong>Recurring Events:</strong> Many event types (Pinata Party, Card Collection, Fishing, etc.) rotate and return periodically.<br>
+                <strong>Limited-Time:</strong> Seasonal and themed events (Spring Festival, The Big Game, Silvertails) are limited-time and may not return.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">📚</span> Detailed Event Types Guide</h3>
+            <p>Based on Fandom Wiki community research, here are the detailed mechanics for each major event type in Gossip Harbor.</p>
+
+            <h4 class="event-type-title">1. Card Collection Events</h4>
+            <div class="info-box">
+                <p><strong>Schedule:</strong> Monthly events that rotate regularly<br>
+                <strong>Mechanic:</strong> Collect 9 cards per collection to earn rewards<br>
+                <strong>Card Value:</strong> Some collections are more valuable than others - rarer cards provide better rewards<br>
+                <strong>Album Completion:</strong> Complete the entire album for a final grand prize<br>
+                <strong>Prestige Album:</strong> After completing the main album, you can start a prestige album with the same cards but more rewards. <span class="highlight">Warning:</span> Excess cards are lost when starting prestige!</p>
+            </div>
+
+            <h4 class="event-type-title">2. Cloudy Events (Cloud Events)</h4>
+            <div class="info-box">
+                <p><strong>Board Layout:</strong> Parts of the board are locked by clouds<br>
+                <strong>Unlock Order:</strong> Must unlock clouds in a specific order (unlike other events where you can explore freely)<br>
+                <strong>Cloud Count:</strong> Usually 5 clouds covering different board sections<br>
+                <strong>Main Items:</strong> Mergeable items are plants (fruits, vegetables, flowers)<br>
+                <strong>Hidden Contents:</strong> Unlocked areas contain crates or bags of feed</p>
+            </div>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Item Type</th><th>Contents/Use</th><th>Notes</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Crates</strong></td><td>Gems, energy potion, coins, more mergeable items</td><td>Immediate rewards when opened</td></tr>
+                        <tr><td><strong>Bags of Feed</strong></td><td>Feed to animals OR use as plant feed</td><td>Plant feed unlocks additional plot of land</td></tr>
+                        <tr><td><strong>Plant Feed</strong></td><td>Unlocks additional plot of land (max 4 plots)</td><td>More plots = +1 output when harvesting</td></tr>
+                        <tr><td><strong>Sickles</strong></td><td>Needed to harvest plants</td><td>Gained from completing orders</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="strategy-card">
+                <h4>☁️ Cloudy Event Strategy</h4>
+                <ul class="strategy-steps">
+                    <li><span class="step-num">1</span>Prioritize unlocking clouds in the required order</li>
+                    <li><span class="step-num">2</span>Use bags of feed wisely - decide between feeding animals or unlocking plots</li>
+                    <li><span class="step-num">3</span>Max out at 4 plots for maximum harvest efficiency (+1 output per plot)</li>
+                    <li><span class="step-num">4</span>Complete orders to get sickles for harvesting</li>
+                </ul>
+            </div>
+            <p><strong>Examples:</strong> Lavender Season, Tony's Farmyard Deeds, Tony's Fruit Farm</p>
+
+            <h4 class="event-type-title">3. Explorative Merging Events</h4>
+            <div class="info-box">
+                <p><strong>Uniqueness:</strong> Most unique event type in the game<br>
+                <strong>Board:</strong> Only 1 merging board (like single level events)<br>
+                <strong>Scrolling:</strong> Board doesn't scroll<br>
+                <strong>Energy Type:</strong> Collect PINK ENERGY from orders (not mergeable items)<br>
+                <strong>Pink Energy Use:</strong> Used to perform actions on a separate map<br>
+                <strong>Character Control:</strong> Control a Gossip Harbor character on the map</p>
+            </div>
+            <div class="strategy-card">
+                <h4>🗺️ Exploration Mechanics</h4>
+                <ul class="strategy-steps">
+                    <li><span class="step-num">1</span>Clear barriers (rocks, trees, plants) with pink energy</li>
+                    <li><span class="step-num">2</span>Some barriers require multiple taps to clear</li>
+                    <li><span class="step-num">3</span>Clearing barriers gives items for the merging board</li>
+                    <li><span class="step-num">4</span>Goals include collecting items and saving animals</li>
+                </ul>
+            </div>
+            <p><strong>Examples:</strong> Mark's Rescue Mission, The Winter Quest</p>
+
+            <h4 class="event-type-title">4. Multilevel Events</h4>
+            <div class="info-box">
+                <p><strong>Board Size:</strong> Smaller boards than single level events<br>
+                <strong>Progression:</strong> Gain a key by creating a marked item<br>
+                <strong>Unlocking:</strong> Key unlocks door to next level<br>
+                <strong>Exploration:</strong> Known areas covered by clouds or fauna<br>
+                <strong>Freedom:</strong> Unlike cloudy events, you can explore in any order</p>
+            </div>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Level Reached</th><th>Reward</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Level 1</strong></td><td>No special rewards</td></tr>
+                        <tr><td><strong>Level 2</strong></td><td>A Coin everywhere</td></tr>
+                        <tr><td><strong>Level 3</strong></td><td>Blast of Energy</td></tr>
+                        <tr><td><strong>Level 4</strong></td><td>Gem shards</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Examples:</strong> Dinosaur Discovery, Hilarious Hijinks, Sensational Sportsfest, Springtide Gardens</p>
+
+            <h4 class="event-type-title">5. Digging Events (formerly Scrolling Events)</h4>
+            <div class="info-box">
+                <p><strong>Similarity:</strong> Like single level events but board scrolls down<br>
+                <strong>Reveals:</strong> More items to merge and uncover as you scroll<br>
+                <strong>Points System:</strong> Usually have a points system for progression<br>
+                <strong>Rewards:</strong> Reach certain point thresholds for rewards</p>
+            </div>
+            <p><strong>Examples:</strong> Forest Forager, Rose Garden Romance, Seaside Sandscaping</p>
+
+            <h4 class="event-type-title">6. Single Level Events</h4>
+            <div class="info-box">
+                <p><strong>Starting Items:</strong> Preexisting items on board at start<br>
+                <strong>Merging:</strong> Merge with items from orders<br>
+                <strong>Completion:</strong> Once all preexisting items are merged and final levels reached = event over<br>
+                <strong>Scrolling:</strong> Rarely scrolls upwards</p>
+            </div>
+            <p><strong>Examples:</strong> Cinco de Mayo Party, Down the Rabbit Hole, Easter Egg Hunt</p>
+
+            <h4 class="event-type-title">7. Order Events</h4>
+            <div class="info-box">
+                <p><strong>Mechanic:</strong> Complete specific orders to progress<br>
+                <strong>Focus:</strong> Order completion is the primary goal</p>
+            </div>
+            <p><strong>Examples:</strong> Galactic Grand Prix, Mutineer Mayhem, Raccoon</p>
+
+            <h4 class="event-type-title">8. Decoration Events</h4>
+            <div class="info-box">
+                <p><strong>Purpose:</strong> Improve permanent decorations in your harbor<br>
+                <strong>Locations:</strong> Usually park square or Quinn's garden<br>
+                <strong>Duration:</strong> Last longer than other events, have more stages<br>
+                <strong>Permanence:</strong> Decorations remain after event ends</p>
+            </div>
+            <p><strong>Examples:</strong> A Marionette's Mission, An Egyptian Excursion, Easter Jamboree, The Lost City of Heron Keys, The Masked Tenor</p>
+
+            <h4 class="event-type-title">9. Other Important Events</h4>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Event</th><th>Description</th><th>Notes</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Restaurant Goals</strong></td><td>Weekly rotating goals</td><td>1 week duration, then restarts with new goals</td></tr>
+                        <tr><td><strong>Big Drop Rush</strong></td><td>Special rush event</td><td>Limited-time high-value rewards</td></tr>
+                        <tr><td><strong>Bingo</strong></td><td>Bingo-style task completion</td><td>Complete lines for rewards</td></tr>
+                        <tr><td><strong>Clay Color Combos</strong></td><td>Color matching minigame</td><td>Combine colors strategically</td></tr>
+                        <tr><td><strong>Fruit Roulette</strong></td><td>Spinning wheel mechanic</td><td>Random fruit-based prizes</td></tr>
+                        <tr><td><strong>Gazebo Garden Pools</strong></td><td>Garden decoration event</td><td>Pool-themed decorations</td></tr>
+                        <tr><td><strong>Lucky River</strong></td><td>River-themed luck event</td><td>Chance-based rewards</td></tr>
+                        <tr><td><strong>Sky-High Scramble</strong></td><td>Vertical climbing event</td><td>Progress upward for rewards</td></tr>
+                        <tr><td><strong>Disco Party</strong></td><td>Party-themed event</td><td>Partially free - Coconut gives 1 free spin for 25 energy</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Event Type Quick Reference</div>
+                <p><strong>Cloudy Events:</strong> Follow the unlock order, manage sickles wisely.<br>
+                <strong>Explorative Merging:</strong> Focus on pink energy orders first.<br>
+                <strong>Multilevel:</strong> Push to Level 4 for gem shards.<br>
+                <strong>Digging:</strong> Keep scrolling to reveal more merge opportunities.<br>
+                <strong>Decoration:</strong> Long-term investment - complete when possible.</p>
+            </div>
+        </section>
+
+        <div class="section-divider">💎 ✅ ❌ 🎯 💰</div>
+
+        <!-- ===== DIAMOND GUIDE ===== -->
+        <section id="diamonds">
+            <div class="section-header">
+                <div class="tag">💎 Premium Currency</div>
+                <h2>Diamond Guide</h2>
+                <p>Diamonds (gems) are the premium currency in Gossip Harbor. Here are the real prices, verified uses, and spending priorities.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">💰</span> Diamond Prices (CNY)</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Price (CNY)</th><th>Gems</th><th>Gems per Yuan</th><th>Value Rating</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>¥8</strong></td><td>100</td><td>12.5</td><td class="value-low">Low</td></tr>
+                        <tr><td><strong>¥30</strong></td><td>380</td><td>12.7</td><td class="value-medium">Fair</td></tr>
+                        <tr><td><strong>¥68</strong></td><td>880</td><td>12.9</td><td class="value-medium">Fair</td></tr>
+                        <tr><td><strong>¥128</strong></td><td>1,650</td><td>12.9</td><td class="value-high">Good</td></tr>
+                        <tr><td><strong>¥328</strong></td><td>4,200</td><td>12.8</td><td class="value-high">Good</td></tr>
+                        <tr><td><strong>¥648</strong></td><td>8,250</td><td>12.7</td><td class="value-high">Best Volume</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h4>📊 Pricing Note</h4>
+                <p>Gem-per-yuan ratios are relatively consistent across tiers (~12.5-12.9 gems/yuan). The largest pack (¥648) gives the most total gems. Prices shown are for the Chinese (CNY) server. Other regions may have different pricing.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">✅</span> Verified Diamond Uses</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Use</th><th>Details</th><th>Priority</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Buy Energy</strong></td><td>Most common use. First purchase: 10 diamonds (free), then 20 diamonds, 40 diamonds, 80 diamonds (doubles each time)</td><td class="value-high">HIGH (first 2 buys)</td></tr>
+                        <tr><td><strong>Speed Up Gift Box</strong></td><td>Accelerate gift box opening with diamonds</td><td class="value-medium">MEDIUM</td></tr>
+                        <tr><td><strong>Skip 2.5hr Cooldown</strong></td><td>Skip the 2.5-hour cooldown timer. Costs roughly $1.50 equivalent in diamonds</td><td class="value-low">LOW (poor value)</td></tr>
+                        <tr><td><strong>Unlock Warehouse/Storage Slots</strong></td><td>Expand storage space. Diamonds only - cannot be purchased with coins</td><td class="value-high">MEDIUM-HIGH</td></tr>
+                        <tr><td><strong>Buy Bubble Items</strong></td><td>Purchase items inside bubbles during merging</td><td class="value-medium">MEDIUM (situational)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">📊</span> Spending Priority Guide</h3>
+            <div class="diamond-tips">
+                <div class="diamond-tip do"><span class="priority priority-do">✅ HIGH PRIORITY</span><h4>Emergency Energy (First 2 Purchases)</h4><p>The first two energy buys cost only 10 and 20 diamonds (total 30 diamonds for 200 energy). This is the best value for diamond spending. After that, costs double each time (40, 80...), so only buy the first two.</p><div class="cost">Cost: 30 diamonds for 200 energy | Best value in the game</div></div>
+                <div class="diamond-tip do"><span class="priority priority-do">✅ MEDIUM PRIORITY</span><h4>Unlock Warehouse/Storage Slots</h4><p>Board space is the biggest late-game bottleneck. Warehouse/storage slots can only be bought with diamonds (not coins). Expanding storage gives you more room to work with, which directly impacts your ability to progress.</p><div class="cost">Diamonds only | Biggest late-game bottleneck</div></div>
+                <div class="diamond-tip do"><span class="priority priority-do">✅ MEDIUM PRIORITY</span><h4>Buy Key Bubble Items</h4><p>Purchasing items inside bubbles during merging can be worthwhile when you need specific items. This also helps avoid board clutter from unnecessary items.</p><div class="cost">Situational | Avoids board clutter</div></div>
+                <div class="diamond-tip dont"><span class="priority priority-dont">❌ LOW PRIORITY</span><h4>Skip Cooldowns</h4><p>Skip the 2.5-hour cooldown costs approximately $1.50 equivalent in diamonds. Very poor value. Just wait it out and do other tasks.</p><div class="cost">~$1.50 equivalent | Poor value</div></div>
+                <div class="diamond-tip dont"><span class="priority priority-dont">❌ NOT RECOMMENDED</span><h4>Pure Decoration Purchases</h4><p>Spending diamonds purely on cosmetic decorations is not recommended. Save your diamonds for functional uses like energy and storage.</p><div class="cost">Cosmetic only | No gameplay benefit</div></div>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🆓</span> Free-to-Play Diamond Sources</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Source</th><th>Details</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Complete Tasks</strong></td><td>Various in-game tasks and achievements reward diamonds</td></tr>
+                        <tr><td><strong>Merge Challenge Boxes</strong></td><td>Open challenge boxes from merging to find diamonds</td></tr>
+                        <tr><td><strong>Redemption Codes</strong></td><td>Official redemption codes released periodically (follow official channels)</td></tr>
+                        <tr><td><strong>Season Pass Activities</strong></td><td>Battle Pass/Season Pass tier rewards include diamonds</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Diamond Summary</div>
+                <p><strong>Best Value:</strong> First 2 energy purchases (30 diamonds = 200 energy). <strong>Biggest Bottleneck:</strong> Warehouse/storage slots (diamonds only, biggest late-game issue). <strong>Worst Value:</strong> Skipping 2.5hr cooldowns (~$1.50 equivalent). <strong>F2P:</strong> Earn diamonds through tasks, challenge boxes, redemption codes, and season pass activities. The game uses Battle Pass and limited-time offers rather than a traditional VIP system.</p>
+            </div>
+        </section>
+
+        <div class="section-divider">📖 🕵️ 🔥 💞 ⚓</div>
+
+        <!-- ===== STORY WALKTHROUGH ===== -->
+        <section id="story">
+            <div class="section-header">
+                <div class="tag">📖 Narrative</div>
+                <h2>Story Guide</h2>
+                <p>Follow Quinn Castillo's journey on Brimwave Island. Rebuilding, investigating, and discovering the truth.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🏝️</span> Setting</h3>
+            <div class="info-box">
+                <h4>📍 Brimwave Island</h4>
+                <p>The game takes place on Brimwave Island, a coastal island community. Quinn returns here after her life in the city falls apart. The island setting provides a close-knit community atmosphere where gossip, secrets, and personal dramas intertwine with the restaurant rebuilding storyline.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">📖</span> Main Plot</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card"><h4>💔 The Collapse</h4><p>Quinn's once-perfect life crumbles: she goes through a painful divorce after discovering her ex-husband gambling at a casino with two women. Betrayed and broken, she has no choice but to return to Brimwave Island.</p><ul class="strategy-steps"><li><span class="step-num">💔</span>Divorce from ex-husband</li><li><span class="step-num">🎰</span>Ex-husband caught gambling with two women</li><li><span class="step-num">🏠</span>Return to Brimwave Island</li><li><span class="step-num">👧</span>Single mother rebuilding her life</li></ul></div>
+                <div class="strategy-card"><h4>🔥 The Restaurant</h4><p>Quinn's father, now deceased, owned a restaurant on Brimwave Island. The restaurant was destroyed through a series of attacks: first a food poisoning incident, then vandalism, and finally arson. Quinn must rebuild it from scratch while investigating who is responsible.</p><ul class="strategy-steps"><li><span class="step-num">🍽️</span>Father's restaurant destroyed</li><li><span class="step-num">🤢</span>Food poisoning incident</li><li><span class="step-num">🔨</span>Vandalism</li><li><span class="step-num">🔥</span>Arson</li></ul></div>
+                <div class="strategy-card"><h4>🔍 The Investigation</h4><p>Throughout the story, Quinn investigates who is ruining her life and who destroyed her father's restaurant. The mystery involves uncovering secrets, determining who to trust, and confronting those responsible.</p><ul class="strategy-steps"><li><span class="step-num">🕵️</span>Who is ruining her life?</li><li><span class="step-num">🤫</span>Secrets and betrayals</li><li><span class="step-num">🤝</span>Learning who to trust</li><li><span class="step-num">⚖️</span>Confrontation and justice</li></ul></div>
+                <div class="strategy-card"><h4>💞 New Beginnings</h4><p>The story also explores themes of new romance, LGBTQ+ elements, and finding strength after betrayal. Quinn's journey is as much about personal growth as it is about solving mysteries.</p><ul class="strategy-steps"><li><span class="step-num">💕</span>Possible new romance</li><li><span class="step-num">🏳️‍🌈</span>LGBTQ+ story elements</li><li><span class="step-num">💪</span>Personal growth</li><li><span class="step-num">🌅</span>Rebuilding and renewal</li></ul></div>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">⚠️</span> Important Story Mechanics</h3>
+            <div class="merge-table-wrapper">
+                <table class="merge-table">
+                    <thead><tr><th>Mechanic</th><th>Details</th><th>Notes</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Chapter Releases</strong></td><td>New chapters every Friday</td><td>Consistent weekly update schedule</td></tr>
+                        <tr><td><strong>Unlock Cost</strong></td><td>Spend coins to unlock chapters</td><td>Save coins for story progression</td></tr>
+                        <tr><td><strong>Irreversible Choices</strong></td><td>Appear mid-game (levels 16-40)</td><td>Story choices that cannot be undone</td></tr>
+                        <tr><td><strong>Decoration Progress</strong></td><td>Tied to story progress</td><td>New decorations unlock as story advances</td></tr>
+                        <tr><td><strong>Story Themes</strong></td><td>Divorce, betrayal, secrets, trust, romance</td><td>Mature themes throughout</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Story Progression Tips</div>
+                <p><strong>1. Save Coins for Story:</strong> Chapters cost coins to unlock. Don't spend all your coins on decorations. <strong>2. Play Every Friday:</strong> New chapters release weekly. <strong>3. Choices Matter:</strong> Irreversible story choices appear in levels 16-40. Think carefully before choosing. <strong>4. Read Everything:</strong> Dialogue contains important story details and hints about future developments.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>📝 Note on Chapter Details</h4>
+                <p>Specific chapter names and detailed chapter-by-chapter walkthroughs are not widely documented in public sources. The story is ongoing with new content released weekly. For the most current story details, check in-game content and community discussions. The general plot arc (return to island, rebuild restaurant, investigate destruction, personal growth) remains consistent throughout.</p>
+            </div>
+        </section>
+
+        <div class="section-divider">👥 👩 🧑‍🍳 🕵️ 💞</div>
+
+        <!-- ===== CHARACTERS ===== -->
+        <section id="characters">
+            <div class="section-header">
+                <div class="tag">👥 Lore</div>
+                <h2>Characters of Brimwave Island</h2>
+                <p>Meet the residents of Brimwave Island. Each character plays a role in Quinn's journey to rebuild her father's restaurant and uncover the truth.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">⭐</span> Main Characters</h3>
+            <div class="character-grid">
+                <div class="character-card"><div class="character-avatar">👩</div><div class="character-info"><h4>Quinn Castillo</h4><div class="role">Protagonist</div><p>Restaurant owner and amateur detective. Single mother who returned to Brimwave Island after her perfect life collapsed: divorce, betrayal, destruction. Her ex-husband was caught gambling at a casino with two women. Now she must rebuild her father's destroyed restaurant and find out who is ruining her life.</p><div class="character-traits"><span>Determined</span><span>Resilient</span><span>Protective</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👧</div><div class="character-info"><h4>Olivia Castillo</h4><div class="role">Quinn's Daughter</div><p>Quinn's daughter who accompanies her mother to Brimwave Island. Part of the Castillo family central to the story.</p><div class="character-traits"><span>Family</span><span>Main Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👵</div><div class="character-info"><h4>Ramona Castillo</h4><div class="role">Quinn's Mother</div><p>Quinn's mother and part of the extended Castillo family. Provides family support and backstory.</p><div class="character-traits"><span>Family</span><span>Support</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨</div><div class="character-info"><h4>Colton Everett</h4><div class="role">Quinn's Ex-Husband</div><p>Quinn's ex-husband who was caught gambling at a casino with two women. Accused of arson and poisoning related to the restaurant destruction.</p><div class="character-traits"><span>Antagonist</span><span>Divorce</span><span>Betrayal</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">🧑‍🍳</div><div class="character-info"><h4>Rowan</h4><div class="role">Mentor & Friend</div><p>A once-famous actress who left Hollywood. Now runs a diner on Brimwave Island. Becomes Quinn's mentor and closest ally, offering guidance as Quinn navigates her new life and the mysteries surrounding the restaurant.</p><div class="character-traits"><span>Wise</span><span>Experienced</span><span>Loyal</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👴</div><div class="character-info"><h4>Quinn's Father</h4><div class="role">Deceased / Backstory</div><p>Former restaurant owner on Brimwave Island. His restaurant was destroyed in a series of incidents: first a food poisoning scandal, followed by vandalism, and finally arson. His death and the restaurant's destruction are central to the story.</p><div class="character-traits"><span>Legacy</span><span>Mystery</span><span>Family</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👩</div><div class="character-info"><h4>Amala Mishra</h4><div class="role">Quinn's Best Friend</div><p>One of Quinn's best friends who provides emotional support and appears throughout the story.</p><div class="character-traits"><span>Supportive</span><span>Friendship</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">🧑</div><div class="character-info"><h4>Sam Walters</h4><div class="role">Quinn's Best Friend</div><p>One of Quinn's best friends. Also appears in "Sam's Road Trip" event as a travel-themed character.</p><div class="character-traits"><span>Adventurous</span><span>Friendship</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">🐱</div><div class="character-info"><h4>Coconut</h4><div class="role">Quinn's Pet Cat</div><p>Quinn's beloved pet cat who accompanies her on Brimwave Island. Adds lighthearted moments to the story.</p><div class="character-traits"><span>Pet</span><span>Cute</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👩</div><div class="character-info"><h4>Carmen Morello</h4><div class="role">Family Friend</div><p>Family friend who provides support and connections on Brimwave Island.</p><div class="character-traits"><span>Friend</span><span>Support</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨</div><div class="character-info"><h4>Mark Yeun</h4><div class="role">Friend</div><p>Friend of Quinn who appears in the story and provides assistance.</p><div class="character-traits"><span>Friend</span><span>Support</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨</div><div class="character-info"><h4>Harrison Taylor</h4><div class="role">Friend</div><p>Another friend in Quinn's circle on Brimwave Island.</p><div class="character-traits"><span>Friend</span><span>Support</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👩</div><div class="character-info"><h4>Lori Lynwood</h4><div class="role">Main Cast</div><p>Part of the main character cast in the story.</p><div class="character-traits"><span>Main Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨</div><div class="character-info"><h4>Norman</h4><div class="role">Main Cast</div><p>Character in the main storyline.</p><div class="character-traits"><span>Main Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨</div><div class="character-info"><h4>Frankie Melosi</h4><div class="role">Main Cast</div><p>Character in the main storyline.</p><div class="character-traits"><span>Main Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨</div><div class="character-info"><h4>Saul Moon</h4><div class="role">Main Cast</div><p>Character in the main storyline.</p><div class="character-traits"><span>Main Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨</div><div class="character-info"><h4>Dominic Castillo</h4><div class="role">Castillo Family</div><p>Member of the extended Castillo family.</p><div class="character-traits"><span>Family</span></div></div></div>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">👥</span> Side Characters</h3>
+            <div class="character-grid">
+                <div class="character-card"><div class="character-avatar">👨‍👩‍👧</div><div class="character-info"><h4>Blauveldt Family</h4><div class="role">Side Characters</div><p>Family on Brimwave Island with connections to the main story.</p><div class="character-traits"><span>Family</span><span>Side Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">🐕</div><div class="character-info"><h4>Buster</h4><div class="role">Side Character</div><p>Character in side stories and events.</p><div class="character-traits"><span>Side Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">🎁</div><div class="character-info"><h4>Gerald</h4><div class="role">Gift Shop Owner</div><p>Owner of the gift shop on Brimwave Island.</p><div class="character-traits"><span>Merchant</span><span>Shop</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨‍💼</div><div class="character-info"><h4>Herman Johnson</h4><div class="role">Side Character</div><p>Character appearing in side stories.</p><div class="character-traits"><span>Side Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">🎩</div><div class="character-info"><h4>Mayor Bruno</h4><div class="role">Mayor</div><p>The mayor of Brimwave Island.</p><div class="character-traits"><span>Authority</span><span>Politics</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👩</div><div class="character-info"><h4>Riley Maza</h4><div class="role">Side Character</div><p>Character in side stories.</p><div class="character-traits"><span>Side Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨</div><div class="character-info"><h4>Vance-Pierce Cunningham</h4><div class="role">Side Character</div><p>Character with connections to the island's affairs.</p><div class="character-traits"><span>Side Story</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👽</div><div class="character-info"><h4>Zorkee</h4><div class="role">Side Character</div><p>Unique character appearing in the game.</p><div class="character-traits"><span>Unique</span><span>Side Story</span></div></div></div>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🎉</span> Event Characters</h3>
+            <div class="character-grid">
+                <div class="character-card"><div class="character-avatar">🧒</div><div class="character-info"><h4>Ollie</h4><div class="role">Event NPC</div><p>Appears in special events including "Find Ollie's Lollipop" and "Ollie's Friends". A child character who brings lighthearted event storylines to the game.</p><div class="character-traits"><span>Playful</span><span>Event-only</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">🎨</div><div class="character-info"><h4>Lucy</h4><div class="role">Event NPC</div><p>Appears in the "Lucy's Class Mural" event. An art-themed character whose event involves creative merging tasks related to painting and murals.</p><div class="character-traits"><span>Creative</span><span>Event-only</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">👨‍🍳</div><div class="character-info"><h4>Jiwa</h4><div class="role">Event NPC</div><p>Appears in the "Jiwa's Restaurant Competition" event. A rival chef character whose event involves competitive cooking and restaurant-related merging challenges.</p><div class="character-traits"><span>Competitive</span><span>Event-only</span></div></div></div>
+                <div class="character-card"><div class="character-avatar">🤠</div><div class="character-info"><h4>Colton, Olivia, Lori</h4><div class="role">Event NPCs</div><p>Characters from the Silvertails Cowboy Celebration event (May 2026). Western-themed NPCs who appeared in this limited-time seasonal event.</p><div class="character-traits"><span>Seasonal</span><span>Event-only</span></div></div></div>
+            </div>
+
+            <div class="info-box">
+                <h4>📝 Character Notes</h4>
+                <p><strong>Main Story Characters:</strong> Quinn, Olivia, Ramona, Colton Everett, Rowan, and the extended Castillo family are the core story characters. The story revolves around Quinn rebuilding her life and investigating who destroyed her father's restaurant.<br>
+                <strong>Side Characters:</strong> Blauveldt Family, Buster, Gerald, Herman Johnson, Mayor Bruno, Riley Maza, Vance-Pierce Cunningham, and Zorkee add depth to the island's community.<br>
+                <strong>Event NPCs:</strong> Ollie, Lucy, Jiwa, and others appear only during specific limited-time events. They are not part of the main storyline.<br>
+                <strong>Story Themes:</strong> The main story explores divorce, betrayal, secrets, trust, possible new romance, and LGBTQ+ elements. Irreversible story choices appear mid-game (levels 16-40).<br>
+                <strong>New Content:</strong> New story chapters release every Friday. Progression requires spending coins to unlock chapters.</p>
+            </div>
+        </section>
+
+        <div class="section-divider">🪑 🎨 📸 🏖️ 🌊</div>
+
+        <!-- ===== DECORATION ===== -->
+        <section id="decoration">
+            <div class="section-header">
+                <div class="tag">🏠 Customization</div>
+                <h2>Decoration Guide</h2>
+                <p>Make your restaurant uniquely yours. Unlike other merge games, Gossip Harbor lets you change decorations anytime!</p>
+            </div>
+            <div class="decoration-grid">
+                <div class="deco-item"><div class="deco-icon">🪑</div><h4>Classic Chair</h4><div class="deco-cost">🪙 500</div><div class="deco-unlock">Level 5</div></div>
+                <div class="deco-item"><div class="deco-icon">🛋️</div><h4>Cozy Booth</h4><div class="deco-cost">🪙 1,200</div><div class="deco-unlock">Level 10</div></div>
+                <div class="deco-item"><div class="deco-icon">🖼️</div><h4>Beach Painting</h4><div class="deco-cost">🪙 800</div><div class="deco-unlock">Level 8</div></div>
+                <div class="deco-item"><div class="deco-icon">🪴</div><h4>Potted Plant</h4><div class="deco-cost">🪙 300</div><div class="deco-unlock">Level 3</div></div>
+                <div class="deco-item"><div class="deco-icon">💡</div><h4>Pendant Light</h4><div class="deco-cost">🪙 600</div><div class="deco-unlock">Level 7</div></div>
+                <div class="deco-item"><div class="deco-icon">⛵</div><h4>Ship Model</h4><div class="deco-cost">🪙 1,500</div><div class="deco-unlock">Level 15</div></div>
+                <div class="deco-item"><div class="deco-icon">🏖️</div><h4>Beach Mural</h4><div class="deco-cost">🪙 2,000</div><div class="deco-unlock">Level 20</div></div>
+                <div class="deco-item"><div class="deco-icon">🎸</div><h4>Live Music Stage</h4><div class="deco-cost">🪙 5,000</div><div class="deco-unlock">Level 30</div></div>
+                <div class="deco-item"><div class="deco-icon">🌸</div><h4>Flower Vase</h4><div class="deco-cost">🪙 400</div><div class="deco-unlock">Level 6</div></div>
+                <div class="deco-item"><div class="deco-icon">🕯️</div><h4>Candle Set</h4><div class="deco-cost">🪙 350</div><div class="deco-unlock">Level 4</div></div>
+                <div class="deco-item"><div class="deco-icon">🪵</div><h4>Wooden Counter</h4><div class="deco-cost">🪙 900</div><div class="deco-unlock">Level 12</div></div>
+                <div class="deco-item"><div class="deco-icon">🎨</div><h4>Art Collection</h4><div class="deco-cost">🪙 3,000</div><div class="deco-unlock">Level 25</div></div>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">💡 Decoration Strategy</div>
+                <p><strong>1. Don't Rush:</strong> Decoration choices are reversible. Focus on story progress first. <strong>2. Save Coins:</strong> Premium decorations cost thousands of coins. Save during Coin Rush events. <strong>3. Theme Consistency:</strong> Matching decorations give bonus customer satisfaction. <strong>4. Event Exclusives:</strong> Some decorations are only available during events — don't miss them!</p>
+            </div>
+        </section>
+
+        <div class="section-divider">🏆 🎖️ ⭐ 🏅 🎯</div>
+
+        <!-- ===== ACHIEVEMENTS ===== -->
+        <section id="achievements">
+            <div class="section-header">
+                <div class="tag">🏆 Accomplishments</div>
+                <h2>Achievement Guide</h2>
+                <p>Complete achievements for rewards and track your progress through Gossip Harbor!</p>
+            </div>
+            <div class="achievement-grid">
+                <div class="achievement-card"><div class="achv-icon">🍳</div><div><h4>First Order</h4><p>Complete your first customer order.</p><div class="achv-reward">⚡ 10 Energy</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">🔗</div><div><h4>Chain Master</h4><p>Merge 100 items in a single chain.</p><div class="achv-reward">💎 20 Diamonds</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">📖</div><div><h4>Story Buff</h4><p>Complete 10 story chapters.</p><div class="achv-reward">⚡ 50 Energy</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">🎉</div><div><h4>Event Champion</h4><p>Complete 5 events with all milestones.</p><div class="achv-reward">💎 50 Diamonds</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">🏠</div><div><h4>Restaurant Owner</h4><p>Fully upgrade your restaurant kitchen.</p><div class="achv-reward">⚡ 100 Energy</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">👥</div><div><h4>Social Butterfly</h4><p>Add 20 friends and send 100 gifts.</p><div class="achv-reward">💎 30 Diamonds</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">⚙️</div><div><h4>Generator Pro</h4><p>Upgrade 5 generators to level 10.</p><div class="achv-reward">⚡ 75 Energy</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">🧹</div><div><h4>Board Master</h4><p>Expand your merge board to maximum size.</p><div class="achv-reward">💎 100 Diamonds</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">🪙</div><div><h4>Coin Collector</h4><p>Earn 100,000 coins total.</p><div class="achv-reward">⚡ 50 Energy</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">📅</div><div><h4>Daily Devotion</h4><p>Log in for 30 consecutive days.</p><div class="achv-reward">💎 75 Diamonds</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">🦐</div><div><h4>Seafood Expert</h4><p>Merge 50 Lobster items.</p><div class="achv-reward">⚡ 30 Energy</div></div></div>
+                <div class="achievement-card"><div class="achv-icon">🌟</div><div><h4>Level 50</h4><p>Reach player level 50.</p><div class="achv-reward">💎 100 Diamonds</div></div></div>
+            </div>
+        </section>
+
+        <div class="section-divider">🎯 📊 🧠 💡 🏆</div>
+
+        <!-- ===== ADVANCED STRATEGIES ===== -->
+        <section id="advanced">
+            <div class="section-header">
+                <div class="tag">🎯 Expert</div>
+                <h2>Advanced Strategies</h2>
+                <p>Master-level techniques for experienced players who want to optimize every aspect of gameplay.</p>
+            </div>
+            <div class="strategy-grid">
+                <div class="strategy-card"><h4>⚡ Energy Optimization</h4><p>Maximize every energy point with these advanced techniques:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Calculate energy ROI before each merge</li><li><span class="step-num">2</span>Use 5-merge bonus whenever possible (+25% efficiency)</li><li><span class="step-num">3</span>Save energy bubbles for critical moments</li><li><span class="step-num">4</span>Time generator taps with energy regeneration</li><li><span class="step-num">5</span>Never let energy cap — always be merging</li></ul></div>
+                <div class="strategy-card"><h4>🔗 Chain Management</h4><p>Advanced merge chain optimization:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Keep 2-3 levels of each chain ready</li><li><span class="step-num">2</span>Never merge final items unless for orders</li><li><span class="step-num">3</span>Plan chains 5-10 merges ahead</li><li><span class="step-num">4</span>Use board space for chain staging</li><li><span class="step-num">5</span>Know which chains are energy-efficient</li></ul></div>
+                <div class="strategy-card"><h4>⚙️ Generator Mastery</h4><p>Get maximum output from your generators:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Set phone alarms for generator cooldowns</li><li><span class="step-num">2</span>Prioritize upgrades by current story needs</li><li><span class="step-num">3</span>Higher level = better items AND faster cooldown</li><li><span class="step-num">4</span>Tap generators before logging off</li><li><span class="step-num">5</span>Match generator output to order demand</li></ul></div>
+                <div class="strategy-card"><h4>💰 Economy Mastery</h4><p>Build your coin and diamond reserves:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Save high-value orders for Coin Rush events</li><li><span class="step-num">2</span>Never spend diamonds on speed-ups</li><li><span class="step-num">3</span>Calculate ROI before every diamond purchase</li><li><span class="step-num">4</span>Complete all achievements for free diamonds</li><li><span class="step-num">5</span>Monthly pass offers best value for spenders</li></ul></div>
+                <div class="strategy-card"><h4>🏆 Event Dominance</h4><p>Win events and maximize rewards:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Start events immediately when they open</li><li><span class="step-num">2</span>Save energy items for event push</li><li><span class="step-num">3</span>Know point values for each merge level</li><li><span class="step-num">4</span>Final 2 hours are critical for PvP events</li><li><span class="step-num">5</span>Prioritize seasonal events (exclusive rewards)</li></ul></div>
+                <div class="strategy-card"><h4>📖 Story Efficiency</h4><p>Progress through story chapters faster:</p><ul class="strategy-steps"><li><span class="step-num">1</span>Read ahead to know required items</li><li><span class="step-num">2</span>Prepare chains before starting chapters</li><li><span class="step-num">3</span>Save diamonds for story blockers only</li><li><span class="step-num">4</span>Character orders advance plot — prioritize!</li><li><span class="step-num">5</span>Choice matters — pick dialogue carefully</li></ul></div>
+            </div>
+
+            <div class="pro-tip">
+                <div class="pro-tip-title">🏆 The 5-Merge Rule</div>
+                <p>The single most important advanced technique: <strong>Always merge 5 items instead of 3 when possible.</strong> Merging 5 gives you 2 items instead of 1 — that's a 100% bonus! This single habit can increase your efficiency by 25-40% over time. Plan your board to enable 5-merges whenever possible.</p>
+            </div>
+        </section>
+
+        <div class="section-divider">📋 ✅ 🎯 🏆 ⭐</div>
+
+        <!-- ===== DAILY TASKS ===== -->
+        <section id="daily">
+            <div class="section-header">
+                <div class="tag">📋 Daily Routine</div>
+                <h2>Daily Tasks Checklist</h2>
+                <p>Complete these tasks every day to maximize your progress. Consistency is key in Gossip Harbor!</p>
+            </div>
+            <div class="daily-grid">
+                <div class="daily-task"><div class="task-icon">🎁</div><div><h4>Claim Daily Login</h4><p>Open the game and claim your daily reward. Streak bonus increases over time!</p><div class="reward">Reward: 10-100 Energy</div></div></div>
+                <div class="daily-task"><div class="task-icon">🎰</div><div><h4>Spin the Wheel</h4><p>Free daily spin for energy, coins, or diamonds. VIP players get better odds.</p><div class="reward">Reward: Random</div></div></div>
+                <div class="daily-task"><div class="task-icon">📺</div><div><h4>Watch All Ads</h4><p>Watch every available reward ad. Check back every few hours for new ads.</p><div class="reward">Reward: 50-100 Energy</div></div></div>
+                <div class="daily-task"><div class="task-icon">👥</div><div><h4>Send/Receive Gifts</h4><p>Send energy to friends and receive gifts. Up to 20 gifts per day!</p><div class="reward">Reward: 100-200 Energy</div></div></div>
+                <div class="daily-task"><div class="task-icon">🧹</div><div><h4>Clean the Board</h4><p>Merge everything possible. A clean board means efficient energy use.</p><div class="reward">Reward: Efficiency</div></div></div>
+                <div class="daily-task"><div class="task-icon">⚡</div><div><h4>Collect Energy Bubbles</h4><p>Tap and merge energy bubbles that spawn on your board throughout the day.</p><div class="reward">Reward: 20-50 Energy</div></div></div>
+                <div class="daily-task"><div class="task-icon">📅</div><div><h4>Check Events</h4><p>Review active events and prioritize those ending soon.</p><div class="reward">Reward: Event Progress</div></div></div>
+                <div class="daily-task"><div class="task-icon">📖</div><div><h4>Progress Story</h4><p>Complete at least one story task per day for steady progress.</p><div class="reward">Reward: Story Progress</div></div></div>
+                <div class="daily-task"><div class="task-icon">⚙️</div><div><h4>Tap All Generators</h4><p>Collect items from every generator. Set reminders for cooldowns!</p><div class="reward">Reward: Free Items</div></div></div>
+                <div class="daily-task"><div class="task-icon">🍽️</div><div><h4>Complete Orders</h4><p>Fill customer orders for coins and XP. Focus on high-value orders.</p><div class="reward">Reward: Coins & XP</div></div></div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section id="faq">
+            <div class="section-header">
+                <div class="tag">❓ Help</div>
+                <h2>Frequently Asked Questions</h2>
+                <p>Answers to the most common questions about Gossip Harbor gameplay, progression, and troubleshooting.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item"><div class="faq-question"><span>How do I get more energy?</span><span class="toggle">+</span></div><div class="faq-answer">Energy comes from multiple sources: natural regeneration (+1 every 2 minutes), watching ads (15 per ad for F2P), daily system gift (100 if you used all energy previous day), daily check-in (20), event rewards (20-500+), friend gifts, and diamond purchases (emergency only). The most reliable sources are daily logins and events. Save your diamonds for board expansions instead of energy!</div></div>
+                <div class="faq-item"><div class="faq-question"><span>What should I spend diamonds on?</span><span class="toggle">+</span></div><div class="faq-answer">Board expansions are the #1 best investment — more space means more efficient merging. Generator upgrades are second priority, especially for generators tied to current story tasks. Avoid spending diamonds on speeding up cooldowns, decorations (use coins instead), or mystery chests (terrible odds).</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Why is my merge board full?</span><span class="toggle">+</span></div><div class="faq-answer">A full board means you need to merge items more aggressively. Always merge items to their highest level before generating new ones. Consider spending diamonds on board expansion if this happens frequently. Before logging off, clean your board completely so you start fresh next session.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How do I unlock new generators?</span><span class="toggle">+</span></div><div class="faq-answer">Generators unlock through story progression. Each chapter typically unlocks 1-2 new generators. Focus on completing story tasks to unlock all generators. Once unlocked, generators can be upgraded with coins or diamonds for faster production.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>What are the best events to focus on?</span><span class="toggle">+</span></div><div class="faq-answer">Prioritize limited-time seasonal events (they won't return) and events with energy/diamond rewards. PvP events like Cook-Off Challenge are great if you can commit time. Weekly events like Merge Marathon have good milestone rewards. Always check the rewards before committing energy to an event.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How do relationships work?</span><span class="toggle">+</span></div><div class="faq-answer">The story explores themes of trust, betrayal, and possible new romance. Dialogue choices affect relationships and story direction. Irreversible story choices appear mid-game (levels 16-40), so choose carefully. The story also includes LGBTQ+ elements.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>My game is lagging. What should I do?</span><span class="toggle">+</span></div><div class="faq-answer">Try these steps: 1) Close other apps to free memory, 2) Clear the game cache in settings, 3) Restart your device, 4) Check for game updates, 5) Ensure you have at least 2GB free storage. If problems persist, contact support through the game settings.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How do I transfer my progress to a new device?</span><span class="toggle">+</span></div><div class="faq-answer">Connect your game to Facebook or your Google/Apple account in settings. On your new device, install the game and sign in to the same account. Your progress will sync automatically. Do NOT uninstall the old device until you confirm the transfer worked!</div></div>
+                <div class="faq-item"><div class="faq-question"><span>What's the best way to earn coins?</span><span class="toggle">+</span></div><div class="faq-answer">Complete customer orders, especially high-value ones from VIP customers and party groups. Save orders for Coin Rush weekends when all coins are doubled. Merge high-level items for orders rather than selling them directly. Focus on seafood and premium chains for the best coin returns.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How often should I play each day?</span><span class="toggle">+</span></div><div class="faq-answer">For optimal progress, log in 3-4 times per day: morning (claim daily, full energy), lunch (collect regenerated energy), evening (events, story), and before bed (clean board, tap generators). Each session can be 10-15 minutes. Consistency matters more than long sessions!</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Should I merge 3 or 5 items?</span><span class="toggle">+</span></div><div class="faq-answer">ALWAYS merge 5 items when possible! Merging 5 gives you 2 items instead of 1 — that's a 100% bonus. Merging 3 gives only 1 item. This single habit can increase your overall efficiency by 25-40%. Plan your board to enable 5-merges whenever possible.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>What level should I upgrade my generators to?</span><span class="toggle">+</span></div><div class="faq-answer">Use coins to upgrade all generators to level 5 (good value). For levels 6-10 (diamonds), only upgrade your most-used generators that match current story tasks. A level 10 generator is about 2x faster than level 1, so focus diamonds on 2-3 key generators rather than spreading evenly.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How do I unlock more merge board space?</span><span class="toggle">+</span></div><div class="faq-answer">Board expansions unlock through story progression and can be purchased with diamonds. The first expansion costs 100 diamonds, with prices increasing for larger expansions. This is the BEST diamond investment in the game — more space means more efficient merging and less wasted energy. Prioritize board expansions over all other diamond purchases.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>What's the difference between regular and VIP customers?</span><span class="toggle">+</span></div><div class="faq-answer">VIP customers appear randomly and offer 3-5x higher rewards than regular customers. They typically request premium items like seafood and sushi. Always prioritize VIP orders when you have the items ready. You can identify VIPs by their special appearance and the VIP badge on their order.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How do romance options work in the story?</span><span class="toggle">+</span></div><div class="faq-answer">The story explores possible new romance and LGBTQ+ elements. Dialogue choices affect relationships and story direction. Irreversible choices appear mid-game (levels 16-40). New chapters release every Friday, so the story continues to evolve.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Does the game have a monthly pass or VIP system?</span><span class="toggle">+</span></div><div class="faq-answer">Gossip Harbor uses a Battle Pass (Season Pass) system and limited-time offers rather than a traditional VIP or monthly pass. The Season/Battle Pass lets you clear tiers for predictable, consistent rewards. Limited-time offers appear periodically with various bundles. Check the in-game shop for current offers.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How do I get more diamonds for free?</span><span class="toggle">+</span></div><div class="faq-answer">Free diamonds come from: completing tasks, opening merge challenge boxes, using official redemption codes (follow official channels), and Season/Battle Pass tier rewards. Save diamonds for emergency energy (first 2 purchases are best value) and warehouse/storage slots (diamonds only, biggest late-game bottleneck).</div></div>
+                <div class="faq-item"><div class="faq-question"><span>What happens when my board is full?</span><span class="toggle">+</span></div><div class="faq-answer">When your board is full, you can't tap generators or receive new items. This wastes potential resources. Solution: Always merge items before your board fills up. If full, sell low-level items to create space, then merge aggressively. Consider a board expansion if this happens frequently. A clean board is essential for efficient gameplay.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How do seasonal events work?</span><span class="toggle">+</span></div><div class="faq-answer">Seasonal events (Halloween, Christmas, Valentine's, etc.) run for 7-14 days and offer EXCLUSIVE rewards that won't return. Always prioritize completing these events fully. They introduce special merge chains and decorations. The energy investment is high, but the exclusive items are worth it. Plan ahead and save energy items for seasonal events!</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Can I change my romance choice after Chapter 9?</span><span class="toggle">+</span></div><div class="faq-answer">No, romance choices are permanent after Chapter 9. If you want to see a different romance path, you'll need to start a new game or use the chapter select feature (unlocked after Chapter 11). This is intentional — your choices have consequences! Choose carefully based on which character's story you find most compelling.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Why am I not getting enough energy from ads?</span><span class="toggle">+</span></div><div class="faq-answer">Gossip Harbor gives approximately 40% less energy from ads compared to similar merge games. This is by design. Adapt your strategy: focus heavily on event rewards, daily logins, and friend gifts as your primary energy sources. Watch every available ad, but don't rely on them as your main energy source. Save energy items for critical moments!</div></div>
+            </div>
+        </section>
+
+        <!-- ===== CTA ===== -->
+        <div class="cta-section">
+            <h2>Stay Updated 🌊</h2>
+            <p>Get weekly guides, event alerts, merge tips, and exclusive strategies delivered to your inbox. Join 10,000+ Gossip Harbor players!</p>
+            <div class="cta-form">
+                <input type="email" placeholder="Enter your email..." aria-label="Email address">
+                <button type="button">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>⚓ Gossip Harbor Guide</h3>
+                <p>The ultimate fan-made resource for Gossip Harbor: Merge & Story. Not affiliated with Microfun — just passionate players helping players.</p>
+            </div>
+            <div>
+                <h4>Guides</h4>
+                <ul>
+                    <li><a href="#beginner">Beginner Guide</a></li>
+                    <li><a href="#merge-chains">Merge Chains</a></li>
+                    <li><a href="#generators">Generators</a></li>
+                    <li><a href="#energy">Energy Tips</a></li>
+                    <li><a href="#diamonds">Diamond Strategy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Content</h4>
+                <ul>
+                    <li><a href="#events">Event Calendar</a></li>
+                    <li><a href="#story">Story Walkthrough</a></li>
+                    <li><a href="#characters">Characters</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="https://www.reddit.com/r/GossipHarbor/" target="_blank">Reddit Community</a></li>
+                    <li><a href="https://www.facebook.com/GossipHarbor" target="_blank">Facebook Page</a></li>
+                    <li><a href="https://gossip-harbor.fandom.com/wiki/Gossip_Harbor_Wiki" target="_blank">Fandom Wiki</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy" onclick="document.getElementById('privacy-modal').style.display='block'">Privacy Policy</a></li>
+                    <li><a href="#terms" onclick="document.getElementById('terms-modal').style.display='block'">Terms of Service</a></li>
+                    <li><a href="#contact" onclick="document.getElementById('contact-modal').style.display='block'">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Gossip Harbor Guide. Fan-made site. Gossip Harbor is a trademark of Microfun. All game assets belong to their respective owners.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">This website uses Google AdSense to serve ads. <a href="#privacy" onclick="document.getElementById('privacy-modal').style.display='block'" style="color: var(--gold);">Learn more</a></p>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; overflow-y:auto;">
+        <div style="max-width:800px; margin:50px auto; background:var(--card-bg); padding:40px; border-radius:var(--radius); position:relative;">
+            <button onclick="document.getElementById('privacy-modal').style.display='none'" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--text);">×</button>
+            <h2>Privacy Policy</h2>
+            <p><strong>Last Updated:</strong> January 2026</p>
+            <h3>1. Information We Collect</h3>
+            <p>This website uses Google AdSense, which may collect certain information about your visit, including:</p>
+            <ul>
+                <li>IP address</li>
+                <li>Browser type and version</li>
+                <li>Pages you visit on this site</li>
+                <li>Time spent on pages</li>
+                <li>Referring website</li>
+            </ul>
+            <h3>2. Google AdSense</h3>
+            <p>We use Google AdSense to display advertisements. Google uses cookies to serve ads based on your prior visits to this and other websites. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--primary);">Google Ads Settings</a>.</p>
+            <h3>3. Cookies</h3>
+            <p>This website uses cookies to enhance user experience and serve personalized ads. By using this site, you consent to the use of cookies.</p>
+            <h3>4. Third-Party Links</h3>
+            <p>This website contains links to third-party sites (e.g., Reddit, Facebook, Fandom). We are not responsible for the privacy practices of these sites.</p>
+            <h3>5. Contact</h3>
+            <p>If you have questions about this privacy policy, please contact us through the Contact Us page.</p>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="terms-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; overflow-y:auto;">
+        <div style="max-width:800px; margin:50px auto; background:var(--card-bg); padding:40px; border-radius:var(--radius); position:relative;">
+            <button onclick="document.getElementById('terms-modal').style.display='none'" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--text);">×</button>
+            <h2>Terms of Service</h2>
+            <p><strong>Last Updated:</strong> January 2026</p>
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing and using this website, you accept and agree to be bound by these Terms of Service.</p>
+            <h3>2. Content</h3>
+            <p>This is a fan-made guide for Gossip Harbor: Merge & Story. All game content, including images, characters, and story elements, are the property of Microfun. This site is not affiliated with or endorsed by Microfun.</p>
+            <h3>3. Use of Information</h3>
+            <p>The information provided on this website is for educational and entertainment purposes only. While we strive for accuracy, we make no guarantees about the completeness or reliability of the information.</p>
+            <h3>4. Advertisements</h3>
+            <p>This website displays advertisements through Google AdSense. We are not responsible for the content of these advertisements.</p>
+            <h3>5. Limitation of Liability</h3>
+            <p>We shall not be liable for any damages arising from the use of this website or the information contained herein.</p>
+            <h3>6. Changes to Terms</h3>
+            <p>We reserve the right to modify these terms at any time. Continued use of the site constitutes acceptance of the updated terms.</p>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; overflow-y:auto;">
+        <div style="max-width:600px; margin:50px auto; background:var(--card-bg); padding:40px; border-radius:var(--radius); position:relative;">
+            <button onclick="document.getElementById('contact-modal').style.display='none'" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--text);">×</button>
+            <h2>Contact Us</h2>
+            <p>Have questions, suggestions, or corrections for the guide? We'd love to hear from you!</p>
+            <div style="margin-top:24px;">
+                <h3>Community Channels</h3>
+                <ul style="margin:16px 0; padding-left:24px;">
+                    <li>Join the discussion on <a href="https://www.reddit.com/r/GossipHarbor/" target="_blank" style="color:var(--primary);">Reddit</a></li>
+                    <li>Follow updates on <a href="https://www.facebook.com/GossipHarbor" target="_blank" style="color:var(--primary);">Facebook</a></li>
+                    <li>Visit the <a href="https://gossip-harbor.fandom.com/wiki/Gossip_Harbor_Wiki" target="_blank" style="color:var(--primary);">Fandom Wiki</a> for more info</li>
+                </ul>
+            </div>
+            <div style="margin-top:24px; padding:16px; background:var(--bg-light); border-radius:var(--radius);">
+                <p style="font-size:0.9rem; color:var(--text-light);"><strong>Note:</strong> This is a fan-made guide site. For official game support, please contact Microfun through the game's settings menu.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelector('.nav-links').classList.remove('open');
+                }
+            });
+        });
+
+        // Active nav
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                if (window.scrollY >= section.offsetTop - 140) current = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        });
+
+        // Merge demo cycling
+        const mergeDemos = [
+            { a: '🍞', aLabel: 'Bread', b: '🧀', bLabel: 'Cheese', result: '🥪', rLabel: 'Sandwich!' },
+            { a: '🌱', aLabel: 'Bean', b: '🌱', bLabel: 'Bean', result: '☕', rLabel: 'Coffee!' },
+            { a: '🪱', aLabel: 'Bait', b: '🪱', bLabel: 'Bait', result: '🦐', rLabel: 'Shrimp!' },
+            { a: '🥛', aLabel: 'Milk', b: '🧈', bLabel: 'Butter', result: '🧁', rLabel: 'Cupcake!' },
+            { a: '🧊', aLabel: 'Ice', b: '🍋', bLabel: 'Lemon', result: '🍹', rLabel: 'Cocktail!' },
+        ];
+        let demoIndex = 0;
+        const demo = document.querySelector('.merge-demo');
+        if (demo) {
+            setInterval(() => {
+                demoIndex = (demoIndex + 1) % mergeDemos.length;
+                const d = mergeDemos[demoIndex];
+                const items = demo.querySelectorAll('.demo-item');
+                const result = demo.querySelector('.demo-result');
+                const labels = demo.querySelectorAll('.demo-label');
+                items[0].textContent = d.a; items[1].textContent = d.b; result.textContent = d.result;
+                labels[0].textContent = d.aLabel; labels[1].textContent = d.bLabel; labels[2].textContent = d.rLabel;
+                result.style.transform = 'scale(1.2)';
+                setTimeout(() => result.style.transform = 'scale(1)', 300);
+            }, 3000);
+        }
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                const toggle = q.querySelector('.toggle');
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    toggle.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    toggle.textContent = '−';
+                }
+            });
+        });
+
+        // Energy calculator
+        function calculateEnergy() {
+            const current = parseInt(document.getElementById('currentEnergy').value) || 0;
+            const needed = parseInt(document.getElementById('neededEnergy').value) || 0;
+            document.getElementById('energyResult').textContent = `You have enough for ~${Math.floor(current / 2)} merges`;
+            const diff = needed - current;
+            if (diff > 0) {
+                const minutes = diff * 0.5;
+                document.getElementById('timeResult').textContent = `~${Math.ceil(minutes)} minutes to recharge naturally`;
+            } else {
+                document.getElementById('timeResult').textContent = `You already have enough energy!`;
+            }
+        }
+    </script>
+</body>
+</html>

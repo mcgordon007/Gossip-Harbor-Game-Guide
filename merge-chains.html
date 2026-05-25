@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2693;</text></svg>">
     <title>Merge Chains Overview - Gossip Harbor Complete Guide</title>
     <link rel="canonical" href="https://166669999.xyz/merge-chains.html">
     <meta property="og:title" content="Merge Chains Overview - Gossip Harbor Complete Guide">
@@ -102,6 +103,19 @@
         .info-box { background: var(--primary-light); border: 1px solid #d1ecf1; border-radius: 10px; padding: 16px; margin: 16px 0; }
         .info-box h4 { font-size: 0.9rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
         .info-box p { font-size: 0.85rem; color: var(--text); }
+        .content-block { margin: 24px 0; font-size: 0.9rem; line-height: 1.8; color: var(--text); }
+        .content-block h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 20px 0 10px; }
+        .content-block p { margin-bottom: 12px; }
+        .content-block ul, .content-block ol { margin: 10px 0 16px 20px; }
+        .content-block li { margin-bottom: 8px; }
+        .content-block strong { color: var(--primary-dark); }
+        .content-block .highlight { background: var(--gold-light); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+        .warning-box { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 10px; padding: 16px; margin: 16px 0; }
+        .warning-box h4 { font-size: 0.9rem; font-weight: 700; color: #b45309; margin-bottom: 8px; }
+        .warning-box p { font-size: 0.85rem; color: var(--text); }
+        .success-box { background: #d1fae5; border: 1px solid #10b981; border-radius: 10px; padding: 16px; margin: 16px 0; }
+        .success-box h4 { font-size: 0.9rem; font-weight: 700; color: #047857; margin-bottom: 8px; }
+        .success-box p { font-size: 0.85rem; color: var(--text); }
 
         .pro-tip { margin-top: 24px; padding: 20px; background: var(--accent-light); border-radius: 10px; border-left: 4px solid var(--accent); }
         .pro-tip-title { font-weight: 700; color: var(--accent); margin-bottom: 8px; font-size: 0.9rem; }
@@ -179,6 +193,19 @@
             margin-bottom: 8px;
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Merge Chains Overview",
+      "description": "Complete merge chain reference for Gossip Harbor. All 25+ merge chains organized by category with energy costs, generators, and usage tips.",
+      "url": "https://166669999.xyz/merge-chains.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gossip Harbor Guide"
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -261,98 +288,218 @@
     <div class="container">
         <section id="merge-chains">
             <div class="section-header">
-                <div class="tag">🔗 Core Mechanic</div>
-                <h2>Complete Merge Chain Reference</h2>
-                <p>Every merge chain in the game organized by category. Know exactly what to merge, what drops it, and what it's used for.</p>
+                <div class="tag">Core Mechanic</div>
+                <h1>Merge Chains</h1>
+                <p>Every merge chain in the game organized by category. Know exactly what to merge, what drops it, and what it is used for.</p>
             </div>
 
-            <h3 class="subsection-title"><span class="icon">📚</span> Detailed Chain Guides</h3>
-            <div class="chain-cards">
-                <a href="merge-chains-bread.html" class="chain-card">
-                    <div class="chain-icon">🍞</div>
-                    <h3>Bread Chain (15 Levels)</h3>
-                    <p>The most essential chain in the game. From Flour to Luxe Cheeseburger Meal - complete level-by-level breakdown.</p>
-                    <div class="chain-meta">
-                        <span>Lv 1-15</span>
-                        <span>16,000+ Energy</span>
-                    </div>
-                </a>
-                <a href="merge-chains-coffee.html" class="chain-card">
-                    <div class="chain-icon">☕</div>
-                    <h3>Coffee & Tea Chains</h3>
-                    <p>Highest priority orders with best energy-to-reward ratio. Coffee Pot produces both Coffee and Tea.</p>
-                    <div class="chain-meta">
-                        <span>Lv ~10</span>
-                        <span>Best ROI</span>
-                    </div>
-                </a>
-                <a href="merge-chains-seafood.html" class="chain-card">
-                    <div class="chain-icon">🦐</div>
-                    <h3>Seafood Chains</h3>
-                    <p>High-value orders from Fishing Net. Upgrade net to unlock fish mother piece for Fresh Fish.</p>
-                    <div class="chain-meta">
-                        <span>Lv ~8</span>
-                        <span>High Coins</span>
-                    </div>
-                </a>
-                <a href="merge-chains-other.html" class="chain-card">
-                    <div class="chain-icon">🧰</div>
-                    <h3>Other Chains</h3>
-                    <p>Tool chains, decoration chains, pet chains, and event-exclusive chains all in one place.</p>
-                    <div class="chain-meta">
-                        <span>Various</span>
-                        <span>Special Use</span>
-                    </div>
-                </a>
+            <!-- Introduction -->
+            <h3 class="subsection-title"><span class="icon">📖</span> Introduction to Merge Chains</h3>
+            <div class="content-block">
+                <p>Merge chains are the backbone of Gossip Harbor's gameplay. A merge chain is a sequence of items where each level is created by merging items from the previous level. For example, five Sacks of Flour merge into one Proofed Dough, and five Proofed Doughs merge into one Beginner's Bread, and so on up the chain. Understanding all the merge chains, their generators, and their energy costs is essential for playing efficiently.</p>
+                <p>Each merge chain has a specific generator that produces its base-level items. The energy cost to produce items increases exponentially as you move up the chain. For instance, producing a Sack of Flour costs 1 energy, but producing a Luxe Cheeseburger Meal (the highest level of the Bread chain) requires 16,384 energy. High-level items also have special properties: items at level 8 and above in many chains will spawn <strong>A Coin</strong> drops, and some levels are eligible for bubble spawns that can contain gems, energy, or other rewards.</p>
+                <p>This guide covers all the major merge chains in the game. All data is sourced from the <a href="https://gossip-harbor.fandom.com/wiki/Gossip_Harbor_Wiki" target="_blank">Gossip Harbor Fandom Wiki</a>. Energy values listed assume the 1x Generator Booster is used unless otherwise noted.</p>
             </div>
 
-            <h3 class="subsection-title"><span class="icon">☕</span> Food & Beverage Chains Overview</h3>
+            <!-- Complete Chain List -->
+            <h3 class="subsection-title"><span class="icon">📚</span> Complete Chain List</h3>
+            <div class="content-block">
+                <p>Below is a comprehensive overview of every major merge chain in Gossip Harbor, including the number of levels, the energy cost range, the generator that produces it, and key characteristics.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🍞</span> 1. Bread Chain (15 Levels)</h3>
+            <div class="content-block">
+                <p>The Bread chain is the most common and essential chain in the game. It is produced by <strong>Grocery Generators</strong> (baskets and carts), which primarily produce Sacks of Flour and occasionally Raw Potatoes. The chain spans 15 levels, from Sack of Flour (1 energy) all the way up to Luxe Cheeseburger Meal (16,384 energy). Bread items are involved in the vast majority of customer orders, making this chain your primary source of income and story progression.</p>
+                <p>Key milestones in the Bread chain include Beginner's Bread (level 3, the first orderable item), Sliced Loaf (level 5, eligible for 2-minute ice cubes), Half a Ham Sandwich (level 8, first level to spawn A Coin), and Sub With the Fixins' (level 10, which customers sometimes order). Items at level 12 and above (Ham and Cheese Croissant, Gooey Cheeseburger, Cheeseburger and Fries, Luxe Cheeseburger Meal) trigger automatic orders when spawned and are rarely or never ordered by customers normally.</p>
+                <p>The full chain: Sack of Flour &rarr; Proofed Dough &rarr; Beginner's Bread &rarr; Sourdough Loaf &rarr; Sliced Loaf &rarr; Toast with Butter and Jam &rarr; Jelly Sandwich &rarr; Half a Ham Sandwich &rarr; Ham n' Cheese Sammy &rarr; Sub With the Fixins' &rarr; Bagel Sandwich &rarr; Ham and Cheese Croissant &rarr; Gooey Cheeseburger &rarr; Cheeseburger and Fries &rarr; Luxe Cheeseburger Meal.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">☕</span> 2. Coffee Chain (14 Levels)</h3>
+            <div class="content-block">
+                <p>The Coffee chain is widely considered to have the best energy-to-reward ratio in the game. It is produced by <strong>Coffee/Tea Generators</strong> (coffee makers), which also produce Tea items as a secondary output. The chain has 14 levels, from Empty To-Go Cup (1 energy) to Sugary Tea Party (8,192 energy). Coffee orders are extremely frequent, and the items are relatively energy-efficient to produce.</p>
+                <p>The highest level that most customers will order is <strong>level 11 (A Sweltering Coffee Drink)</strong>, which costs 1,024 energy to produce. Some players are in a test group where levels 12-14 can also be ordered, but for the majority of players, items above level 11 will trigger automatic orders. Level 8 (Barista's Choice) is the first level to spawn A Coin, making it an important milestone for coin accumulation. Certain coffee levels are also eligible for frozen items (ice cubes), specifically levels 10-11, which can be useful for events.</p>
+                <p>The full chain: Empty To-Go Cup &rarr; To-Go Cup &rarr; Ready To-Go Cup &rarr; Decaf Coffee &rarr; Regular Coffee &rarr; House Blend &rarr; Sweet House Blend &rarr; Barista's Choice &rarr; Caramel Macchiato &rarr; Nice Hot Chocolate &rarr; A Sweltering Coffee Drink &rarr; Candied Berry Coffee &rarr; Lush Coffee Dessert &rarr; Sugary Tea Party.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🍵</span> 3. Tea Chain (7 Levels)</h3>
+            <div class="content-block">
+                <p>The Tea chain is a shorter chain also produced by <strong>Coffee/Tea Generators</strong>. It has 7 levels, from Tea Bag (1 energy) to Exquisite Teapot (64 energy). Tea items have a lower drop rate compared to coffee items from the same generator, but they provide additional order variety. Unlike coffee, tea items are <strong>not eligible for frozen items</strong> (ice cubes), so there is no benefit to preparing for frozen tea.</p>
+                <p>Customers can order tea starting from level 2 (Hot Tea). The highest level, Exquisite Teapot, is notable because if you have 2 or more on the board simultaneously, it will trigger an automatic order similar to high-level bread items. Exquisite Teapot also spawns from Rave Reviews and is worth 62 coins when sold, making it a valuable item to receive as a reward.</p>
+                <p>The full chain: Tea Bag &rarr; Hot Tea &rarr; Iced Lemon Tea &rarr; Country Iced Tea &rarr; Pitcher of Iced Tea &rarr; Elegant Teapot &rarr; Exquisite Teapot.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🦐</span> 4. Seafood Chain (3 Sub-Chains)</h3>
+            <div class="content-block">
+                <p>The Seafood chain is more complex than other chains because it consists of three interconnected sub-chains. It is produced by <strong>Fishing Nets and Fishing Rods</strong>.</p>
+
+                <h3>Sub-Chain A: Seafood Generator (11 Levels)</h3>
+                <p>The raw fish generator produces items from Simple Hook up through Great Fishing Cooler. Levels 1-3 produce nothing; levels 4-11 produce raw fish items. Upgrading the fishing net is essential for accessing higher-level raw fish.</p>
+
+                <h3>Sub-Chain B: Raw Fish (5 Levels)</h3>
+                <p>This sub-chain covers the raw fish items: Raw Shrimp (1 energy) &rarr; Fresh Fish (2 energy) &rarr; Bucket O' Fish (4 energy) &rarr; Fish for Sale (8 energy) &rarr; Prepped Seafood (16 energy). None of these items can be directly ordered by customers. Prepped Seafood is the key transition item -- it acts as a generator itself, producing orderable seafood items.</p>
+
+                <h3>Sub-Chain C: Prepped Seafood Output (10 Levels)</h3>
+                <p>Prepped Seafood produces the following orderable items: Slice of Salmon &rarr; Honey Glazed Salmon &rarr; Whole Grilled Fish &rarr; Grilled Fish for Two &rarr; Shrimp Linguini &rarr; Pasta Pescatore &rarr; Fresh Oysters &rarr; Boiled Whole Crab &rarr; Lobster Dinner &rarr; Big Seafood Tower. The total energy cost to reach Big Seafood Tower (including the energy to create Prepped Seafood) is 1,195 energy.</p>
+
+                <h3>Special Mechanic: Prepped Seafood Expiry</h3>
+                <p>Prepped Seafood expires after generating items worth 12 energy (12 Slices of Salmon at 1x, or 6 Honey Glazed Salmon at 2x). Once expired, you must create new Prepped Seafood by merging raw fish from scratch. However, there is a critical energy-saving trick: after the 11th generation, use <strong>Scissors</strong> to split the Prepped Seafood into 2 Fish for Sale, then merge them back together. This resets the counter to zero, giving you another full 12 uses without spending any additional energy. This is one of the most important advanced strategies in the game.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🍟</span> 5. Potato/Fries Chain (7 Levels)</h3>
+            <div class="content-block">
+                <p>The Potato/Fries chain is produced by <strong>Grocery Generators</strong> alongside bread items. It has 7 levels, from Raw Potatoes (1 energy) to Family Bucket (64 energy). Potatoes have a lower drop rate from grocery generators compared to flour, so you will naturally accumulate fewer of them. The chain synergizes with the Bread chain at higher levels: Cheeseburger and Fries (Bread level 14) requires both bread and fries items.</p>
+                <p>Level 6 (Nugget &amp; Fries Combo) is the first fries item to spawn A Coin. The full chain: Raw Potatoes &rarr; Cut Potatoes &rarr; Classic French Fries &rarr; Ketchup Fries &rarr; Plate of Waffle Fries &rarr; Nugget &amp; Fries Combo &rarr; Family Bucket. Note that Cut Potatoes and Classic French Fries can also be generated by the Box of Fries item.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🐚</span> 6. Seashell Chain (12 Levels)</h3>
+            <div class="content-block">
+                <p>The Seashell chain is produced by the <strong>Coral Generator</strong>. It spans 12 levels, from Shrimpy Shell to Mother of Pearl. Seashell items are primarily used for decoration events and are less relevant for standard customer orders. However, they can be important during specific event periods where decoration-related items are needed. The chain is a secondary priority for most players.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🍊</span> 7. Orange Chain (7 Levels)</h3>
+            <div class="content-block">
+                <p>The Orange chain is unique because it <strong>does not consume any energy</strong>. Oranges are produced by the Orange Tree using only time, making them a completely free resource. The chain has 7 levels, from Whole Orange to Deluxe Dream Cake. Once you have 2 Deluxe Dream Cakes on the board, an automatic order is generated for both of them, giving you free coins and progress.</p>
+                <p>Because orange generation is free, it is highly recommended to stockpile oranges in the staging area. They are useful for merging events (providing free mergeable items for better rewards), Restaurant Goals (coin hoarding), and Flaming Frenzy (coin accumulation). Always keep your Orange Tree running and merge oranges whenever possible.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🦆</span> 8. Rubber Ducky/Floaties Chain (11 Levels)</h3>
+            <div class="content-block">
+                <p>The Rubber Ducky/Floaties chain is produced by the <strong>Storage Bin Generator</strong>. It has 11 levels, from Rubber Ducky to Dino Floatie. These items are used for mid-level orders and certain events. The chain is a secondary priority compared to the main food chains but can be useful during specific event periods.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">🩱</span> 9. Swimwear Chain (7 Levels)</h3>
+            <div class="content-block">
+                <p>The Swimwear chain spans 7 levels, from Swimming Goggles to Diving Adventure Tank. Notably, this chain does <strong>not produce A Coin drops</strong> at high levels, making it less valuable for coin accumulation compared to other chains. It is primarily useful for fulfilling specific customer orders and event requirements.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">💰</span> 10. Coin Chain (6 Levels)</h3>
+            <div class="content-block">
+                <p>The Coin chain is created by merging A Coin drops that spawn from high-level items in other chains. Gold Nugget (level 0) only appears in events and cannot be used on the kitchen board. A Coin (level 1, worth 2 coins) is the practical starting point on the main board. The full chain on the kitchen board: A Coin (2 coins) &rarr; A Couple of Coins (6 coins) &rarr; Spare Coins (14 coins) &rarr; Stack of Coins (30 coins) &rarr; Loose Coins (62 coins). Always merge 5 at once for the 100% bonus. Coins are essential for story progression since each scene costs coins to unlock.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">💎</span> 11. Gem Chain</h3>
+            <div class="content-block">
+                <p>The Gem chain starts with A Gem (worth 1 gem) and merges up to Couple of Gems (worth 3 gems). Higher levels exist but are not well-documented on the wiki. Gems are a premium currency used for purchasing energy, items from the Hot Sale, and other special items. Gem Shards (the base-level gem item) only appear in merging events, similar to Well Water Drops.</p>
+            </div>
+
+            <h3 class="subsection-title"><span class="icon">⚡</span> 12. Energy Potion Chain (6 Levels)</h3>
+            <div class="content-block">
+                <p>The Energy Potion chain consists of 6 levels: Well Water Drops (event only) &rarr; Zap of Energy (2 energy) &rarr; Blast of Energy (6 energy) &rarr; Punch of Energy (15 energy) &rarr; Shock of Energy (40 energy) &rarr; Big Bolt of Energy (100 energy). The critical rule: <strong>always merge to maximum level before opening</strong>. The difference between level 5 (40 energy) and level 6 (100 energy) is massive -- a 150% increase for one additional merge. Big Bolt of Energy can only be obtained by merging 2 Shock of Energies together; there is no other way to get it.</p>
+            </div>
+
+            <!-- Chain Comparison Table -->
+            <h3 class="subsection-title"><span class="icon">📊</span> Chain Comparison Table</h3>
+            <div class="content-block">
+                <p>The following table provides a side-by-side comparison of all major merge chains to help you prioritize your energy and merging efforts.</p>
+            </div>
             <div class="merge-table-wrapper">
                 <table class="merge-table">
                     <thead>
-                        <tr><th>Chain</th><th>Merge Path</th><th>Lv</th><th>Energy</th><th>Generator</th><th>Used For</th></tr>
+                        <tr><th>Chain</th><th>Levels</th><th>Max Energy Cost</th><th>Generator</th><th>Best For</th><th>Priority</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>🍞 Bread Chain</strong></td><td><span class="item-emoji">🌾</span>Flour → <span class="item-emoji">🫓</span>Dough → <span class="item-emoji">🍞</span>Bread → <span class="item-emoji">🥪</span>Sandwich → <span class="item-emoji">🍔</span>Burger...</td><td><span class="level-badge">15</span></td><td class="energy-cost">1-16,384</td><td class="drop-source">Basket</td><td>Most common orders, Sandwich ingredient</td></tr>
-                        <tr><td><strong>☕ Coffee Chain</strong></td><td><span class="item-emoji">🥤</span>Empty Cup → <span class="item-emoji">☕</span>Coffee → <span class="item-emoji">🎨</span>Latte Art</td><td><span class="level-badge">~10</span></td><td class="energy-cost">1-2</td><td class="drop-source">Coffee Pot</td><td>Highest priority orders</td></tr>
-                        <tr><td><strong>🍵 Tea Chain</strong></td><td><span class="item-emoji">🫖</span>Tea Bag → <span class="item-emoji">🧊</span>Iced Tea / <span class="item-emoji">🍵</span>Black Tea</td><td><span class="level-badge">~8</span></td><td class="energy-cost">1-2</td><td class="drop-source">Coffee Pot</td><td>Tea orders, lower drop rate</td></tr>
-                        <tr><td><strong>🍟 Fries Chain</strong></td><td><span class="item-emoji">🥔</span>Potato → <span class="item-emoji">🍟</span>Fries</td><td><span class="level-badge">7</span></td><td class="energy-cost">1-2</td><td class="drop-source">Basket (~10%)</td><td>Fries orders, good value</td></tr>
-                        <tr><td><strong>🦐 Seafood Chain</strong></td><td><span class="item-emoji">🦐</span>Raw Shrimp → <span class="item-emoji">🐟</span>Fish → <span class="item-emoji">🍣</span>Grilled Fish</td><td><span class="level-badge">~8</span></td><td class="energy-cost">2-4</td><td class="drop-source">Fishing Net</td><td>High-value orders</td></tr>
-                        <tr><td><strong>🍊 Orange Chain</strong></td><td><span class="item-emoji">🍊</span>Orange → <span class="item-emoji">🍰</span>Orange Cake</td><td><span class="level-badge">~6</span></td><td class="energy-cost">0</td><td class="drop-source">Orange Tree</td><td>FREE - auto gen, no energy</td></tr>
+                        <tr><td><strong>Bread</strong></td><td>15</td><td class="energy-cost">16,384</td><td class="drop-source">Grocery Generator</td><td>Most common orders</td><td class="value-high">TOP</td></tr>
+                        <tr><td><strong>Coffee</strong></td><td>14</td><td class="energy-cost">8,192</td><td class="drop-source">Coffee/Tea Generator</td><td>Best gem ratio, frequent orders</td><td class="value-high">TOP</td></tr>
+                        <tr><td><strong>Tea</strong></td><td>7</td><td class="energy-cost">64</td><td class="drop-source">Coffee/Tea Generator</td><td>Quick orders, variety</td><td class="value-medium">Medium</td></tr>
+                        <tr><td><strong>Seafood (combined)</strong></td><td>10+5+11</td><td class="energy-cost">1,195</td><td class="drop-source">Fishing Net</td><td>High-value orders, A Coin drops</td><td class="value-medium">Medium-High</td></tr>
+                        <tr><td><strong>Potato/Fries</strong></td><td>7</td><td class="energy-cost">64</td><td class="drop-source">Grocery Generator</td><td>Mid-level orders, bread synergy</td><td class="value-high">High</td></tr>
+                        <tr><td><strong>Seashell</strong></td><td>12</td><td class="energy-cost">Varies</td><td class="drop-source">Coral Generator</td><td>Decoration events</td><td class="value-low">Low</td></tr>
+                        <tr><td><strong>Orange</strong></td><td>7</td><td class="energy-cost">0 (FREE)</td><td class="drop-source">Orange Tree</td><td>Free items, events</td><td class="value-high">High (free)</td></tr>
+                        <tr><td><strong>Floaties</strong></td><td>11</td><td class="energy-cost">1,024</td><td class="drop-source">Storage Bin Generator</td><td>Mid-level orders</td><td class="value-medium">Medium</td></tr>
+                        <tr><td><strong>Swimwear</strong></td><td>7</td><td class="energy-cost">64</td><td class="drop-source">Various</td><td>Mid-level orders (no A Coin)</td><td class="value-low">Low-Medium</td></tr>
+                        <tr><td><strong>Coin</strong></td><td>6</td><td class="energy-cost">N/A</td><td class="drop-source">Dropped by high-level items</td><td>Story progression</td><td class="value-high">High</td></tr>
+                        <tr><td><strong>Energy Potion</strong></td><td>6</td><td class="energy-cost">N/A</td><td class="drop-source">Events, rewards</td><td>Energy recovery</td><td class="value-high">High</td></tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3 class="subsection-title"><span class="icon">📊</span> Merge Chain Efficiency Analysis</h3>
-            <div class="merge-table-wrapper">
-                <table class="merge-table">
-                    <thead><tr><th>Chain Category</th><th>Avg Energy/Merge</th><th>Order Frequency</th><th>Efficiency Rating</th><th>Best For</th><th>Priority</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>☕ Coffee Chain</strong></td><td class="energy-cost">1-2</td><td>Very High</td><td class="value-high">⭐⭐⭐⭐⭐</td><td>Most common orders, best value per energy</td><td class="value-high">TOP Priority</td></tr>
-                        <tr><td><strong>🍞 Bread Chain</strong></td><td class="energy-cost">1-2</td><td>Very High</td><td class="value-high">⭐⭐⭐⭐⭐</td><td>Core ingredient for sandwiches, constant demand</td><td class="value-high">TOP Priority</td></tr>
-                        <tr><td><strong>🍟 Fries Chain</strong></td><td class="energy-cost">1-2</td><td>High</td><td class="value-high">⭐⭐⭐⭐</td><td>Good value orders, ~10% drop from Basket</td><td class="value-high">High</td></tr>
-                        <tr><td><strong>🦐 Seafood Chain</strong></td><td class="energy-cost">2-4</td><td>Medium</td><td class="value-medium">⭐⭐⭐</td><td>High coin rewards, needs net upgrades</td><td class="value-medium">Medium</td></tr>
-                        <tr><td><strong>🍵 Tea Chain</strong></td><td class="energy-cost">1-2</td><td>Medium</td><td class="value-medium">⭐⭐⭐</td><td>Shares Coffee Pot, lower drop rate</td><td class="value-medium">Medium</td></tr>
-                        <tr><td><strong>🍊 Orange Chain</strong></td><td class="energy-cost">0</td><td>Low</td><td class="value-medium">⭐⭐⭐</td><td>Free energy, long cooldown</td><td class="value-medium">Low-Medium</td></tr>
-                        <tr><td><strong>🍰 High-level Cake/Latte</strong></td><td class="energy-cost">5-10+</td><td>Low</td><td class="value-low">⭐⭐</td><td>F2P players should SKIP - too energy-intensive</td><td class="value-low">SKIP (F2P)</td></tr>
-                        <tr><td><strong>🐕 Pet Orders</strong></td><td class="energy-cost">5-15+</td><td>Low</td><td class="value-low">⭐</td><td>NOT recommended during events</td><td class="value-low">SKIP (Events)</td></tr>
-                    </tbody>
-                </table>
+            <!-- Which Chain to Prioritize -->
+            <h3 class="subsection-title"><span class="icon">🎯</span> Which Chain to Prioritize</h3>
+            <div class="content-block">
+                <p>With limited energy and board space, you need to be strategic about which chains to focus on. Here is the recommended priority order for most players:</p>
+                <ol>
+                    <li><strong>Coffee Chain (Highest Priority):</strong> Coffee has the best energy-to-reward ratio in the game. Orders are extremely frequent, and level 8+ items spawn A Coin. Focus on upgrading your Coffee/Tea Generator as early as possible.</li>
+                    <li><strong>Bread Chain (Highest Priority):</strong> Bread items are involved in the majority of customer orders. You will always need bread items, so keep this chain active at all times.</li>
+                    <li><strong>Potato/Fries Chain (High Priority):</strong> Fries orders offer good value and the chain synergizes with bread at higher levels. Since potatoes drop from the same generators as flour, you will naturally accumulate them.</li>
+                    <li><strong>Seafood Chain (Medium-High Priority):</strong> Seafood orders give high coin rewards, but the chain is more complex and energy-intensive. Focus on this once your bread and coffee chains are well-established.</li>
+                    <li><strong>Tea Chain (Medium Priority):</strong> Tea provides order variety but has a lower drop rate from Coffee/Tea Generators. Do not actively pursue tea unless you need it for specific orders.</li>
+                    <li><strong>Orange Chain (High Priority, Free):</strong> Always keep oranges running since they cost no energy. Stockpile them for events and free orders.</li>
+                </ol>
+            </div>
+
+            <!-- How Chains Connect -->
+            <h3 class="subsection-title"><span class="icon">🔗</span> How Chains Connect</h3>
+            <div class="content-block">
+                <p>Understanding how merge chains interact with each other is key to efficient play. Several chains share generators or have synergistic relationships:</p>
+                <ul>
+                    <li><strong>Coffee/Tea Generators</strong> produce both Empty To-Go Cups (coffee chain) and Tea Bags (tea chain). The coffee drop rate is higher than tea, so you will naturally produce more coffee items. Both chains compete for the same generator energy.</li>
+                    <li><strong>Grocery Generators</strong> produce both Sacks of Flour (bread chain) and Raw Potatoes (fries chain). Flour is the primary output, with potatoes dropping at a lower rate. Both chains share the same energy investment.</li>
+                    <li><strong>Bread + Fries synergy:</strong> At level 14, the Bread chain produces Cheeseburger and Fries, which conceptually combines both chains. Having a strong fries chain supports higher-level bread orders.</li>
+                    <li><strong>A Coin drops:</strong> Multiple chains contribute to the Coin chain. Level 8+ coffee items and level 8+ seafood items both spawn A Coin. This means investing in these chains pays double dividends -- you get order rewards plus coin drops.</li>
+                    <li><strong>Prepped Seafood as a generator:</strong> The Seafood chain is unique because Prepped Seafood acts as a secondary generator, producing orderable seafood items. Managing its 12-use expiry with the Scissors trick is essential for efficient seafood production.</li>
+                </ul>
+            </div>
+
+            <!-- Generator Overview -->
+            <h3 class="subsection-title"><span class="icon">⚙️</span> Generator Overview</h3>
+            <div class="content-block">
+                <p>Every merge chain starts with a generator. Here is a summary of all major generators and the chains they produce:</p>
+                <div class="merge-table-wrapper">
+                    <table class="merge-table">
+                        <thead>
+                            <tr><th>Generator</th><th>Primary Chain</th><th>Secondary Chain</th><th>Energy Cost</th><th>Thunderbolt Color</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Grocery Generator</strong></td><td>Bread (Flour)</td><td>Fries (Potatoes)</td><td>1</td><td>Yellow</td></tr>
+                            <tr><td><strong>Coffee/Tea Generator</strong></td><td>Coffee (Cups)</td><td>Tea (Tea Bags)</td><td>1</td><td>Yellow</td></tr>
+                            <tr><td><strong>Fishing Net</strong></td><td>Seafood (Raw Fish)</td><td>Prepped Seafood output</td><td>1-2</td><td>Yellow/Purple</td></tr>
+                            <tr><td><strong>Orange Tree</strong></td><td>Orange</td><td>None</td><td>0</td><td>None (free)</td></tr>
+                            <tr><td><strong>Coral Generator</strong></td><td>Seashell</td><td>None</td><td>Varies</td><td>Varies</td></tr>
+                            <tr><td><strong>Storage Bin Generator</strong></td><td>Floaties</td><td>None</td><td>Varies</td><td>Varies</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Upgrading generators through story progression and events is one of the most impactful things you can do. Higher-level generators produce better base items, which means fewer merges (and less energy) needed to reach orderable levels. Focus your upgrade efforts on the Coffee/Tea Generator first, then the Grocery Generator.</p>
+            </div>
+
+            <!-- 5-Merge Rule -->
+            <h3 class="subsection-title"><span class="icon">✋</span> The 5-Merge Rule</h3>
+            <div class="content-block">
+                <p>The 5-merge rule applies to every single merge chain in the game and is the single most important efficiency mechanic. When you merge 5 items of the same level, you receive 2 items of the next level. When you merge 3 items, you receive only 1 item of the next level (leaving 2 items unused).</p>
+                <p>Consider the math: to create one level-3 item using 3-merges, you need 9 level-1 items (3 groups of 3). Using 5-merges, you need 10 level-1 items but get 2 level-3 items. That means with just 1 extra level-1 item, you get <strong>double the output</strong>. Over hundreds of merges, this compounds into enormous efficiency gains.</p>
+            </div>
+
+            <div class="success-box">
+                <h4>5-Merge Efficiency Example</h4>
+                <p>To create one Bagel Sandwich (Bread level 11) using only 3-merges, you need 177,147 Sacks of Flour. Using 5-merges, you need 100,000 Sacks of Flour but get 2 Bagel Sandwiches. That is a 43.5% reduction in base items needed per output. The savings only increase at higher levels.</p>
+            </div>
+
+            <!-- Tips for Efficient Merging -->
+            <h3 class="subsection-title"><span class="icon">💡</span> Tips for Efficient Merging</h3>
+            <div class="content-block">
+                <p>These tips apply across all merge chains and will help you maximize your energy efficiency:</p>
+                <ol>
+                    <li><strong>Use the 1x booster as your default.</strong> More generator activations mean more bubble spawn chances. Only switch to 2x or 4x when your board is critically low on space or you are rushing a time-limited task.</li>
+                    <li><strong>Plan your board layout for 5-merges.</strong> Before generating items, check if you already have items of the same level on the board. Position new items adjacent to existing ones to enable 5-merges.</li>
+                    <li><strong>Do not claim staging items prematurely.</strong> Items in the staging area are safe storage. Only claim them when you have space on the board and are ready to merge.</li>
+                    <li><strong>Save card packs for last.</strong> Card packs block other staging items from being claimed. Always accept card packs after all other items.</li>
+                    <li><strong>Fill your board with non-point items before point events.</strong> During point/token-based events, having high-level items that do not give points on your board saves energy for when the event starts.</li>
+                    <li><strong>Wait for better bubble items.</strong> When an ad-eligible item appears in a bubble, wait briefly to see if a higher-level ad-eligible item appears. Bubbles pop themselves after about 1 minute, so do not wait too long.</li>
+                    <li><strong>Always merge energy potions to max before opening.</strong> A Big Bolt of Energy (100 energy) is worth 2.5x a Shock of Energy (40 energy). Never open potions below maximum level.</li>
+                    <li><strong>Use the Scissors trick for Prepped Seafood.</strong> After 11 uses, split with Scissors and re-merge to reset the 12-use counter. This saves massive amounts of energy over time.</li>
+                    <li><strong>Stockpile oranges.</strong> They are free and useful for events, Restaurant Goals, and Flaming Frenzy. Two Deluxe Dream Cakes auto-generate a free order.</li>
+                    <li><strong>Avoid selling items.</strong> Selling gives very low coin returns (1-11 coins). Always use items for orders instead, which give far better rewards including XP and event points.</li>
+                </ol>
             </div>
 
             <div class="info-box">
-                <h4>🎯 Chain Selection Strategy (Real Game Data)</h4>
-                <p><strong>Priority Order: Coffee > Bread > Fries</strong> — these are the most common orders with the best energy-to-reward ratio.<br>
-                <strong>Low-level Coffee Orders:</strong> Complete ~5 orders below level 7, then switch to Shrimp orders for better returns.<br>
-                <strong>Cake / High-level Latte:</strong> F2P players should SKIP these — they are extremely energy-intensive with poor ROI.<br>
-                <strong>Pet Orders:</strong> NOT recommended during events — they consume too much energy and have long wait times.<br>
-                <strong>Energy Bottles:</strong> Always merge to MAX level before opening! A max-level bottle gives 100 energy vs 40 at Lv4.<br>
-                <strong>Orange Tree:</strong> Free energy source (no energy cost, auto-generates). Use Scissors to cut down high-level oranges for merging.</p>
+                <h4>Chain Selection Strategy</h4>
+                <p><strong>Priority Order: Coffee &gt; Bread &gt; Fries &gt; Seafood &gt; Tea</strong> -- these are the most common orders with the best energy-to-reward ratios. The Orange chain is always worth maintaining since it costs no energy. During events, focus exclusively on event-related chains and orders to maximize your event rewards.</p>
             </div>
 
             <div class="pro-tip">
-                <div class="pro-tip-title">💡 Pro Tip: Real Game Merge Chain Strategy</div>
-                <p><strong>1. Coffee Pot is King:</strong> The Coffee Pot produces both Coffee and Tea. Coffee has a higher drop rate — focus on Coffee orders first. <strong>2. Basket Drop Rates:</strong> The Basket primarily drops Bread materials. Fries (Potato) drop at ~10% rate — don't waste energy farming them specifically. <strong>3. Fishing Net Upgrade:</strong> Upgrade the Fishing Net to unlock the fish mother piece — this is essential for the Seafood chain. <strong>4. Energy Bottle Rule:</strong> NEVER open low-level Energy Bottles! Always merge them to max first. Lv4 = 40 energy, Max = 100 energy. <strong>5. Scissors + Orange Tree:</strong> Use Scissors to cut high-level Orange Tree items down one level for easier merging. <strong>6. Event Strategy:</strong> During events, focus ONLY on event orders. Skip pet orders and high-level cake/latte orders to conserve energy.</p>
+                <div class="pro-tip-title">Pro Tip: Real Game Merge Chain Strategy</div>
+                <p><strong>1. Coffee Pot is King:</strong> The Coffee/Tea Generator produces both Coffee and Tea. Coffee has a higher drop rate -- focus on Coffee orders first. <strong>2. Grocery Drop Rates:</strong> The Grocery Generator primarily drops Bread materials. Potatoes drop at a lower rate -- do not waste energy farming them specifically. <strong>3. Fishing Net Upgrade:</strong> Upgrade the Fishing Net to unlock the fish mother piece -- this is essential for the Seafood chain. <strong>4. Energy Bottle Rule:</strong> NEVER open low-level Energy Bottles! Always merge them to max first. Level 5 = 40 energy, Max = 100 energy. <strong>5. Scissors + Prepped Seafood:</strong> After 11 uses of Prepped Seafood, use Scissors to split and re-merge for a free reset. <strong>6. Event Strategy:</strong> During events, focus ONLY on event orders. Skip pet orders and high-level items to conserve energy.</p>
             </div>
         </section>
 
